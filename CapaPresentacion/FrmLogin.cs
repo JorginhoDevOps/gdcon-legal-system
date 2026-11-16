@@ -16,5 +16,18 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal menu = new FrmMenuPrincipal();
+            menu.Show();
+
+            this.Hide();
+        }
+
+        private void btnSalirLogin_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
