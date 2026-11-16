@@ -334,6 +334,7 @@
             this.btnPagosBanco.Text = "Lista de Pagos al Banco";
             this.btnPagosBanco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagosBanco.UseVisualStyleBackColor = false;
+            this.btnPagosBanco.Click += new System.EventHandler(this.btnPagosBanco_Click);
             // 
             // btnListadoEntrega
             // 
@@ -397,6 +398,7 @@
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GDCON SYSTEM LEGAL";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenuPrincipal_FormClosed);
             this.pnlLateral.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             this.pnlLogo.PerformLayout();

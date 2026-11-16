@@ -50,5 +50,37 @@ namespace CapaPresentacion
                 frmPlacas.Show();
             }
         }
+
+        private void btnPagosBanco_Click(object sender, EventArgs e)
+        {
+            // 1. Verificamos si el formulario ya está abierto
+            Form formularioAbierto = Application.OpenForms["FrmListadoBanco"];
+
+            if (formularioAbierto != null)
+            {
+                // Si ya está abierto, lo traemos al frente
+                formularioAbierto.BringToFront();
+            }
+            else
+            {
+                // Si no está abierto, creamos la instancia
+                FrmListadoBanco frmBanco = new FrmListadoBanco();
+
+                // Le indicamos que su contenedor principal es este Menú (MDI)
+                frmBanco.MdiParent = this;
+
+                // Configuramos bordes y relleno para que encaje perfecto
+                frmBanco.FormBorderStyle = FormBorderStyle.None;
+                frmBanco.Dock = DockStyle.Fill;
+
+                // Lo mostramos en pantalla
+                frmBanco.Show();
+            }
+        }
+
+        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
