@@ -46,5 +46,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void lblAviso_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
