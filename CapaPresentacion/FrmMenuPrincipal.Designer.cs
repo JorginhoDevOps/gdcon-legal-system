@@ -113,6 +113,7 @@
             this.btnPlacas.Text = "Placas y Pagos";
             this.btnPlacas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPlacas.UseVisualStyleBackColor = false;
+            this.btnPlacas.Click += new System.EventHandler(this.btnPlacas_Click);
             // 
             // btnDiprove
             // 

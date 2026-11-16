@@ -23,5 +23,32 @@ namespace CapaPresentacion
 
             this.Close();
         }
+
+        private void btnPlacas_Click(object sender, EventArgs e)
+        {
+            // 1. Verificamos si el formulario ya está abierto para no abrirlo dos veces
+            Form formularioAbierto = Application.OpenForms["FrmPlacasPagos"];
+
+            if (formularioAbierto != null)
+            {
+                // Si ya está abierto, lo traemos al frente
+                formularioAbierto.BringToFront();
+            }
+            else
+            {
+                // Si no está abierto, creamos uno nuevo
+                FrmPlacasPagos frmPlacas = new FrmPlacasPagos();
+
+                // Le decimos que su "padre" es este Menú Principal (MDI)
+                frmPlacas.MdiParent = this;
+
+                // Le quitamos el marco de arriba para que parezca incrustado
+                frmPlacas.FormBorderStyle = FormBorderStyle.None;
+                frmPlacas.Dock = DockStyle.Fill;
+
+                // Lo mostramos
+                frmPlacas.Show();
+            }
+        }
     }
 }
