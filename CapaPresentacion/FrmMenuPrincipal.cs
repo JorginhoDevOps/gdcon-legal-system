@@ -82,5 +82,23 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            Form formularioAbierto = Application.OpenForms["FrmUsuarios"];
+
+            if (formularioAbierto != null)
+            {
+                formularioAbierto.BringToFront();
+            }
+            else
+            {
+                FrmUsuarios frmUsuarios = new FrmUsuarios();
+                frmUsuarios.MdiParent = this;
+                frmUsuarios.FormBorderStyle = FormBorderStyle.None;
+                frmUsuarios.Dock = DockStyle.Fill;
+                frmUsuarios.Show();
+            }
+        }
     }
 }

@@ -15,11 +15,12 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoBanco));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsAcciones = new System.Windows.Forms.ToolStrip();
             this.tsbImprimir = new System.Windows.Forms.ToolStripButton();
             this.tsbVistaPrevia = new System.Windows.Forms.ToolStripButton();
@@ -63,7 +64,6 @@
             // 
             this.tsAcciones.AutoSize = false;
             this.tsAcciones.BackColor = System.Drawing.Color.White;
-            this.tsAcciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.tsAcciones.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsAcciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbImprimir,
@@ -80,23 +80,23 @@
             // 
             // tsbImprimir
             // 
-            this.tsbImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
+            this.tsbImprimir.Image = ((System.Drawing.Image)(resources.GetObject("tsbImprimir.Image")));
             this.tsbImprimir.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbImprimir.Name = "tsbImprimir";
-            this.tsbImprimir.Size = new System.Drawing.Size(76, 40);
+            this.tsbImprimir.Size = new System.Drawing.Size(73, 40);
             this.tsbImprimir.Text = "Imprimir";
             // 
             // tsbVistaPrevia
             // 
-            this.tsbVistaPrevia.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
+            this.tsbVistaPrevia.Image = ((System.Drawing.Image)(resources.GetObject("tsbVistaPrevia.Image")));
             this.tsbVistaPrevia.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbVistaPrevia.Name = "tsbVistaPrevia";
-            this.tsbVistaPrevia.Size = new System.Drawing.Size(92, 40);
+            this.tsbVistaPrevia.Size = new System.Drawing.Size(87, 40);
             this.tsbVistaPrevia.Text = "Vista previa";
             // 
             // tsbLimpiar
             // 
-            this.tsbLimpiar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
+            this.tsbLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("tsbLimpiar.Image")));
             this.tsbLimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbLimpiar.Name = "tsbLimpiar";
             this.tsbLimpiar.Size = new System.Drawing.Size(67, 40);
@@ -105,19 +105,17 @@
             // tsbCerrar
             // 
             this.tsbCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
             this.tsbCerrar.Margin = new System.Windows.Forms.Padding(8, 2, 4, 2);
             this.tsbCerrar.Name = "tsbCerrar";
-            this.tsbCerrar.Size = new System.Drawing.Size(59, 40);
+            this.tsbCerrar.Size = new System.Drawing.Size(43, 40);
             this.tsbCerrar.Text = "Cerrar";
             // 
             // tsbBuscar
             // 
             this.tsbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
             this.tsbBuscar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(62, 40);
+            this.tsbBuscar.Size = new System.Drawing.Size(46, 40);
             this.tsbBuscar.Text = "Buscar";
             // 
             // txtBuscar
@@ -129,7 +127,7 @@
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(220, 28);
+            this.txtBuscar.Size = new System.Drawing.Size(220, 23);
             // 
             // pnlCuerpo
             // 
@@ -164,20 +162,20 @@
             this.dgvPagos.AllowUserToAddRows = false;
             this.dgvPagos.AllowUserToDeleteRows = false;
             this.dgvPagos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.dgvPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPagos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPagos.ColumnHeadersHeight = 32;
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -186,14 +184,14 @@
             this.colPlaca,
             this.colModalidad,
             this.colMonto});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPagos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPagos.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPagos.EnableHeadersVisualStyles = false;
             this.dgvPagos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -209,8 +207,8 @@
             // 
             // colNumero
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNumero.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNumero.DefaultCellStyle = dataGridViewCellStyle8;
             this.colNumero.FillWeight = 30F;
             this.colNumero.HeaderText = "N°";
             this.colNumero.Name = "colNumero";
@@ -239,8 +237,8 @@
             // 
             // colMonto
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colMonto.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colMonto.DefaultCellStyle = dataGridViewCellStyle9;
             this.colMonto.FillWeight = 80F;
             this.colMonto.HeaderText = "Monto (Bs)";
             this.colMonto.Name = "colMonto";
@@ -400,7 +398,7 @@
             this.lblSubtituloEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblSubtituloEmpresa.Location = new System.Drawing.Point(0, 24);
             this.lblSubtituloEmpresa.Name = "lblSubtituloEmpresa";
-            this.lblSubtituloEmpresa.Size = new System.Drawing.Size(298, 15);
+            this.lblSubtituloEmpresa.Size = new System.Drawing.Size(311, 15);
             this.lblSubtituloEmpresa.TabIndex = 1;
             this.lblSubtituloEmpresa.Text = "Gestión Documental y Legal — Módulo de Placas y Pagos";
             // 
@@ -411,7 +409,7 @@
             this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             this.lblEmpresa.Location = new System.Drawing.Point(0, 4);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(156, 19);
+            this.lblEmpresa.Size = new System.Drawing.Size(162, 19);
             this.lblEmpresa.TabIndex = 0;
             this.lblEmpresa.Text = "GDCON LEGAL SYSTEM";
             // 
@@ -438,6 +436,7 @@
             this.pnlEncabezadoHoja.ResumeLayout(false);
             this.pnlEncabezadoHoja.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.ToolStrip tsAcciones;

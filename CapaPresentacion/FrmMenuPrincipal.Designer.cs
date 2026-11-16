@@ -367,6 +367,7 @@
             this.btnConfiguracion.Text = "Configuración";
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguracion.UseVisualStyleBackColor = false;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnSalir
             // 

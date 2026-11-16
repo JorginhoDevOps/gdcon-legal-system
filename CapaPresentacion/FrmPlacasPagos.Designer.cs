@@ -16,6 +16,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlacasPagos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -72,6 +73,7 @@
             this.chkPago = new System.Windows.Forms.CheckBox();
             this.lblEncabezadoDatos = new System.Windows.Forms.Label();
             this.epValidacion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsAcciones.SuspendLayout();
             this.pnlPasos.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
@@ -85,9 +87,9 @@
             // 
             // tsAcciones
             // 
-            this.tsAcciones.AutoSize = false;
             this.tsAcciones.BackColor = System.Drawing.Color.White;
             this.tsAcciones.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsAcciones.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.tsAcciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbGuardar,
@@ -96,46 +98,53 @@
             this.tsbLimpiar,
             this.tsbCerrar,
             this.tsbBuscar,
-            this.txtBuscar});
+            this.txtBuscar,
+            this.btnSalir});
             this.tsAcciones.Location = new System.Drawing.Point(0, 0);
             this.tsAcciones.Name = "tsAcciones";
             this.tsAcciones.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.tsAcciones.Size = new System.Drawing.Size(1060, 44);
+            this.tsAcciones.Size = new System.Drawing.Size(1060, 39);
             this.tsAcciones.TabIndex = 0;
             // 
             // tsbNuevo
             // 
+            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
             this.tsbNuevo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(57, 40);
-            this.tsbNuevo.Text = "+ Nuevo";
+            this.tsbNuevo.Size = new System.Drawing.Size(70, 35);
+            this.tsbNuevo.Text = "Nuevo";
+            this.tsbNuevo.ToolTipText = "Nuevo";
             // 
             // tsbGuardar
             // 
+            this.tsbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tsbGuardar.Image")));
             this.tsbGuardar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbGuardar.Name = "tsbGuardar";
-            this.tsbGuardar.Size = new System.Drawing.Size(53, 40);
+            this.tsbGuardar.Size = new System.Drawing.Size(77, 35);
             this.tsbGuardar.Text = "Guardar";
             // 
             // tsbModificar
             // 
+            this.tsbModificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificar.Image")));
             this.tsbModificar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbModificar.Name = "tsbModificar";
-            this.tsbModificar.Size = new System.Drawing.Size(62, 40);
+            this.tsbModificar.Size = new System.Drawing.Size(86, 35);
             this.tsbModificar.Text = "Modificar";
             // 
             // tsbEliminar
             // 
+            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
             this.tsbEliminar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(54, 40);
+            this.tsbEliminar.Size = new System.Drawing.Size(78, 35);
             this.tsbEliminar.Text = "Eliminar";
             // 
             // tsbLimpiar
             // 
+            this.tsbLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("tsbLimpiar.Image")));
             this.tsbLimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbLimpiar.Name = "tsbLimpiar";
-            this.tsbLimpiar.Size = new System.Drawing.Size(51, 40);
+            this.tsbLimpiar.Size = new System.Drawing.Size(75, 35);
             this.tsbLimpiar.Text = "Limpiar";
             // 
             // tsbCerrar
@@ -143,7 +152,7 @@
             this.tsbCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsbCerrar.Margin = new System.Windows.Forms.Padding(8, 2, 4, 2);
             this.tsbCerrar.Name = "tsbCerrar";
-            this.tsbCerrar.Size = new System.Drawing.Size(43, 40);
+            this.tsbCerrar.Size = new System.Drawing.Size(43, 35);
             this.tsbCerrar.Text = "Cerrar";
             // 
             // tsbBuscar
@@ -151,7 +160,7 @@
             this.tsbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsbBuscar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(46, 40);
+            this.tsbBuscar.Size = new System.Drawing.Size(46, 35);
             this.tsbBuscar.Text = "Buscar";
             // 
             // txtBuscar
@@ -175,7 +184,7 @@
             this.pnlPasos.Controls.Add(this.lblPaso5);
             this.pnlPasos.Controls.Add(this.pnlBordePasos);
             this.pnlPasos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPasos.Location = new System.Drawing.Point(0, 44);
+            this.pnlPasos.Location = new System.Drawing.Point(0, 39);
             this.pnlPasos.Name = "pnlPasos";
             this.pnlPasos.Size = new System.Drawing.Size(1060, 44);
             this.pnlPasos.TabIndex = 1;
@@ -247,10 +256,10 @@
             this.pnlCuerpo.Controls.Add(this.pnlSeparador);
             this.pnlCuerpo.Controls.Add(this.pnlDatos);
             this.pnlCuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCuerpo.Location = new System.Drawing.Point(0, 88);
+            this.pnlCuerpo.Location = new System.Drawing.Point(0, 83);
             this.pnlCuerpo.Name = "pnlCuerpo";
             this.pnlCuerpo.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlCuerpo.Size = new System.Drawing.Size(1060, 661);
+            this.pnlCuerpo.Size = new System.Drawing.Size(1060, 666);
             this.pnlCuerpo.TabIndex = 2;
             // 
             // pnlLista
@@ -262,7 +271,7 @@
             this.pnlLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLista.Location = new System.Drawing.Point(364, 12);
             this.pnlLista.Name = "pnlLista";
-            this.pnlLista.Size = new System.Drawing.Size(684, 637);
+            this.pnlLista.Size = new System.Drawing.Size(684, 642);
             this.pnlLista.TabIndex = 2;
             // 
             // dgvPlacas
@@ -278,7 +287,7 @@
             this.dgvPlacas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
@@ -313,7 +322,7 @@
             this.dgvPlacas.RowHeadersVisible = false;
             this.dgvPlacas.RowTemplate.Height = 28;
             this.dgvPlacas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlacas.Size = new System.Drawing.Size(682, 605);
+            this.dgvPlacas.Size = new System.Drawing.Size(682, 610);
             this.dgvPlacas.TabIndex = 1;
             // 
             // colChasis
@@ -394,7 +403,7 @@
             this.pnlSeparador.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSeparador.Location = new System.Drawing.Point(352, 12);
             this.pnlSeparador.Name = "pnlSeparador";
-            this.pnlSeparador.Size = new System.Drawing.Size(12, 637);
+            this.pnlSeparador.Size = new System.Drawing.Size(12, 642);
             this.pnlSeparador.TabIndex = 1;
             // 
             // pnlDatos
@@ -407,7 +416,7 @@
             this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlDatos.Location = new System.Drawing.Point(12, 12);
             this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(340, 637);
+            this.pnlDatos.Size = new System.Drawing.Size(340, 642);
             this.pnlDatos.TabIndex = 0;
             // 
             // pnlAviso
@@ -707,6 +716,14 @@
             this.epValidacion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epValidacion.ContainerControl = this;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(57, 36);
+            this.btnSalir.Text = "Salir";
+            // 
             // FrmPlacasPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -734,6 +751,7 @@
             this.tlpCampos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidacion)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -789,5 +807,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMonto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPago;
         private System.Windows.Forms.ErrorProvider epValidacion;
+        private System.Windows.Forms.ToolStripButton btnSalir;
     }
 }
