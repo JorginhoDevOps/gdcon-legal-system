@@ -126,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmEntregaFinal.resx">
+      <DependentUpon>FrmEntregaFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoBanco.resx">
       <DependentUpon>FrmListadoBanco.cs</DependentUpon>
     </EmbeddedResource>
