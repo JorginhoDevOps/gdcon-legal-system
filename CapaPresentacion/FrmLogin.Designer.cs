@@ -62,7 +62,7 @@
             this.pnlMarca.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMarca.Location = new System.Drawing.Point(0, 0);
             this.pnlMarca.Name = "pnlMarca";
-            this.pnlMarca.Size = new System.Drawing.Size(370, 461);
+            this.pnlMarca.Size = new System.Drawing.Size(370, 500);
             this.pnlMarca.TabIndex = 0;
             // 
             // label4
@@ -115,7 +115,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(370, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(4, 461);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(4, 500);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label5
@@ -283,7 +283,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(914, 461);
+            this.ClientSize = new System.Drawing.Size(930, 500);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalirLogin);
             this.Controls.Add(this.btnIngresar);
