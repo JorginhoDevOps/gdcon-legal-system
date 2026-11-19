@@ -21,9 +21,30 @@ namespace CapaPresentacion
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
+            frm.FormClosed += (s, e) =>
+            {
+                if (formularioActual == frm)
+                {
+                    formularioActual = null;
+                    MostrarPanelGeneral();
+                }
+            };
+            pnlPanelGeneral.Visible = false;
             pnlContenedor.Controls.Add(frm);
             frm.Show();
             frm.BringToFront();
+        }
+
+        private void MostrarPanelGeneral()
+        {
+            pnlPanelGeneral.Visible = true;
+            pnlPanelGeneral.BringToFront();
+        }
+
+        private void btnPanelGeneral_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null) formularioActual.Close();
+            else MostrarPanelGeneral();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

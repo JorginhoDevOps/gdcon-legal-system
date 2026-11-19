@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntregaFinal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsAcciones = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbGuardar = new System.Windows.Forms.ToolStripButton();
@@ -48,21 +48,10 @@
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsbLimpiar = new System.Windows.Forms.ToolStripButton();
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
-            this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
+            this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.pnlCuerpo = new System.Windows.Forms.Panel();
-            this.pnlDatos = new System.Windows.Forms.Panel();
-            this.pnlPasos = new System.Windows.Forms.Panel();
-            this.lblPaso5 = new System.Windows.Forms.Label();
-            this.lblPaso4 = new System.Windows.Forms.Label();
-            this.lblPaso3 = new System.Windows.Forms.Label();
-            this.lblPaso2 = new System.Windows.Forms.Label();
-            this.lblPaso1 = new System.Windows.Forms.Label();
-            this.pnlBordePasos = new System.Windows.Forms.Panel();
             this.pnlLista = new System.Windows.Forms.Panel();
-            this.pnlSeparador = new System.Windows.Forms.Panel();
-            this.lblEncabezadoDatos = new System.Windows.Forms.Label();
-            this.lblEncabezadoLista = new System.Windows.Forms.Label();
             this.dgvEntregas = new System.Windows.Forms.DataGridView();
             this.colChasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +62,9 @@
             this.colRuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colActa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblEncabezadoLista = new System.Windows.Forms.Label();
+            this.pnlSeparador = new System.Windows.Forms.Panel();
+            this.pnlDatos = new System.Windows.Forms.Panel();
             this.tlpCampos = new System.Windows.Forms.TableLayoutPanel();
             this.lblChasis = new System.Windows.Forms.Label();
             this.txtChasis = new System.Windows.Forms.TextBox();
@@ -81,32 +73,40 @@
             this.txtPlaca = new System.Windows.Forms.TextBox();
             this.txtModalidad = new System.Windows.Forms.TextBox();
             this.gbDia1 = new System.Windows.Forms.GroupBox();
-            this.chkActaImpresa = new System.Windows.Forms.CheckBox();
-            this.chkComprobanteCopia = new System.Windows.Forms.CheckBox();
             this.chkDocsIniciales = new System.Windows.Forms.CheckBox();
+            this.chkComprobanteCopia = new System.Windows.Forms.CheckBox();
+            this.chkActaImpresa = new System.Windows.Forms.CheckBox();
             this.gbDia2 = new System.Windows.Forms.GroupBox();
-            this.chkResolucion = new System.Windows.Forms.CheckBox();
-            this.chkPlacasMetalicas = new System.Windows.Forms.CheckBox();
-            this.chkRuat = new System.Windows.Forms.CheckBox();
             this.chkPolizaOriginal = new System.Windows.Forms.CheckBox();
+            this.chkRuat = new System.Windows.Forms.CheckBox();
+            this.chkPlacasMetalicas = new System.Windows.Forms.CheckBox();
+            this.chkResolucion = new System.Windows.Forms.CheckBox();
             this.lblEntregadoA = new System.Windows.Forms.Label();
             this.txtEntregadoA = new System.Windows.Forms.TextBox();
             this.lblFechaEntrega = new System.Windows.Forms.Label();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.pnlAviso = new System.Windows.Forms.Panel();
-            this.pnlBordeAviso = new System.Windows.Forms.Panel();
             this.lblAviso = new System.Windows.Forms.Label();
+            this.pnlBordeAviso = new System.Windows.Forms.Panel();
             this.btnFinalizarEntrega = new System.Windows.Forms.Button();
+            this.lblEncabezadoDatos = new System.Windows.Forms.Label();
+            this.pnlPasos = new System.Windows.Forms.Panel();
+            this.pnlBordePasos = new System.Windows.Forms.Panel();
+            this.lblPaso1 = new System.Windows.Forms.Label();
+            this.lblPaso2 = new System.Windows.Forms.Label();
+            this.lblPaso3 = new System.Windows.Forms.Label();
+            this.lblPaso4 = new System.Windows.Forms.Label();
+            this.lblPaso5 = new System.Windows.Forms.Label();
             this.tsAcciones.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
-            this.pnlDatos.SuspendLayout();
-            this.pnlPasos.SuspendLayout();
             this.pnlLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
+            this.pnlDatos.SuspendLayout();
             this.tlpCampos.SuspendLayout();
             this.gbDia1.SuspendLayout();
             this.gbDia2.SuspendLayout();
             this.pnlAviso.SuspendLayout();
+            this.pnlPasos.SuspendLayout();
             this.SuspendLayout();
             // 
             // tsAcciones
@@ -184,15 +184,7 @@
             this.tsbCerrar.Name = "tsbCerrar";
             this.tsbCerrar.Size = new System.Drawing.Size(57, 40);
             this.tsbCerrar.Text = "Salir";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(200, 44);
+            this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
             // tsbBuscar
             // 
@@ -203,6 +195,15 @@
             this.tsbBuscar.Name = "tsbBuscar";
             this.tsbBuscar.Size = new System.Drawing.Size(70, 40);
             this.tsbBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(200, 44);
             // 
             // pnlCuerpo
             // 
@@ -218,95 +219,6 @@
             this.pnlCuerpo.Size = new System.Drawing.Size(1296, 755);
             this.pnlCuerpo.TabIndex = 4;
             // 
-            // pnlDatos
-            // 
-            this.pnlDatos.Controls.Add(this.tlpCampos);
-            this.pnlDatos.Controls.Add(this.lblEncabezadoDatos);
-            this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlDatos.Location = new System.Drawing.Point(12, 56);
-            this.pnlDatos.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(340, 687);
-            this.pnlDatos.TabIndex = 5;
-            // 
-            // pnlPasos
-            // 
-            this.pnlPasos.Controls.Add(this.pnlBordePasos);
-            this.pnlPasos.Controls.Add(this.lblPaso1);
-            this.pnlPasos.Controls.Add(this.lblPaso2);
-            this.pnlPasos.Controls.Add(this.lblPaso3);
-            this.pnlPasos.Controls.Add(this.lblPaso4);
-            this.pnlPasos.Controls.Add(this.lblPaso5);
-            this.pnlPasos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPasos.Location = new System.Drawing.Point(12, 12);
-            this.pnlPasos.Name = "pnlPasos";
-            this.pnlPasos.Size = new System.Drawing.Size(1272, 44);
-            this.pnlPasos.TabIndex = 0;
-            // 
-            // lblPaso5
-            // 
-            this.lblPaso5.AutoSize = true;
-            this.lblPaso5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaso5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
-            this.lblPaso5.Location = new System.Drawing.Point(805, 15);
-            this.lblPaso5.Name = "lblPaso5";
-            this.lblPaso5.Size = new System.Drawing.Size(60, 15);
-            this.lblPaso5.TabIndex = 10;
-            this.lblPaso5.Text = "⑤ Entrega";
-            // 
-            // lblPaso4
-            // 
-            this.lblPaso4.AutoSize = true;
-            this.lblPaso4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaso4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
-            this.lblPaso4.Location = new System.Drawing.Point(675, 15);
-            this.lblPaso4.Name = "lblPaso4";
-            this.lblPaso4.Size = new System.Drawing.Size(101, 15);
-            this.lblPaso4.TabIndex = 9;
-            this.lblPaso4.Text = "④ Tránsito   ─────";
-            // 
-            // lblPaso3
-            // 
-            this.lblPaso3.AutoSize = true;
-            this.lblPaso3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaso3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
-            this.lblPaso3.Location = new System.Drawing.Point(490, 15);
-            this.lblPaso3.Name = "lblPaso3";
-            this.lblPaso3.Size = new System.Drawing.Size(136, 15);
-            this.lblPaso3.TabIndex = 8;
-            this.lblPaso3.Text = "③ Placas y Pagos   ─────";
-            // 
-            // lblPaso2
-            // 
-            this.lblPaso2.AutoSize = true;
-            this.lblPaso2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaso2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
-            this.lblPaso2.Location = new System.Drawing.Point(345, 15);
-            this.lblPaso2.Name = "lblPaso2";
-            this.lblPaso2.Size = new System.Drawing.Size(111, 15);
-            this.lblPaso2.TabIndex = 7;
-            this.lblPaso2.Text = "② Despacho   ─────";
-            // 
-            // lblPaso1
-            // 
-            this.lblPaso1.AutoSize = true;
-            this.lblPaso1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaso1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
-            this.lblPaso1.Location = new System.Drawing.Point(200, 15);
-            this.lblPaso1.Name = "lblPaso1";
-            this.lblPaso1.Size = new System.Drawing.Size(114, 15);
-            this.lblPaso1.TabIndex = 6;
-            this.lblPaso1.Text = "① Recepción   ─────";
-            // 
-            // pnlBordePasos
-            // 
-            this.pnlBordePasos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(221)))), ((int)(((byte)(230)))));
-            this.pnlBordePasos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBordePasos.Location = new System.Drawing.Point(0, 43);
-            this.pnlBordePasos.Name = "pnlBordePasos";
-            this.pnlBordePasos.Size = new System.Drawing.Size(1272, 1);
-            this.pnlBordePasos.TabIndex = 11;
-            // 
             // pnlLista
             // 
             this.pnlLista.Controls.Add(this.dgvEntregas);
@@ -318,59 +230,24 @@
             this.pnlLista.Size = new System.Drawing.Size(920, 687);
             this.pnlLista.TabIndex = 0;
             // 
-            // pnlSeparador
-            // 
-            this.pnlSeparador.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSeparador.Location = new System.Drawing.Point(352, 56);
-            this.pnlSeparador.Name = "pnlSeparador";
-            this.pnlSeparador.Size = new System.Drawing.Size(12, 687);
-            this.pnlSeparador.TabIndex = 6;
-            // 
-            // lblEncabezadoDatos
-            // 
-            this.lblEncabezadoDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblEncabezadoDatos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEncabezadoDatos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncabezadoDatos.ForeColor = System.Drawing.Color.White;
-            this.lblEncabezadoDatos.Location = new System.Drawing.Point(0, 0);
-            this.lblEncabezadoDatos.Name = "lblEncabezadoDatos";
-            this.lblEncabezadoDatos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblEncabezadoDatos.Size = new System.Drawing.Size(340, 30);
-            this.lblEncabezadoDatos.TabIndex = 0;
-            this.lblEncabezadoDatos.Text = "Datos de la entrega";
-            this.lblEncabezadoDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblEncabezadoLista
-            // 
-            this.lblEncabezadoLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblEncabezadoLista.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEncabezadoLista.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncabezadoLista.ForeColor = System.Drawing.Color.White;
-            this.lblEncabezadoLista.Location = new System.Drawing.Point(0, 0);
-            this.lblEncabezadoLista.Name = "lblEncabezadoLista";
-            this.lblEncabezadoLista.Size = new System.Drawing.Size(920, 30);
-            this.lblEncabezadoLista.TabIndex = 0;
-            this.lblEncabezadoLista.Text = "Carpetas armadas y entregadas";
-            this.lblEncabezadoLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // dgvEntregas
             // 
             this.dgvEntregas.AllowUserToAddRows = false;
             this.dgvEntregas.AllowUserToDeleteRows = false;
             this.dgvEntregas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvEntregas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.dgvEntregas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntregas.BackgroundColor = System.Drawing.Color.White;
             this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvEntregas.ColumnHeadersHeight = 30;
             this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEntregas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -383,14 +260,14 @@
             this.colRuat,
             this.colActa,
             this.colEntrega});
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvEntregas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEntregas.EnableHeadersVisualStyles = false;
             this.dgvEntregas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -406,75 +283,107 @@
             // 
             // colChasis
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colChasis.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colChasis.DefaultCellStyle = dataGridViewCellStyle15;
             this.colChasis.HeaderText = "Chasis";
             this.colChasis.Name = "colChasis";
             this.colChasis.ReadOnly = true;
             // 
             // colPlaca
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPlaca.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPlaca.DefaultCellStyle = dataGridViewCellStyle16;
             this.colPlaca.HeaderText = "Placa";
             this.colPlaca.Name = "colPlaca";
             this.colPlaca.ReadOnly = true;
             // 
             // colCliente
             // 
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colCliente.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colCliente.DefaultCellStyle = dataGridViewCellStyle17;
             this.colCliente.HeaderText = "Cliente";
             this.colCliente.Name = "colCliente";
             this.colCliente.ReadOnly = true;
             // 
             // colModalidad
             // 
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colModalidad.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colModalidad.DefaultCellStyle = dataGridViewCellStyle18;
             this.colModalidad.HeaderText = "Modalidad";
             this.colModalidad.Name = "colModalidad";
             this.colModalidad.ReadOnly = true;
             // 
             // colResolucion
             // 
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colResolucion.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colResolucion.DefaultCellStyle = dataGridViewCellStyle19;
             this.colResolucion.HeaderText = "Resolución";
             this.colResolucion.Name = "colResolucion";
             this.colResolucion.ReadOnly = true;
             // 
             // colPlacas
             // 
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPlacas.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPlacas.DefaultCellStyle = dataGridViewCellStyle20;
             this.colPlacas.HeaderText = "Placas";
             this.colPlacas.Name = "colPlacas";
             this.colPlacas.ReadOnly = true;
             // 
             // colRuat
             // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colRuat.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colRuat.DefaultCellStyle = dataGridViewCellStyle21;
             this.colRuat.HeaderText = "RUAT";
             this.colRuat.Name = "colRuat";
             this.colRuat.ReadOnly = true;
             // 
             // colActa
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colActa.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colActa.DefaultCellStyle = dataGridViewCellStyle22;
             this.colActa.HeaderText = "Acta";
             this.colActa.Name = "colActa";
             this.colActa.ReadOnly = true;
             // 
             // colEntrega
             // 
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colEntrega.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colEntrega.DefaultCellStyle = dataGridViewCellStyle23;
             this.colEntrega.HeaderText = "Entrega";
             this.colEntrega.Name = "colEntrega";
             this.colEntrega.ReadOnly = true;
+            // 
+            // lblEncabezadoLista
+            // 
+            this.lblEncabezadoLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            this.lblEncabezadoLista.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEncabezadoLista.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezadoLista.ForeColor = System.Drawing.Color.White;
+            this.lblEncabezadoLista.Location = new System.Drawing.Point(0, 0);
+            this.lblEncabezadoLista.Name = "lblEncabezadoLista";
+            this.lblEncabezadoLista.Size = new System.Drawing.Size(920, 30);
+            this.lblEncabezadoLista.TabIndex = 0;
+            this.lblEncabezadoLista.Text = "Carpetas armadas y entregadas";
+            this.lblEncabezadoLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlSeparador
+            // 
+            this.pnlSeparador.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSeparador.Location = new System.Drawing.Point(352, 56);
+            this.pnlSeparador.Name = "pnlSeparador";
+            this.pnlSeparador.Size = new System.Drawing.Size(12, 687);
+            this.pnlSeparador.TabIndex = 6;
+            // 
+            // pnlDatos
+            // 
+            this.pnlDatos.Controls.Add(this.tlpCampos);
+            this.pnlDatos.Controls.Add(this.lblEncabezadoDatos);
+            this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlDatos.Location = new System.Drawing.Point(12, 56);
+            this.pnlDatos.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDatos.Name = "pnlDatos";
+            this.pnlDatos.Size = new System.Drawing.Size(340, 687);
+            this.pnlDatos.TabIndex = 5;
             // 
             // tlpCampos
             // 
@@ -604,17 +513,17 @@
             this.gbDia1.TabStop = false;
             this.gbDia1.Text = "Armado de carpeta (Día 1)";
             // 
-            // chkActaImpresa
+            // chkDocsIniciales
             // 
-            this.chkActaImpresa.AutoSize = true;
-            this.chkActaImpresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkActaImpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.chkActaImpresa.Location = new System.Drawing.Point(6, 19);
-            this.chkActaImpresa.Name = "chkActaImpresa";
-            this.chkActaImpresa.Size = new System.Drawing.Size(95, 19);
-            this.chkActaImpresa.TabIndex = 0;
-            this.chkActaImpresa.Text = "Acta impresa";
-            this.chkActaImpresa.UseVisualStyleBackColor = true;
+            this.chkDocsIniciales.AutoSize = true;
+            this.chkDocsIniciales.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDocsIniciales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.chkDocsIniciales.Location = new System.Drawing.Point(6, 65);
+            this.chkDocsIniciales.Name = "chkDocsIniciales";
+            this.chkDocsIniciales.Size = new System.Drawing.Size(139, 19);
+            this.chkDocsIniciales.TabIndex = 2;
+            this.chkDocsIniciales.Text = "Documentos iniciales";
+            this.chkDocsIniciales.UseVisualStyleBackColor = true;
             // 
             // chkComprobanteCopia
             // 
@@ -628,17 +537,17 @@
             this.chkComprobanteCopia.Text = "Comprobante (copia)";
             this.chkComprobanteCopia.UseVisualStyleBackColor = true;
             // 
-            // chkDocsIniciales
+            // chkActaImpresa
             // 
-            this.chkDocsIniciales.AutoSize = true;
-            this.chkDocsIniciales.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDocsIniciales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.chkDocsIniciales.Location = new System.Drawing.Point(6, 65);
-            this.chkDocsIniciales.Name = "chkDocsIniciales";
-            this.chkDocsIniciales.Size = new System.Drawing.Size(139, 19);
-            this.chkDocsIniciales.TabIndex = 2;
-            this.chkDocsIniciales.Text = "Documentos iniciales";
-            this.chkDocsIniciales.UseVisualStyleBackColor = true;
+            this.chkActaImpresa.AutoSize = true;
+            this.chkActaImpresa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkActaImpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.chkActaImpresa.Location = new System.Drawing.Point(6, 19);
+            this.chkActaImpresa.Name = "chkActaImpresa";
+            this.chkActaImpresa.Size = new System.Drawing.Size(95, 19);
+            this.chkActaImpresa.TabIndex = 0;
+            this.chkActaImpresa.Text = "Acta impresa";
+            this.chkActaImpresa.UseVisualStyleBackColor = true;
             // 
             // gbDia2
             // 
@@ -656,29 +565,17 @@
             this.gbDia2.TabStop = false;
             this.gbDia2.Text = "Recepción desde Tránsito y Alcaldía (Día 2)";
             // 
-            // chkResolucion
+            // chkPolizaOriginal
             // 
-            this.chkResolucion.AutoSize = true;
-            this.chkResolucion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkResolucion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.chkResolucion.Location = new System.Drawing.Point(3, 19);
-            this.chkResolucion.Name = "chkResolucion";
-            this.chkResolucion.Size = new System.Drawing.Size(84, 19);
-            this.chkResolucion.TabIndex = 0;
-            this.chkResolucion.Text = "Resolución";
-            this.chkResolucion.UseVisualStyleBackColor = true;
-            // 
-            // chkPlacasMetalicas
-            // 
-            this.chkPlacasMetalicas.AutoSize = true;
-            this.chkPlacasMetalicas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPlacasMetalicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.chkPlacasMetalicas.Location = new System.Drawing.Point(3, 43);
-            this.chkPlacasMetalicas.Name = "chkPlacasMetalicas";
-            this.chkPlacasMetalicas.Size = new System.Drawing.Size(112, 19);
-            this.chkPlacasMetalicas.TabIndex = 1;
-            this.chkPlacasMetalicas.Text = "Placas metálicas";
-            this.chkPlacasMetalicas.UseVisualStyleBackColor = true;
+            this.chkPolizaOriginal.AutoSize = true;
+            this.chkPolizaOriginal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPolizaOriginal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.chkPolizaOriginal.Location = new System.Drawing.Point(3, 91);
+            this.chkPolizaOriginal.Name = "chkPolizaOriginal";
+            this.chkPolizaOriginal.Size = new System.Drawing.Size(100, 19);
+            this.chkPolizaOriginal.TabIndex = 3;
+            this.chkPolizaOriginal.Text = "Póliza original";
+            this.chkPolizaOriginal.UseVisualStyleBackColor = true;
             // 
             // chkRuat
             // 
@@ -692,17 +589,29 @@
             this.chkRuat.Text = "RUAT";
             this.chkRuat.UseVisualStyleBackColor = true;
             // 
-            // chkPolizaOriginal
+            // chkPlacasMetalicas
             // 
-            this.chkPolizaOriginal.AutoSize = true;
-            this.chkPolizaOriginal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPolizaOriginal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.chkPolizaOriginal.Location = new System.Drawing.Point(3, 91);
-            this.chkPolizaOriginal.Name = "chkPolizaOriginal";
-            this.chkPolizaOriginal.Size = new System.Drawing.Size(100, 19);
-            this.chkPolizaOriginal.TabIndex = 3;
-            this.chkPolizaOriginal.Text = "Póliza original";
-            this.chkPolizaOriginal.UseVisualStyleBackColor = true;
+            this.chkPlacasMetalicas.AutoSize = true;
+            this.chkPlacasMetalicas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPlacasMetalicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.chkPlacasMetalicas.Location = new System.Drawing.Point(3, 43);
+            this.chkPlacasMetalicas.Name = "chkPlacasMetalicas";
+            this.chkPlacasMetalicas.Size = new System.Drawing.Size(112, 19);
+            this.chkPlacasMetalicas.TabIndex = 1;
+            this.chkPlacasMetalicas.Text = "Placas metálicas";
+            this.chkPlacasMetalicas.UseVisualStyleBackColor = true;
+            // 
+            // chkResolucion
+            // 
+            this.chkResolucion.AutoSize = true;
+            this.chkResolucion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkResolucion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.chkResolucion.Location = new System.Drawing.Point(3, 19);
+            this.chkResolucion.Name = "chkResolucion";
+            this.chkResolucion.Size = new System.Drawing.Size(84, 19);
+            this.chkResolucion.TabIndex = 0;
+            this.chkResolucion.Text = "Resolución";
+            this.chkResolucion.UseVisualStyleBackColor = true;
             // 
             // lblEntregadoA
             // 
@@ -765,15 +674,6 @@
             this.pnlAviso.Size = new System.Drawing.Size(310, 38);
             this.pnlAviso.TabIndex = 12;
             // 
-            // pnlBordeAviso
-            // 
-            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pnlBordeAviso.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlBordeAviso.Location = new System.Drawing.Point(0, 0);
-            this.pnlBordeAviso.Name = "pnlBordeAviso";
-            this.pnlBordeAviso.Size = new System.Drawing.Size(4, 38);
-            this.pnlBordeAviso.TabIndex = 0;
-            // 
             // lblAviso
             // 
             this.lblAviso.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -786,6 +686,15 @@
             this.lblAviso.TabIndex = 1;
             this.lblAviso.Text = "✕ Sin resolución, placas y RUAT no se puede entregar";
             this.lblAviso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlBordeAviso
+            // 
+            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnlBordeAviso.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlBordeAviso.Location = new System.Drawing.Point(0, 0);
+            this.pnlBordeAviso.Name = "pnlBordeAviso";
+            this.pnlBordeAviso.Size = new System.Drawing.Size(4, 38);
+            this.pnlBordeAviso.TabIndex = 0;
             // 
             // btnFinalizarEntrega
             // 
@@ -805,6 +714,98 @@
             this.btnFinalizarEntrega.Text = "Finalizar entrega";
             this.btnFinalizarEntrega.UseVisualStyleBackColor = false;
             // 
+            // lblEncabezadoDatos
+            // 
+            this.lblEncabezadoDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            this.lblEncabezadoDatos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEncabezadoDatos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezadoDatos.ForeColor = System.Drawing.Color.White;
+            this.lblEncabezadoDatos.Location = new System.Drawing.Point(0, 0);
+            this.lblEncabezadoDatos.Name = "lblEncabezadoDatos";
+            this.lblEncabezadoDatos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblEncabezadoDatos.Size = new System.Drawing.Size(340, 30);
+            this.lblEncabezadoDatos.TabIndex = 0;
+            this.lblEncabezadoDatos.Text = "Datos de la entrega";
+            this.lblEncabezadoDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlPasos
+            // 
+            this.pnlPasos.Controls.Add(this.pnlBordePasos);
+            this.pnlPasos.Controls.Add(this.lblPaso1);
+            this.pnlPasos.Controls.Add(this.lblPaso2);
+            this.pnlPasos.Controls.Add(this.lblPaso3);
+            this.pnlPasos.Controls.Add(this.lblPaso4);
+            this.pnlPasos.Controls.Add(this.lblPaso5);
+            this.pnlPasos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPasos.Location = new System.Drawing.Point(12, 12);
+            this.pnlPasos.Name = "pnlPasos";
+            this.pnlPasos.Size = new System.Drawing.Size(1272, 44);
+            this.pnlPasos.TabIndex = 0;
+            // 
+            // pnlBordePasos
+            // 
+            this.pnlBordePasos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(221)))), ((int)(((byte)(230)))));
+            this.pnlBordePasos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBordePasos.Location = new System.Drawing.Point(0, 43);
+            this.pnlBordePasos.Name = "pnlBordePasos";
+            this.pnlBordePasos.Size = new System.Drawing.Size(1272, 1);
+            this.pnlBordePasos.TabIndex = 11;
+            // 
+            // lblPaso1
+            // 
+            this.lblPaso1.AutoSize = true;
+            this.lblPaso1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
+            this.lblPaso1.Location = new System.Drawing.Point(200, 15);
+            this.lblPaso1.Name = "lblPaso1";
+            this.lblPaso1.Size = new System.Drawing.Size(114, 15);
+            this.lblPaso1.TabIndex = 6;
+            this.lblPaso1.Text = "① Recepción   ─────";
+            // 
+            // lblPaso2
+            // 
+            this.lblPaso2.AutoSize = true;
+            this.lblPaso2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
+            this.lblPaso2.Location = new System.Drawing.Point(345, 15);
+            this.lblPaso2.Name = "lblPaso2";
+            this.lblPaso2.Size = new System.Drawing.Size(111, 15);
+            this.lblPaso2.TabIndex = 7;
+            this.lblPaso2.Text = "② Despacho   ─────";
+            // 
+            // lblPaso3
+            // 
+            this.lblPaso3.AutoSize = true;
+            this.lblPaso3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
+            this.lblPaso3.Location = new System.Drawing.Point(490, 15);
+            this.lblPaso3.Name = "lblPaso3";
+            this.lblPaso3.Size = new System.Drawing.Size(136, 15);
+            this.lblPaso3.TabIndex = 8;
+            this.lblPaso3.Text = "③ Placas y Pagos   ─────";
+            // 
+            // lblPaso4
+            // 
+            this.lblPaso4.AutoSize = true;
+            this.lblPaso4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
+            this.lblPaso4.Location = new System.Drawing.Point(675, 15);
+            this.lblPaso4.Name = "lblPaso4";
+            this.lblPaso4.Size = new System.Drawing.Size(101, 15);
+            this.lblPaso4.TabIndex = 9;
+            this.lblPaso4.Text = "④ Tránsito   ─────";
+            // 
+            // lblPaso5
+            // 
+            this.lblPaso5.AutoSize = true;
+            this.lblPaso5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
+            this.lblPaso5.Location = new System.Drawing.Point(805, 15);
+            this.lblPaso5.Name = "lblPaso5";
+            this.lblPaso5.Size = new System.Drawing.Size(60, 15);
+            this.lblPaso5.TabIndex = 10;
+            this.lblPaso5.Text = "⑤ Entrega";
+            // 
             // FrmEntregaFinal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -813,18 +814,16 @@
             this.Controls.Add(this.pnlCuerpo);
             this.Controls.Add(this.tsAcciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1116, 719);
             this.Name = "FrmEntregaFinal";
             this.Text = "Entrega Final";
             this.tsAcciones.ResumeLayout(false);
             this.tsAcciones.PerformLayout();
             this.pnlCuerpo.ResumeLayout(false);
-            this.pnlDatos.ResumeLayout(false);
-            this.pnlPasos.ResumeLayout(false);
-            this.pnlPasos.PerformLayout();
             this.pnlLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
+            this.pnlDatos.ResumeLayout(false);
             this.tlpCampos.ResumeLayout(false);
             this.tlpCampos.PerformLayout();
             this.gbDia1.ResumeLayout(false);
@@ -832,6 +831,8 @@
             this.gbDia2.ResumeLayout(false);
             this.gbDia2.PerformLayout();
             this.pnlAviso.ResumeLayout(false);
+            this.pnlPasos.ResumeLayout(false);
+            this.pnlPasos.PerformLayout();
             this.ResumeLayout(false);
 
         }
