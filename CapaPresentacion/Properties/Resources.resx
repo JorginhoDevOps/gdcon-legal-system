@@ -121,4 +121,13 @@
   <data name="VISTA PREVIA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VISTA PREVIA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IMPRIMIR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\IMPRIMIR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-invisible-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\icons8-invisible-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SALIR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\SALIR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

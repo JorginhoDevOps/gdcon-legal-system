@@ -28,27 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntregaFinal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsAcciones = new System.Windows.Forms.ToolStrip();
-            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tsbGuardar = new System.Windows.Forms.ToolStripButton();
-            this.tsbModificar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.tsbLimpiar = new System.Windows.Forms.ToolStripButton();
-            this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
-            this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.pnlCuerpo = new System.Windows.Forms.Panel();
             this.pnlLista = new System.Windows.Forms.Panel();
@@ -71,7 +64,6 @@
             this.lblPlaca = new System.Windows.Forms.Label();
             this.lblModalidad = new System.Windows.Forms.Label();
             this.txtPlaca = new System.Windows.Forms.TextBox();
-            this.txtModalidad = new System.Windows.Forms.TextBox();
             this.gbDia1 = new System.Windows.Forms.GroupBox();
             this.chkDocsIniciales = new System.Windows.Forms.CheckBox();
             this.chkComprobanteCopia = new System.Windows.Forms.CheckBox();
@@ -97,6 +89,15 @@
             this.lblPaso3 = new System.Windows.Forms.Label();
             this.lblPaso4 = new System.Windows.Forms.Label();
             this.lblPaso5 = new System.Windows.Forms.Label();
+            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsbGuardar = new System.Windows.Forms.ToolStripButton();
+            this.tsbModificar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.tsbLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
+            this.tsbActa = new System.Windows.Forms.ToolStripButton();
+            this.cmbModalidad = new System.Windows.Forms.ComboBox();
             this.tsAcciones.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
             this.pnlLista.SuspendLayout();
@@ -122,79 +123,14 @@
             this.tsbLimpiar,
             this.tsbCerrar,
             this.tsbBuscar,
-            this.txtBuscar});
+            this.txtBuscar,
+            this.tsbActa});
             this.tsAcciones.Location = new System.Drawing.Point(0, 0);
             this.tsAcciones.Name = "tsAcciones";
             this.tsAcciones.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.tsAcciones.Size = new System.Drawing.Size(1296, 44);
             this.tsAcciones.TabIndex = 1;
             this.tsAcciones.Text = "toolStrip1";
-            // 
-            // tsbNuevo
-            // 
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
-            this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNuevo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(77, 40);
-            this.tsbNuevo.Text = "Agregar";
-            // 
-            // tsbGuardar
-            // 
-            this.tsbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tsbGuardar.Image")));
-            this.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbGuardar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbGuardar.Name = "tsbGuardar";
-            this.tsbGuardar.Size = new System.Drawing.Size(77, 40);
-            this.tsbGuardar.Text = "Guardar";
-            // 
-            // tsbModificar
-            // 
-            this.tsbModificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificar.Image")));
-            this.tsbModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbModificar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbModificar.Name = "tsbModificar";
-            this.tsbModificar.Size = new System.Drawing.Size(86, 40);
-            this.tsbModificar.Text = "Modificar";
-            // 
-            // tsbEliminar
-            // 
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
-            this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEliminar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(78, 40);
-            this.tsbEliminar.Text = "Eliminar";
-            // 
-            // tsbLimpiar
-            // 
-            this.tsbLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("tsbLimpiar.Image")));
-            this.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbLimpiar.Name = "tsbLimpiar";
-            this.tsbLimpiar.Size = new System.Drawing.Size(75, 40);
-            this.tsbLimpiar.Text = "Limpiar";
-            // 
-            // tsbCerrar
-            // 
-            this.tsbCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("tsbCerrar.Image")));
-            this.tsbCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCerrar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbCerrar.Name = "tsbCerrar";
-            this.tsbCerrar.Size = new System.Drawing.Size(57, 40);
-            this.tsbCerrar.Text = "Salir";
-            this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
-            // 
-            // tsbBuscar
-            // 
-            this.tsbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbBuscar.Image = global::CapaPresentacion.Properties.Resources.VISTA_PREVIA;
-            this.tsbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBuscar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(70, 40);
-            this.tsbBuscar.Text = "Buscar";
             // 
             // txtBuscar
             // 
@@ -235,19 +171,19 @@
             this.dgvEntregas.AllowUserToAddRows = false;
             this.dgvEntregas.AllowUserToDeleteRows = false;
             this.dgvEntregas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvEntregas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.dgvEntregas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntregas.BackgroundColor = System.Drawing.Color.White;
             this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEntregas.ColumnHeadersHeight = 30;
             this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEntregas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -260,14 +196,14 @@
             this.colRuat,
             this.colActa,
             this.colEntrega});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvEntregas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEntregas.EnableHeadersVisualStyles = false;
             this.dgvEntregas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -283,72 +219,72 @@
             // 
             // colChasis
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colChasis.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colChasis.DefaultCellStyle = dataGridViewCellStyle3;
             this.colChasis.HeaderText = "Chasis";
             this.colChasis.Name = "colChasis";
             this.colChasis.ReadOnly = true;
             // 
             // colPlaca
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPlaca.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPlaca.DefaultCellStyle = dataGridViewCellStyle4;
             this.colPlaca.HeaderText = "Placa";
             this.colPlaca.Name = "colPlaca";
             this.colPlaca.ReadOnly = true;
             // 
             // colCliente
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colCliente.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colCliente.DefaultCellStyle = dataGridViewCellStyle5;
             this.colCliente.HeaderText = "Cliente";
             this.colCliente.Name = "colCliente";
             this.colCliente.ReadOnly = true;
             // 
             // colModalidad
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colModalidad.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colModalidad.DefaultCellStyle = dataGridViewCellStyle6;
             this.colModalidad.HeaderText = "Modalidad";
             this.colModalidad.Name = "colModalidad";
             this.colModalidad.ReadOnly = true;
             // 
             // colResolucion
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colResolucion.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colResolucion.DefaultCellStyle = dataGridViewCellStyle7;
             this.colResolucion.HeaderText = "Resolución";
             this.colResolucion.Name = "colResolucion";
             this.colResolucion.ReadOnly = true;
             // 
             // colPlacas
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPlacas.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPlacas.DefaultCellStyle = dataGridViewCellStyle8;
             this.colPlacas.HeaderText = "Placas";
             this.colPlacas.Name = "colPlacas";
             this.colPlacas.ReadOnly = true;
             // 
             // colRuat
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colRuat.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colRuat.DefaultCellStyle = dataGridViewCellStyle9;
             this.colRuat.HeaderText = "RUAT";
             this.colRuat.Name = "colRuat";
             this.colRuat.ReadOnly = true;
             // 
             // colActa
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colActa.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colActa.DefaultCellStyle = dataGridViewCellStyle10;
             this.colActa.HeaderText = "Acta";
             this.colActa.Name = "colActa";
             this.colActa.ReadOnly = true;
             // 
             // colEntrega
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colEntrega.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colEntrega.DefaultCellStyle = dataGridViewCellStyle11;
             this.colEntrega.HeaderText = "Entrega";
             this.colEntrega.Name = "colEntrega";
             this.colEntrega.ReadOnly = true;
@@ -396,7 +332,6 @@
             this.tlpCampos.Controls.Add(this.lblPlaca, 0, 2);
             this.tlpCampos.Controls.Add(this.lblModalidad, 1, 2);
             this.tlpCampos.Controls.Add(this.txtPlaca, 0, 3);
-            this.tlpCampos.Controls.Add(this.txtModalidad, 1, 3);
             this.tlpCampos.Controls.Add(this.gbDia1, 0, 4);
             this.tlpCampos.Controls.Add(this.gbDia2, 0, 5);
             this.tlpCampos.Controls.Add(this.lblEntregadoA, 0, 6);
@@ -405,6 +340,7 @@
             this.tlpCampos.Controls.Add(this.dtpFechaEntrega, 0, 9);
             this.tlpCampos.Controls.Add(this.pnlAviso, 0, 10);
             this.tlpCampos.Controls.Add(this.btnFinalizarEntrega, 0, 11);
+            this.tlpCampos.Controls.Add(this.cmbModalidad, 1, 3);
             this.tlpCampos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCampos.Location = new System.Drawing.Point(0, 30);
             this.tlpCampos.Name = "tlpCampos";
@@ -485,18 +421,6 @@
             this.txtPlaca.Size = new System.Drawing.Size(152, 20);
             this.txtPlaca.TabIndex = 4;
             this.txtPlaca.TabStop = false;
-            // 
-            // txtModalidad
-            // 
-            this.txtModalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtModalidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtModalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(107)))));
-            this.txtModalidad.Location = new System.Drawing.Point(173, 101);
-            this.txtModalidad.Name = "txtModalidad";
-            this.txtModalidad.ReadOnly = true;
-            this.txtModalidad.Size = new System.Drawing.Size(152, 20);
-            this.txtModalidad.TabIndex = 5;
-            this.txtModalidad.TabStop = false;
             // 
             // gbDia1
             // 
@@ -806,6 +730,95 @@
             this.lblPaso5.TabIndex = 10;
             this.lblPaso5.Text = "⑤ Entrega";
             // 
+            // tsbNuevo
+            // 
+            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNuevo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbNuevo.Name = "tsbNuevo";
+            this.tsbNuevo.Size = new System.Drawing.Size(77, 40);
+            this.tsbNuevo.Text = "Agregar";
+            // 
+            // tsbGuardar
+            // 
+            this.tsbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tsbGuardar.Image")));
+            this.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbGuardar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbGuardar.Name = "tsbGuardar";
+            this.tsbGuardar.Size = new System.Drawing.Size(77, 40);
+            this.tsbGuardar.Text = "Guardar";
+            // 
+            // tsbModificar
+            // 
+            this.tsbModificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificar.Image")));
+            this.tsbModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbModificar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbModificar.Name = "tsbModificar";
+            this.tsbModificar.Size = new System.Drawing.Size(86, 40);
+            this.tsbModificar.Text = "Modificar";
+            // 
+            // tsbEliminar
+            // 
+            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEliminar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbEliminar.Name = "tsbEliminar";
+            this.tsbEliminar.Size = new System.Drawing.Size(78, 40);
+            this.tsbEliminar.Text = "Eliminar";
+            // 
+            // tsbLimpiar
+            // 
+            this.tsbLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("tsbLimpiar.Image")));
+            this.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbLimpiar.Name = "tsbLimpiar";
+            this.tsbLimpiar.Size = new System.Drawing.Size(75, 40);
+            this.tsbLimpiar.Text = "Limpiar";
+            // 
+            // tsbCerrar
+            // 
+            this.tsbCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("tsbCerrar.Image")));
+            this.tsbCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCerrar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbCerrar.Name = "tsbCerrar";
+            this.tsbCerrar.Size = new System.Drawing.Size(57, 40);
+            this.tsbCerrar.Text = "Salir";
+            this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
+            // 
+            // tsbBuscar
+            // 
+            this.tsbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbBuscar.Image = global::CapaPresentacion.Properties.Resources.VISTA_PREVIA;
+            this.tsbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBuscar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbBuscar.Name = "tsbBuscar";
+            this.tsbBuscar.Size = new System.Drawing.Size(70, 40);
+            this.tsbBuscar.Text = "Buscar";
+            // 
+            // tsbActa
+            // 
+            this.tsbActa.Image = global::CapaPresentacion.Properties.Resources.icons8_invisible_50;
+            this.tsbActa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbActa.Name = "tsbActa";
+            this.tsbActa.Size = new System.Drawing.Size(76, 41);
+            this.tsbActa.Text = "Ver acta";
+            this.tsbActa.Click += new System.EventHandler(this.tsbActa_Click);
+            // 
+            // cmbModalidad
+            // 
+            this.cmbModalidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbModalidad.FormattingEnabled = true;
+            this.cmbModalidad.Items.AddRange(new object[] {
+            "Contado",
+            "Crédito"});
+            this.cmbModalidad.Location = new System.Drawing.Point(173, 101);
+            this.cmbModalidad.Name = "cmbModalidad";
+            this.cmbModalidad.Size = new System.Drawing.Size(152, 25);
+            this.cmbModalidad.TabIndex = 13;
+            // 
             // FrmEntregaFinal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -877,7 +890,6 @@
         private System.Windows.Forms.Label lblPlaca;
         private System.Windows.Forms.Label lblModalidad;
         private System.Windows.Forms.TextBox txtPlaca;
-        private System.Windows.Forms.TextBox txtModalidad;
         private System.Windows.Forms.GroupBox gbDia1;
         private System.Windows.Forms.CheckBox chkDocsIniciales;
         private System.Windows.Forms.CheckBox chkComprobanteCopia;
@@ -895,5 +907,7 @@
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Panel pnlBordeAviso;
         private System.Windows.Forms.Button btnFinalizarEntrega;
+        private System.Windows.Forms.ToolStripButton tsbActa;
+        private System.Windows.Forms.ComboBox cmbModalidad;
     }
 }

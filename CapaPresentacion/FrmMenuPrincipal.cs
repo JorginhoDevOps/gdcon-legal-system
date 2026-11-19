@@ -78,5 +78,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(new FrmUsuarios());
         }
+
+        private void btnListadoEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmConsolidado());
+        }
     }
 }
