@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace CapaPresentacion
 {
@@ -11,6 +13,7 @@ namespace CapaPresentacion
         public FrmMenuPrincipal()
         {
             InitializeComponent();
+            BarraTitulo.Aplicar(this, Color.White, Color.FromArgb(9, 26, 58));
         }
 
         // Muestra un formulario dentro del panel contenedor
@@ -82,6 +85,16 @@ namespace CapaPresentacion
         private void btnListadoEntrega_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmConsolidado());
+        }
+
+        private void btnDiprove_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmTransito());
+        }
+
+        private void btnSeguimiento_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmSeguimiento());
         }
     }
 }

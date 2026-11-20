@@ -259,6 +259,7 @@
             this.btnSeguimiento.Text = "Seguimiento de Trámites";
             this.btnSeguimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSeguimiento.UseVisualStyleBackColor = false;
+            this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
             // lblSeguimiento
             // 
@@ -358,6 +359,7 @@
             this.btnDiprove.Text = "Diprove y Tránsito";
             this.btnDiprove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiprove.UseVisualStyleBackColor = false;
+            this.btnDiprove.Click += new System.EventHandler(this.btnDiprove_Click);
             // 
             // btnPlacas
             // 

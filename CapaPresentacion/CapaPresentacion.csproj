@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarraTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmActaContado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlacasPagos.resx">
       <DependentUpon>FrmPlacasPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeguimiento.resx">
+      <DependentUpon>FrmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTransito.resx">
       <DependentUpon>FrmTransito.cs</DependentUpon>
