@@ -16,5 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void pnlLineaTiempo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
