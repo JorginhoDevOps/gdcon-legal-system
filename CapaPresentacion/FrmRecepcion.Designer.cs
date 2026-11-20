@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecepcion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -123,7 +123,7 @@
             this.toolStrip1.Margin = new System.Windows.Forms.Padding(1, 2, 8, 4);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1264, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(1060, 44);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -226,7 +226,7 @@
             this.pnlPasos.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPasos.Location = new System.Drawing.Point(0, 44);
             this.pnlPasos.Name = "pnlPasos";
-            this.pnlPasos.Size = new System.Drawing.Size(1264, 38);
+            this.pnlPasos.Size = new System.Drawing.Size(1060, 38);
             this.pnlPasos.TabIndex = 4;
             // 
             // lblPaso1
@@ -288,7 +288,7 @@
             this.pnlBordePasos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBordePasos.Location = new System.Drawing.Point(0, 37);
             this.pnlBordePasos.Name = "pnlBordePasos";
-            this.pnlBordePasos.Size = new System.Drawing.Size(1264, 1);
+            this.pnlBordePasos.Size = new System.Drawing.Size(1060, 1);
             this.pnlBordePasos.TabIndex = 0;
             // 
             // pnlCuerpo
@@ -301,7 +301,7 @@
             this.pnlCuerpo.Location = new System.Drawing.Point(0, 82);
             this.pnlCuerpo.Name = "pnlCuerpo";
             this.pnlCuerpo.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlCuerpo.Size = new System.Drawing.Size(1264, 708);
+            this.pnlCuerpo.Size = new System.Drawing.Size(1060, 667);
             this.pnlCuerpo.TabIndex = 5;
             // 
             // pnlLista
@@ -313,7 +313,7 @@
             this.pnlLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLista.Location = new System.Drawing.Point(312, 10);
             this.pnlLista.Name = "pnlLista";
-            this.pnlLista.Size = new System.Drawing.Size(942, 688);
+            this.pnlLista.Size = new System.Drawing.Size(738, 647);
             this.pnlLista.TabIndex = 2;
             // 
             // dgvPlacas
@@ -321,20 +321,20 @@
             this.dgvPlacas.AllowUserToAddRows = false;
             this.dgvPlacas.AllowUserToDeleteRows = false;
             this.dgvPlacas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvPlacas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.dgvPlacas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlacas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPlacas.BackgroundColor = System.Drawing.Color.White;
             this.dgvPlacas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPlacas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlacas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlacas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPlacas.ColumnHeadersHeight = 30;
             this.dgvPlacas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPlacas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -345,14 +345,14 @@
             this.colPoliza,
             this.colIngreso,
             this.colEstado});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPlacas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPlacas.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPlacas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPlacas.EnableHeadersVisualStyles = false;
             this.dgvPlacas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -363,7 +363,7 @@
             this.dgvPlacas.RowHeadersVisible = false;
             this.dgvPlacas.RowTemplate.Height = 28;
             this.dgvPlacas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlacas.Size = new System.Drawing.Size(940, 660);
+            this.dgvPlacas.Size = new System.Drawing.Size(736, 619);
             this.dgvPlacas.TabIndex = 1;
             // 
             // colChasis
@@ -410,8 +410,8 @@
             // 
             // colEstado
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colEstado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colEstado.DefaultCellStyle = dataGridViewCellStyle7;
             this.colEstado.FillWeight = 65F;
             this.colEstado.HeaderText = "Estado";
             this.colEstado.Name = "colEstado";
@@ -426,7 +426,7 @@
             this.lblEncabezadoLista.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezadoLista.Name = "lblEncabezadoLista";
             this.lblEncabezadoLista.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.lblEncabezadoLista.Size = new System.Drawing.Size(940, 26);
+            this.lblEncabezadoLista.Size = new System.Drawing.Size(736, 26);
             this.lblEncabezadoLista.TabIndex = 0;
             this.lblEncabezadoLista.Text = "Registro de trámites recibidos";
             this.lblEncabezadoLista.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -437,7 +437,7 @@
             this.pnlSeparador.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSeparador.Location = new System.Drawing.Point(302, 10);
             this.pnlSeparador.Name = "pnlSeparador";
-            this.pnlSeparador.Size = new System.Drawing.Size(10, 688);
+            this.pnlSeparador.Size = new System.Drawing.Size(10, 647);
             this.pnlSeparador.TabIndex = 1;
             // 
             // pnlDatos
@@ -450,14 +450,14 @@
             this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlDatos.Location = new System.Drawing.Point(10, 10);
             this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(292, 688);
+            this.pnlDatos.Size = new System.Drawing.Size(292, 647);
             this.pnlDatos.TabIndex = 0;
             // 
             // pnlAviso
             // 
             this.pnlAviso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
+            this.pnlAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pnlAviso.Controls.Add(this.pnlBordeAviso);
             this.pnlAviso.Location = new System.Drawing.Point(8, 518);
             this.pnlAviso.Name = "pnlAviso";
@@ -466,7 +466,7 @@
             // 
             // pnlBordeAviso
             // 
-            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(168)))), ((int)(((byte)(37)))));
+            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.pnlBordeAviso.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBordeAviso.Location = new System.Drawing.Point(0, 0);
             this.pnlBordeAviso.Name = "pnlBordeAviso";
