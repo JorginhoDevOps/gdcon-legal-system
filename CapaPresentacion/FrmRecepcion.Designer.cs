@@ -872,13 +872,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1264, 790);
+            this.ClientSize = new System.Drawing.Size(1060, 749);
             this.Controls.Add(this.pnlCuerpo);
             this.Controls.Add(this.pnlPasos);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(900, 650);
             this.Name = "FrmRecepcion";
-            this.Text = "FrmRecepcion";
+            this.Text = "Recepción";
             this.Load += new System.EventHandler(this.FrmRecepcion_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
