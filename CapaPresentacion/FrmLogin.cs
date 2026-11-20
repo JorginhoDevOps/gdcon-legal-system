@@ -51,30 +51,28 @@ namespace CapaPresentacion
         // ---------- Captcha ----------
         private void GenerarCaptcha()
         {
-            const string letras = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";   // sin O, 0, I, 1 para no confundir
+            const string letras = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";  
             char[] c = new char[5];
             for (int i = 0; i < c.Length; i++) c[i] = letras[azar.Next(letras.Length)];
             codigoCaptcha = new string(c);
 
-            Bitmap bmp = new Bitmap(140, 29);
+            Bitmap bmp = new Bitmap(150, 29);
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.Clear(Color.FromArgb(240, 244, 248));
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.TextRenderingHint = TextRenderingHint.AntiAlias;
 
-                // Ruido: líneas y puntos
                 for (int i = 0; i < 6; i++)
                     using (var pen = new Pen(Color.FromArgb(azar.Next(120, 200), azar.Next(100, 200), azar.Next(100, 200)), 1))
-                        g.DrawLine(pen, azar.Next(140), azar.Next(29), azar.Next(140), azar.Next(29));
+                        g.DrawLine(pen, azar.Next(150), azar.Next(29), azar.Next(150), azar.Next(29));
                 for (int i = 0; i < 40; i++)
-                    bmp.SetPixel(azar.Next(140), azar.Next(29), Color.FromArgb(azar.Next(80, 200), azar.Next(80, 200), azar.Next(80, 200)));
+                    bmp.SetPixel(azar.Next(150), azar.Next(29), Color.FromArgb(azar.Next(80, 200), azar.Next(80, 200), azar.Next(80, 200)));
 
-                // Letras con posición vertical variable
                 using (var fuente = new Font("Consolas", 14F, FontStyle.Bold | FontStyle.Italic))
                 using (var pincel = new SolidBrush(Color.FromArgb(9, 26, 58)))
                     for (int i = 0; i < c.Length; i++)
-                        g.DrawString(c[i].ToString(), fuente, pincel, 10 + i * 24, azar.Next(0, 5));
+                        g.DrawString(c[i].ToString(), fuente, pincel, 10 + i * 26, azar.Next(1, 5));
             }
             if (picCaptcha.Image != null) picCaptcha.Image.Dispose();
             picCaptcha.Image = bmp;

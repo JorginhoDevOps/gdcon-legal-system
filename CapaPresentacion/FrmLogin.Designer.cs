@@ -73,7 +73,7 @@
             this.lblSubtituloMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
             this.lblSubtituloMarca.Location = new System.Drawing.Point(54, 307);
             this.lblSubtituloMarca.Name = "lblSubtituloMarca";
-            this.lblSubtituloMarca.Size = new System.Drawing.Size(166, 13);
+            this.lblSubtituloMarca.Size = new System.Drawing.Size(182, 15);
             this.lblSubtituloMarca.TabIndex = 3;
             this.lblSubtituloMarca.Text = "Gestión de trámites para IMCRUZ";
             // 
@@ -84,7 +84,7 @@
             this.lblSistema.ForeColor = System.Drawing.Color.White;
             this.lblSistema.Location = new System.Drawing.Point(54, 256);
             this.lblSistema.Name = "lblSistema";
-            this.lblSistema.Size = new System.Drawing.Size(264, 17);
+            this.lblSistema.Size = new System.Drawing.Size(249, 19);
             this.lblSistema.TabIndex = 2;
             this.lblSistema.Text = "Sistema de Gestión de Trámites Legales";
             // 
@@ -95,7 +95,7 @@
             this.lblGdcon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
             this.lblGdcon.Location = new System.Drawing.Point(54, 178);
             this.lblGdcon.Name = "lblGdcon";
-            this.lblGdcon.Size = new System.Drawing.Size(160, 44);
+            this.lblGdcon.Size = new System.Drawing.Size(155, 51);
             this.lblGdcon.TabIndex = 1;
             this.lblGdcon.Text = "GDCON";
             // 
@@ -106,7 +106,7 @@
             this.lblSgtl.ForeColor = System.Drawing.Color.White;
             this.lblSgtl.Location = new System.Drawing.Point(54, 100);
             this.lblSgtl.Name = "lblSgtl";
-            this.lblSgtl.Size = new System.Drawing.Size(118, 44);
+            this.lblSgtl.Size = new System.Drawing.Size(110, 51);
             this.lblSgtl.TabIndex = 0;
             this.lblSgtl.Text = "SGTL";
             // 
@@ -122,22 +122,22 @@
             // lblTituloLogin
             // 
             this.lblTituloLogin.AutoSize = true;
-            this.lblTituloLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloLogin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.lblTituloLogin.Location = new System.Drawing.Point(412, 21);
+            this.lblTituloLogin.Location = new System.Drawing.Point(442, 34);
             this.lblTituloLogin.Name = "lblTituloLogin";
-            this.lblTituloLogin.Size = new System.Drawing.Size(165, 30);
+            this.lblTituloLogin.Size = new System.Drawing.Size(171, 30);
             this.lblTituloLogin.TabIndex = 2;
             this.lblTituloLogin.Text = "Inicio de sesión";
             // 
             // lblSubtituloLogin
             // 
             this.lblSubtituloLogin.AutoSize = true;
-            this.lblSubtituloLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtituloLogin.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtituloLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblSubtituloLogin.Location = new System.Drawing.Point(412, 62);
+            this.lblSubtituloLogin.Location = new System.Drawing.Point(442, 70);
             this.lblSubtituloLogin.Name = "lblSubtituloLogin";
-            this.lblSubtituloLogin.Size = new System.Drawing.Size(213, 15);
+            this.lblSubtituloLogin.Size = new System.Drawing.Size(239, 17);
             this.lblSubtituloLogin.TabIndex = 3;
             this.lblSubtituloLogin.Text = "Ingrese sus credenciales para continuar";
             // 
@@ -145,9 +145,9 @@
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(412, 96);
+            this.lblCorreo.Location = new System.Drawing.Point(442, 106);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(93, 13);
+            this.lblCorreo.Size = new System.Drawing.Size(105, 15);
             this.lblCorreo.TabIndex = 4;
             this.lblCorreo.Text = "Correo electrónico";
             // 
@@ -156,18 +156,18 @@
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtCorreo.Location = new System.Drawing.Point(412, 119);
+            this.txtCorreo.Location = new System.Drawing.Point(442, 126);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(300, 29);
+            this.txtCorreo.Size = new System.Drawing.Size(420, 29);
             this.txtCorreo.TabIndex = 5;
             // 
             // lblClave
             // 
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Location = new System.Drawing.Point(412, 158);
+            this.lblClave.Location = new System.Drawing.Point(442, 167);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(61, 13);
+            this.lblClave.Size = new System.Drawing.Size(67, 15);
             this.lblClave.TabIndex = 6;
             this.lblClave.Text = "Contraseña";
             // 
@@ -175,9 +175,9 @@
             // 
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtClave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(412, 181);
+            this.txtClave.Location = new System.Drawing.Point(442, 187);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(300, 29);
+            this.txtClave.Size = new System.Drawing.Size(420, 29);
             this.txtClave.TabIndex = 7;
             this.txtClave.UseSystemPasswordChar = true;
             // 
@@ -185,9 +185,9 @@
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Location = new System.Drawing.Point(412, 220);
+            this.lblRol.Location = new System.Drawing.Point(442, 228);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(23, 13);
+            this.lblRol.Size = new System.Drawing.Size(24, 15);
             this.lblRol.TabIndex = 8;
             this.lblRol.Text = "Rol";
             // 
@@ -199,18 +199,18 @@
             this.cmbRol.Items.AddRange(new object[] {
             "Administrador",
             "Operador"});
-            this.cmbRol.Location = new System.Drawing.Point(412, 243);
+            this.cmbRol.Location = new System.Drawing.Point(442, 248);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(300, 29);
+            this.cmbRol.Size = new System.Drawing.Size(420, 29);
             this.cmbRol.TabIndex = 9;
             // 
             // lblCaptcha
             // 
             this.lblCaptcha.AutoSize = true;
             this.lblCaptcha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCaptcha.Location = new System.Drawing.Point(412, 282);
+            this.lblCaptcha.Location = new System.Drawing.Point(442, 289);
             this.lblCaptcha.Name = "lblCaptcha";
-            this.lblCaptcha.Size = new System.Drawing.Size(47, 13);
+            this.lblCaptcha.Size = new System.Drawing.Size(51, 15);
             this.lblCaptcha.TabIndex = 10;
             this.lblCaptcha.Text = "Captcha";
             // 
@@ -218,10 +218,10 @@
             // 
             this.picCaptcha.BackColor = System.Drawing.Color.Gainsboro;
             this.picCaptcha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picCaptcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCaptcha.Location = new System.Drawing.Point(412, 305);
+            this.picCaptcha.Location = new System.Drawing.Point(442, 309);
             this.picCaptcha.Name = "picCaptcha";
-            this.picCaptcha.Size = new System.Drawing.Size(140, 29);
+            this.picCaptcha.Size = new System.Drawing.Size(150, 29);
+            this.picCaptcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCaptcha.TabIndex = 11;
             this.picCaptcha.TabStop = false;
             // 
@@ -231,12 +231,11 @@
             this.txtCaptcha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCaptcha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCaptcha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtCaptcha.Location = new System.Drawing.Point(648, 309);
             this.txtCaptcha.MaxLength = 5;
-            this.txtCaptcha.Location = new System.Drawing.Point(611, 304);
             this.txtCaptcha.Name = "txtCaptcha";
-            this.txtCaptcha.Size = new System.Drawing.Size(101, 29);
-            this.txtCaptcha.TabIndex = 12;
-            this.txtCaptcha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCaptcha.Size = new System.Drawing.Size(214, 29);
+            this.txtCaptcha.TabIndex = 13;
             // 
             // btnIngresar
             // 
@@ -245,10 +244,10 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(412, 344);
+            this.btnIngresar.Location = new System.Drawing.Point(442, 356);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(300, 40);
-            this.btnIngresar.TabIndex = 13;
+            this.btnIngresar.Size = new System.Drawing.Size(420, 42);
+            this.btnIngresar.TabIndex = 14;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -257,14 +256,13 @@
             // 
             this.btnSalirLogin.BackColor = System.Drawing.Color.White;
             this.btnSalirLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
-            this.btnSalirLogin.FlatAppearance.BorderSize = 1;
             this.btnSalirLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalirLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnSalirLogin.Location = new System.Drawing.Point(412, 394);
+            this.btnSalirLogin.Location = new System.Drawing.Point(442, 408);
             this.btnSalirLogin.Name = "btnSalirLogin";
-            this.btnSalirLogin.Size = new System.Drawing.Size(300, 40);
-            this.btnSalirLogin.TabIndex = 14;
+            this.btnSalirLogin.Size = new System.Drawing.Size(420, 42);
+            this.btnSalirLogin.TabIndex = 15;
             this.btnSalirLogin.Text = "SALIR";
             this.btnSalirLogin.UseVisualStyleBackColor = false;
             this.btnSalirLogin.Click += new System.EventHandler(this.btnSalirLogin_Click);
@@ -275,10 +273,10 @@
             this.btnRefrescarCaptcha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefrescarCaptcha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefrescarCaptcha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
-            this.btnRefrescarCaptcha.Location = new System.Drawing.Point(564, 305);
+            this.btnRefrescarCaptcha.Location = new System.Drawing.Point(602, 309);
             this.btnRefrescarCaptcha.Name = "btnRefrescarCaptcha";
-            this.btnRefrescarCaptcha.Size = new System.Drawing.Size(35, 29);
-            this.btnRefrescarCaptcha.TabIndex = 15;
+            this.btnRefrescarCaptcha.Size = new System.Drawing.Size(36, 29);
+            this.btnRefrescarCaptcha.TabIndex = 12;
             this.btnRefrescarCaptcha.Text = "↻";
             this.btnRefrescarCaptcha.UseVisualStyleBackColor = true;
             this.btnRefrescarCaptcha.Click += new System.EventHandler(this.btnRefrescarCaptcha_Click);
@@ -343,4 +341,3 @@
         private System.Windows.Forms.Label lblRol;
     }
 }
-

@@ -34,7 +34,6 @@ namespace CapaNegocio
         {
             return Vis + 1;
         }
-        // Se usa después de Incrementar(), igual que en el proyecto del docente
         public void Guardar(Usuario DatosUsu)
         {
             DatosUsu.Codigo = Vis + 1;
@@ -69,7 +68,6 @@ namespace CapaNegocio
             VUsuarios[Vis] = null;
             Vis--;
         }
-        // Devuelve el usuario si correo, contraseña y rol son correctos; si no, null
         public Usuario Validar(string Correo, string Clave, string Rol)
         {
             int Pos = Buscar(Correo);
@@ -83,7 +81,6 @@ namespace CapaNegocio
             using (SHA256 Sha = SHA256.Create())
                 return BitConverter.ToString(Sha.ComputeHash(Encoding.UTF8.GetBytes(Texto))).Replace("-", "");
         }
-        // Columnas del DataGridView: CI, Nombre, Correo, Rol
         public void Mostrar(DataGridView Dgv)
         {
             try
