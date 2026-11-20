@@ -96,5 +96,15 @@ namespace CapaPresentacion
         {
             AbrirFormulario(new FrmSeguimiento());
         }
+
+        private void btnListadoDespacho_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmListadoDespacho());
+        }
+
+        private void btnRecepcion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmRecepcion());
+        }
     }
 }
