@@ -545,7 +545,7 @@
             // txtHoraIngreso
             // 
             this.txtHoraIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHoraIngreso.Location = new System.Drawing.Point(137, 392);
+            this.txtHoraIngreso.Location = new System.Drawing.Point(137, 390);
             this.txtHoraIngreso.Name = "txtHoraIngreso";
             this.txtHoraIngreso.Size = new System.Drawing.Size(129, 23);
             this.txtHoraIngreso.TabIndex = 22;
@@ -553,7 +553,7 @@
             // txtFechaIngreso
             // 
             this.txtFechaIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFechaIngreso.Location = new System.Drawing.Point(3, 392);
+            this.txtFechaIngreso.Location = new System.Drawing.Point(3, 390);
             this.txtFechaIngreso.Name = "txtFechaIngreso";
             this.txtFechaIngreso.Size = new System.Drawing.Size(128, 23);
             this.txtFechaIngreso.TabIndex = 21;
@@ -562,7 +562,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label9.Location = new System.Drawing.Point(0, 362);
+            this.label9.Location = new System.Drawing.Point(0, 360);
             this.label9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 15);
@@ -573,7 +573,7 @@
             // 
             this.rbCredito.AutoSize = true;
             this.rbCredito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbCredito.Location = new System.Drawing.Point(137, 337);
+            this.rbCredito.Location = new System.Drawing.Point(137, 335);
             this.rbCredito.Name = "rbCredito";
             this.rbCredito.Size = new System.Drawing.Size(129, 19);
             this.rbCredito.TabIndex = 19;
@@ -585,7 +585,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label8.Location = new System.Drawing.Point(134, 362);
+            this.label8.Location = new System.Drawing.Point(134, 360);
             this.label8.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 15);
@@ -597,7 +597,7 @@
             this.lblModalidad.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.lblModalidad, 2);
             this.lblModalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblModalidad.Location = new System.Drawing.Point(0, 320);
+            this.lblModalidad.Location = new System.Drawing.Point(0, 318);
             this.lblModalidad.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblModalidad.Name = "lblModalidad";
             this.lblModalidad.Size = new System.Drawing.Size(64, 12);
@@ -607,7 +607,7 @@
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(137, 291);
+            this.textBox2.Location = new System.Drawing.Point(137, 289);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 23);
             this.textBox2.TabIndex = 15;
@@ -615,7 +615,7 @@
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 291);
+            this.textBox1.Location = new System.Drawing.Point(3, 289);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(128, 23);
             this.textBox1.TabIndex = 14;
@@ -624,7 +624,7 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblColor.Location = new System.Drawing.Point(134, 271);
+            this.lblColor.Location = new System.Drawing.Point(134, 269);
             this.lblColor.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(36, 15);
@@ -751,7 +751,7 @@
             // 
             this.lblTipoVehiculo.AutoSize = true;
             this.lblTipoVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblTipoVehiculo.Location = new System.Drawing.Point(0, 219);
+            this.lblTipoVehiculo.Location = new System.Drawing.Point(0, 217);
             this.lblTipoVehiculo.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
             this.lblTipoVehiculo.Size = new System.Drawing.Size(95, 15);
@@ -762,7 +762,7 @@
             // 
             this.lblMonto.AutoSize = true;
             this.lblMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblMonto.Location = new System.Drawing.Point(137, 219);
+            this.lblMonto.Location = new System.Drawing.Point(137, 217);
             this.lblMonto.Margin = new System.Windows.Forms.Padding(3, 3, 0, 2);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(61, 15);
@@ -787,7 +787,7 @@
             this.txtPoliza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPoliza.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPoliza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtPoliza.Location = new System.Drawing.Point(137, 236);
+            this.txtPoliza.Location = new System.Drawing.Point(137, 234);
             this.txtPoliza.Margin = new System.Windows.Forms.Padding(3, 0, 0, 7);
             this.txtPoliza.Name = "txtPoliza";
             this.txtPoliza.Size = new System.Drawing.Size(132, 25);
@@ -811,7 +811,7 @@
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblYear.Location = new System.Drawing.Point(0, 271);
+            this.lblYear.Location = new System.Drawing.Point(0, 269);
             this.lblYear.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(29, 15);
@@ -833,7 +833,7 @@
             // txtTipoVehiculo
             // 
             this.txtTipoVehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTipoVehiculo.Location = new System.Drawing.Point(3, 239);
+            this.txtTipoVehiculo.Location = new System.Drawing.Point(3, 237);
             this.txtTipoVehiculo.Name = "txtTipoVehiculo";
             this.txtTipoVehiculo.Size = new System.Drawing.Size(128, 23);
             this.txtTipoVehiculo.TabIndex = 12;
@@ -842,7 +842,7 @@
             // 
             this.rbContado.AutoSize = true;
             this.rbContado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbContado.Location = new System.Drawing.Point(3, 337);
+            this.rbContado.Location = new System.Drawing.Point(3, 335);
             this.rbContado.Name = "rbContado";
             this.rbContado.Size = new System.Drawing.Size(128, 19);
             this.rbContado.TabIndex = 18;
@@ -854,7 +854,7 @@
             // 
             this.chkDespacho.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.chkDespacho, 2);
-            this.chkDespacho.Location = new System.Drawing.Point(3, 424);
+            this.chkDespacho.Location = new System.Drawing.Point(3, 422);
             this.chkDespacho.Name = "chkDespacho";
             this.tlpCampos.SetRowSpan(this.chkDespacho, 2);
             this.chkDespacho.Size = new System.Drawing.Size(178, 19);

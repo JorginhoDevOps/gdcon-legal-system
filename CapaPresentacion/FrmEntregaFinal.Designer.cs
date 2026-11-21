@@ -89,7 +89,7 @@
             this.lblAviso = new System.Windows.Forms.Label();
             this.pnlBordeAviso = new System.Windows.Forms.Panel();
             this.btnFinalizarEntrega = new System.Windows.Forms.Button();
-            this.cmbModalidad = new System.Windows.Forms.ComboBox();
+            this.txtModalidad = new System.Windows.Forms.TextBox();
             this.lblEncabezadoDatos = new System.Windows.Forms.Label();
             this.pnlPasos = new System.Windows.Forms.Panel();
             this.pnlBordePasos = new System.Windows.Forms.Panel();
@@ -425,7 +425,7 @@
             this.tlpCampos.Controls.Add(this.dtpFechaEntrega, 0, 9);
             this.tlpCampos.Controls.Add(this.pnlAviso, 0, 10);
             this.tlpCampos.Controls.Add(this.btnFinalizarEntrega, 0, 11);
-            this.tlpCampos.Controls.Add(this.cmbModalidad, 1, 3);
+            this.tlpCampos.Controls.Add(this.txtModalidad, 1, 3);
             this.tlpCampos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCampos.Location = new System.Drawing.Point(0, 30);
             this.tlpCampos.Name = "tlpCampos";
@@ -723,19 +723,17 @@
             this.btnFinalizarEntrega.Text = "Finalizar entrega";
             this.btnFinalizarEntrega.UseVisualStyleBackColor = false;
             // 
-            // cmbModalidad
+            // txtModalidad
             // 
-            this.cmbModalidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModalidad.FormattingEnabled = true;
-            this.cmbModalidad.Items.AddRange(new object[] {
-            "Contado",
-            "Crédito"});
-            this.cmbModalidad.Location = new System.Drawing.Point(173, 101);
-            this.cmbModalidad.Name = "cmbModalidad";
-            this.cmbModalidad.Size = new System.Drawing.Size(152, 44);
-            this.cmbModalidad.TabIndex = 13;
+            this.txtModalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            this.txtModalidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtModalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(107)))));
+            this.txtModalidad.Location = new System.Drawing.Point(173, 101);
+            this.txtModalidad.Name = "txtModalidad";
+            this.txtModalidad.ReadOnly = true;
+            this.txtModalidad.Size = new System.Drawing.Size(152, 31);
+            this.txtModalidad.TabIndex = 13;
+            this.txtModalidad.TabStop = false;
             // 
             // lblEncabezadoDatos
             // 
@@ -918,6 +916,6 @@
         private System.Windows.Forms.Panel pnlBordeAviso;
         private System.Windows.Forms.Button btnFinalizarEntrega;
         private System.Windows.Forms.ToolStripButton tsbActa;
-        private System.Windows.Forms.ComboBox cmbModalidad;
+        private System.Windows.Forms.TextBox txtModalidad;
     }
 }
