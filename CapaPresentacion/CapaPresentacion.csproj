@@ -150,10 +150,8 @@
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="FrmPlacasPagos.resx">
       <DependentUpon>FrmPlacasPagos.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSeguimiento.resx">
       <DependentUpon>FrmSeguimiento.cs</DependentUpon>
@@ -163,13 +161,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
-
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="FrmRecepcion.resx">
       <DependentUpon>FrmRecepcion.cs</DependentUpon>
-
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
