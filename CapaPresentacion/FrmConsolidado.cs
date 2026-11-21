@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -15,6 +8,22 @@ namespace CapaPresentacion
         public FrmConsolidado()
         {
             InitializeComponent();
+            lblFecha.Text = "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void tsbImprimir_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Enviando listado consolidado a impresión...", "GDCON Legal System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void tsbVistaPrevia_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vista previa lista para impresión.", "GDCON Legal System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void tsbSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

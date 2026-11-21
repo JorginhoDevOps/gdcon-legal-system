@@ -1,4 +1,4 @@
-﻿namespace CapaPresentacion
+﻿﻿namespace CapaPresentacion
 {
     partial class FrmRecepcion
     {
@@ -33,29 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlLateral = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.btnListadoEntrega = new System.Windows.Forms.Button();
-            this.btnPagosBanco = new System.Windows.Forms.Button();
-            this.btnListadoDespacho = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSeguimiento = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pnlUsuario = new System.Windows.Forms.Panel();
-            this.lblEmpresaUsuario = new System.Windows.Forms.Label();
-            this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.lblAvatar = new System.Windows.Forms.Label();
-            this.pnlIndicador = new System.Windows.Forms.Panel();
-            this.btnEntrega = new System.Windows.Forms.Button();
-            this.btnDiprove = new System.Windows.Forms.Button();
-            this.btnPlacas = new System.Windows.Forms.Button();
-            this.btnRecepcion = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnPanelGeneral = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -118,9 +95,6 @@
             this.rbContado = new System.Windows.Forms.RadioButton();
             this.chkDespacho = new System.Windows.Forms.CheckBox();
             this.lblEncabezadoDatos = new System.Windows.Forms.Label();
-            this.pnlLogo.SuspendLayout();
-            this.pnlLateral.SuspendLayout();
-            this.pnlUsuario.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.pnlPasos.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
@@ -131,339 +105,11 @@
             this.tlpCampos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Controls.Add(this.label2);
-            this.pnlLogo.Controls.Add(this.label1);
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(189, 83);
-            this.pnlLogo.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
-            this.label2.Location = new System.Drawing.Point(0, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Sistema de Gestión de Trámites Legales";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "GDCON SYSTEM";
-            // 
-            // pnlLateral
-            // 
-            this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.pnlLateral.Controls.Add(this.btnSalir);
-            this.pnlLateral.Controls.Add(this.btnConfiguracion);
-            this.pnlLateral.Controls.Add(this.btnListadoEntrega);
-            this.pnlLateral.Controls.Add(this.btnPagosBanco);
-            this.pnlLateral.Controls.Add(this.btnListadoDespacho);
-            this.pnlLateral.Controls.Add(this.label5);
-            this.pnlLateral.Controls.Add(this.btnSeguimiento);
-            this.pnlLateral.Controls.Add(this.label4);
-            this.pnlLateral.Controls.Add(this.pnlUsuario);
-            this.pnlLateral.Controls.Add(this.pnlIndicador);
-            this.pnlLateral.Controls.Add(this.btnEntrega);
-            this.pnlLateral.Controls.Add(this.btnDiprove);
-            this.pnlLateral.Controls.Add(this.btnPlacas);
-            this.pnlLateral.Controls.Add(this.btnRecepcion);
-            this.pnlLateral.Controls.Add(this.label3);
-            this.pnlLateral.Controls.Add(this.btnPanelGeneral);
-            this.pnlLateral.Controls.Add(this.pnlLogo);
-            this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLateral.Location = new System.Drawing.Point(0, 0);
-            this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(189, 790);
-            this.pnlLateral.TabIndex = 2;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(0, 690);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnSalir.Size = new System.Drawing.Size(189, 31);
-            this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "Cerrar Sesión";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 440);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnConfiguracion.Size = new System.Drawing.Size(189, 31);
-            this.btnConfiguracion.TabIndex = 17;
-            this.btnConfiguracion.Text = "Configuración";
-            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.UseVisualStyleBackColor = false;
-            // 
-            // btnListadoEntrega
-            // 
-            this.btnListadoEntrega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnListadoEntrega.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnListadoEntrega.FlatAppearance.BorderSize = 0;
-            this.btnListadoEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListadoEntrega.ForeColor = System.Drawing.Color.White;
-            this.btnListadoEntrega.Location = new System.Drawing.Point(0, 409);
-            this.btnListadoEntrega.Name = "btnListadoEntrega";
-            this.btnListadoEntrega.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnListadoEntrega.Size = new System.Drawing.Size(189, 31);
-            this.btnListadoEntrega.TabIndex = 16;
-            this.btnListadoEntrega.Text = "Listado de Entrega";
-            this.btnListadoEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoEntrega.UseVisualStyleBackColor = false;
-            // 
-            // btnPagosBanco
-            // 
-            this.btnPagosBanco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnPagosBanco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPagosBanco.FlatAppearance.BorderSize = 0;
-            this.btnPagosBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagosBanco.ForeColor = System.Drawing.Color.White;
-            this.btnPagosBanco.Location = new System.Drawing.Point(0, 378);
-            this.btnPagosBanco.Name = "btnPagosBanco";
-            this.btnPagosBanco.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnPagosBanco.Size = new System.Drawing.Size(189, 31);
-            this.btnPagosBanco.TabIndex = 15;
-            this.btnPagosBanco.Text = "Lista de Pagos al Banco";
-            this.btnPagosBanco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagosBanco.UseVisualStyleBackColor = false;
-            // 
-            // btnListadoDespacho
-            // 
-            this.btnListadoDespacho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnListadoDespacho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnListadoDespacho.FlatAppearance.BorderSize = 0;
-            this.btnListadoDespacho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListadoDespacho.ForeColor = System.Drawing.Color.White;
-            this.btnListadoDespacho.Location = new System.Drawing.Point(0, 347);
-            this.btnListadoDespacho.Name = "btnListadoDespacho";
-            this.btnListadoDespacho.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnListadoDespacho.Size = new System.Drawing.Size(189, 31);
-            this.btnListadoDespacho.TabIndex = 14;
-            this.btnListadoDespacho.Text = "Listado de Despacho";
-            this.btnListadoDespacho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoDespacho.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label5.Location = new System.Drawing.Point(0, 321);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.label5.Size = new System.Drawing.Size(189, 26);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "INFORMES";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // btnSeguimiento
-            // 
-            this.btnSeguimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnSeguimiento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSeguimiento.FlatAppearance.BorderSize = 0;
-            this.btnSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeguimiento.ForeColor = System.Drawing.Color.White;
-            this.btnSeguimiento.Location = new System.Drawing.Point(0, 290);
-            this.btnSeguimiento.Name = "btnSeguimiento";
-            this.btnSeguimiento.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnSeguimiento.Size = new System.Drawing.Size(189, 31);
-            this.btnSeguimiento.TabIndex = 13;
-            this.btnSeguimiento.Text = "Seguimiento de Trámites";
-            this.btnSeguimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeguimiento.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label4.Location = new System.Drawing.Point(0, 264);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(189, 26);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "SEGUIMIENTO";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // pnlUsuario
-            // 
-            this.pnlUsuario.Controls.Add(this.lblEmpresaUsuario);
-            this.pnlUsuario.Controls.Add(this.lblNombreUsuario);
-            this.pnlUsuario.Controls.Add(this.lblAvatar);
-            this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlUsuario.Location = new System.Drawing.Point(0, 721);
-            this.pnlUsuario.Name = "pnlUsuario";
-            this.pnlUsuario.Size = new System.Drawing.Size(189, 69);
-            this.pnlUsuario.TabIndex = 9;
-            // 
-            // lblEmpresaUsuario
-            // 
-            this.lblEmpresaUsuario.AutoSize = true;
-            this.lblEmpresaUsuario.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpresaUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblEmpresaUsuario.Location = new System.Drawing.Point(51, 35);
-            this.lblEmpresaUsuario.Name = "lblEmpresaUsuario";
-            this.lblEmpresaUsuario.Size = new System.Drawing.Size(151, 12);
-            this.lblEmpresaUsuario.TabIndex = 2;
-            this.lblEmpresaUsuario.Text = "Gestión de trámites para IMCRUZ";
-            // 
-            // lblNombreUsuario
-            // 
-            this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(51, 19);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(86, 15);
-            this.lblNombreUsuario.TabIndex = 1;
-            this.lblNombreUsuario.Text = "Administrador";
-            // 
-            // lblAvatar
-            // 
-            this.lblAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(61)))), ((int)(((byte)(112)))));
-            this.lblAvatar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvatar.ForeColor = System.Drawing.Color.White;
-            this.lblAvatar.Location = new System.Drawing.Point(14, 19);
-            this.lblAvatar.Name = "lblAvatar";
-            this.lblAvatar.Size = new System.Drawing.Size(31, 31);
-            this.lblAvatar.TabIndex = 0;
-            this.lblAvatar.Text = "AD";
-            this.lblAvatar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlIndicador
-            // 
-            this.pnlIndicador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
-            this.pnlIndicador.Location = new System.Drawing.Point(0, 140);
-            this.pnlIndicador.Name = "pnlIndicador";
-            this.pnlIndicador.Size = new System.Drawing.Size(3, 31);
-            this.pnlIndicador.TabIndex = 7;
-            // 
-            // btnEntrega
-            // 
-            this.btnEntrega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnEntrega.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEntrega.FlatAppearance.BorderSize = 0;
-            this.btnEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrega.ForeColor = System.Drawing.Color.White;
-            this.btnEntrega.Location = new System.Drawing.Point(0, 233);
-            this.btnEntrega.Name = "btnEntrega";
-            this.btnEntrega.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnEntrega.Size = new System.Drawing.Size(189, 31);
-            this.btnEntrega.TabIndex = 5;
-            this.btnEntrega.Text = "Entrega Final";
-            this.btnEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrega.UseVisualStyleBackColor = false;
-            // 
-            // btnDiprove
-            // 
-            this.btnDiprove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnDiprove.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDiprove.FlatAppearance.BorderSize = 0;
-            this.btnDiprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiprove.ForeColor = System.Drawing.Color.White;
-            this.btnDiprove.Location = new System.Drawing.Point(0, 202);
-            this.btnDiprove.Name = "btnDiprove";
-            this.btnDiprove.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnDiprove.Size = new System.Drawing.Size(189, 31);
-            this.btnDiprove.TabIndex = 4;
-            this.btnDiprove.Text = "Diprove y Tránsito";
-            this.btnDiprove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiprove.UseVisualStyleBackColor = false;
-            this.btnDiprove.Click += new System.EventHandler(this.btnDiprove_Click);
-            // 
-            // btnPlacas
-            // 
-            this.btnPlacas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnPlacas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlacas.FlatAppearance.BorderSize = 0;
-            this.btnPlacas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlacas.ForeColor = System.Drawing.Color.White;
-            this.btnPlacas.Location = new System.Drawing.Point(0, 171);
-            this.btnPlacas.Name = "btnPlacas";
-            this.btnPlacas.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnPlacas.Size = new System.Drawing.Size(189, 31);
-            this.btnPlacas.TabIndex = 3;
-            this.btnPlacas.Text = "Placas y Pagos";
-            this.btnPlacas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlacas.UseVisualStyleBackColor = false;
-            this.btnPlacas.Click += new System.EventHandler(this.btnPlacas_Click);
-            // 
-            // btnRecepcion
-            // 
-            this.btnRecepcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(75)))));
-            this.btnRecepcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRecepcion.FlatAppearance.BorderSize = 0;
-            this.btnRecepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecepcion.ForeColor = System.Drawing.Color.White;
-            this.btnRecepcion.Location = new System.Drawing.Point(0, 140);
-            this.btnRecepcion.Name = "btnRecepcion";
-            this.btnRecepcion.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnRecepcion.Size = new System.Drawing.Size(189, 31);
-            this.btnRecepcion.TabIndex = 2;
-            this.btnRecepcion.Text = "Recepción y Despacho";
-            this.btnRecepcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecepcion.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label3.Location = new System.Drawing.Point(0, 114);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(189, 26);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "MÓDULOS";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // btnPanelGeneral
-            // 
-            this.btnPanelGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.btnPanelGeneral.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPanelGeneral.FlatAppearance.BorderSize = 0;
-            this.btnPanelGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPanelGeneral.ForeColor = System.Drawing.Color.White;
-            this.btnPanelGeneral.Location = new System.Drawing.Point(0, 83);
-            this.btnPanelGeneral.Name = "btnPanelGeneral";
-            this.btnPanelGeneral.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnPanelGeneral.Size = new System.Drawing.Size(189, 31);
-            this.btnPanelGeneral.TabIndex = 6;
-            this.btnPanelGeneral.Text = "Panel General";
-            this.btnPanelGeneral.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPanelGeneral.UseVisualStyleBackColor = false;
-            this.btnPanelGeneral.Click += new System.EventHandler(this.btnPanelGeneral_Click);
-            // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnGuardar,
@@ -474,11 +120,11 @@
             this.toolStripSeparator1,
             this.btnBuscar,
             this.txtBuscar});
-            this.toolStrip1.Location = new System.Drawing.Point(189, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Margin = new System.Windows.Forms.Padding(1, 2, 8, 4);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1075, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(1060, 44);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -491,7 +137,7 @@
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(62, 44);
+            this.btnNuevo.Size = new System.Drawing.Size(121, 44);
             this.btnNuevo.Text = "Nuevo";
             // 
             // btnGuardar
@@ -501,7 +147,7 @@
             this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(69, 44);
+            this.btnGuardar.Size = new System.Drawing.Size(134, 44);
             this.btnGuardar.Text = "Guardar";
             // 
             // btnEditar
@@ -511,7 +157,7 @@
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(57, 44);
+            this.btnEditar.Size = new System.Drawing.Size(110, 44);
             this.btnEditar.Text = "Editar";
             // 
             // btnEliminar
@@ -521,7 +167,7 @@
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 44);
+            this.btnEliminar.Size = new System.Drawing.Size(135, 44);
             this.btnEliminar.Text = "Eliminar";
             // 
             // btnLimpiar
@@ -531,7 +177,7 @@
             this.btnLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(67, 44);
+            this.btnLimpiar.Size = new System.Drawing.Size(128, 44);
             this.btnLimpiar.Text = "Limpiar";
             // 
             // btnCerrar
@@ -540,7 +186,7 @@
             this.btnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(43, 44);
+            this.btnCerrar.Size = new System.Drawing.Size(82, 44);
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -557,7 +203,7 @@
             this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(62, 44);
+            this.btnBuscar.Size = new System.Drawing.Size(119, 44);
             this.btnBuscar.Text = "Buscar";
             // 
             // txtBuscar
@@ -567,7 +213,7 @@
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(189, 28);
+            this.txtBuscar.Size = new System.Drawing.Size(189, 39);
             // 
             // pnlPasos
             // 
@@ -579,9 +225,9 @@
             this.pnlPasos.Controls.Add(this.lblPaso5);
             this.pnlPasos.Controls.Add(this.pnlBordePasos);
             this.pnlPasos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPasos.Location = new System.Drawing.Point(189, 44);
+            this.pnlPasos.Location = new System.Drawing.Point(0, 44);
             this.pnlPasos.Name = "pnlPasos";
-            this.pnlPasos.Size = new System.Drawing.Size(1075, 38);
+            this.pnlPasos.Size = new System.Drawing.Size(1060, 38);
             this.pnlPasos.TabIndex = 4;
             // 
             // lblPaso1
@@ -591,7 +237,7 @@
             this.lblPaso1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
             this.lblPaso1.Location = new System.Drawing.Point(163, 12);
             this.lblPaso1.Name = "lblPaso1";
-            this.lblPaso1.Size = new System.Drawing.Size(123, 15);
+            this.lblPaso1.Size = new System.Drawing.Size(246, 32);
             this.lblPaso1.TabIndex = 1;
             this.lblPaso1.Text = "① Recepción   ─────";
             // 
@@ -602,7 +248,7 @@
             this.lblPaso2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso2.Location = new System.Drawing.Point(287, 12);
             this.lblPaso2.Name = "lblPaso2";
-            this.lblPaso2.Size = new System.Drawing.Size(111, 15);
+            this.lblPaso2.Size = new System.Drawing.Size(228, 32);
             this.lblPaso2.TabIndex = 2;
             this.lblPaso2.Text = "② Despacho   ─────";
             // 
@@ -613,7 +259,7 @@
             this.lblPaso3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso3.Location = new System.Drawing.Point(411, 12);
             this.lblPaso3.Name = "lblPaso3";
-            this.lblPaso3.Size = new System.Drawing.Size(136, 15);
+            this.lblPaso3.Size = new System.Drawing.Size(275, 32);
             this.lblPaso3.TabIndex = 3;
             this.lblPaso3.Text = "③ Placas y Pagos   ─────";
             // 
@@ -623,7 +269,7 @@
             this.lblPaso4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso4.Location = new System.Drawing.Point(570, 12);
             this.lblPaso4.Name = "lblPaso4";
-            this.lblPaso4.Size = new System.Drawing.Size(100, 15);
+            this.lblPaso4.Size = new System.Drawing.Size(206, 32);
             this.lblPaso4.TabIndex = 4;
             this.lblPaso4.Text = "④ Tránsito   ─────";
             // 
@@ -633,7 +279,7 @@
             this.lblPaso5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso5.Location = new System.Drawing.Point(681, 12);
             this.lblPaso5.Name = "lblPaso5";
-            this.lblPaso5.Size = new System.Drawing.Size(60, 15);
+            this.lblPaso5.Size = new System.Drawing.Size(123, 32);
             this.lblPaso5.TabIndex = 5;
             this.lblPaso5.Text = "⑤ Entrega";
             // 
@@ -643,7 +289,7 @@
             this.pnlBordePasos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBordePasos.Location = new System.Drawing.Point(0, 37);
             this.pnlBordePasos.Name = "pnlBordePasos";
-            this.pnlBordePasos.Size = new System.Drawing.Size(1075, 1);
+            this.pnlBordePasos.Size = new System.Drawing.Size(1060, 1);
             this.pnlBordePasos.TabIndex = 0;
             // 
             // pnlCuerpo
@@ -653,10 +299,10 @@
             this.pnlCuerpo.Controls.Add(this.pnlSeparador);
             this.pnlCuerpo.Controls.Add(this.pnlDatos);
             this.pnlCuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCuerpo.Location = new System.Drawing.Point(189, 82);
+            this.pnlCuerpo.Location = new System.Drawing.Point(0, 82);
             this.pnlCuerpo.Name = "pnlCuerpo";
             this.pnlCuerpo.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlCuerpo.Size = new System.Drawing.Size(1075, 708);
+            this.pnlCuerpo.Size = new System.Drawing.Size(1060, 667);
             this.pnlCuerpo.TabIndex = 5;
             // 
             // pnlLista
@@ -668,7 +314,7 @@
             this.pnlLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLista.Location = new System.Drawing.Point(312, 10);
             this.pnlLista.Name = "pnlLista";
-            this.pnlLista.Size = new System.Drawing.Size(753, 688);
+            this.pnlLista.Size = new System.Drawing.Size(738, 647);
             this.pnlLista.TabIndex = 2;
             // 
             // dgvPlacas
@@ -716,15 +362,17 @@
             this.dgvPlacas.Name = "dgvPlacas";
             this.dgvPlacas.ReadOnly = true;
             this.dgvPlacas.RowHeadersVisible = false;
+            this.dgvPlacas.RowHeadersWidth = 82;
             this.dgvPlacas.RowTemplate.Height = 28;
             this.dgvPlacas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlacas.Size = new System.Drawing.Size(751, 660);
+            this.dgvPlacas.Size = new System.Drawing.Size(736, 619);
             this.dgvPlacas.TabIndex = 1;
             // 
             // colChasis
             // 
             this.colChasis.FillWeight = 135F;
             this.colChasis.HeaderText = "Chasis";
+            this.colChasis.MinimumWidth = 10;
             this.colChasis.Name = "colChasis";
             this.colChasis.ReadOnly = true;
             // 
@@ -732,6 +380,7 @@
             // 
             this.colCliente.FillWeight = 155F;
             this.colCliente.HeaderText = "Cliente";
+            this.colCliente.MinimumWidth = 10;
             this.colCliente.Name = "colCliente";
             this.colCliente.ReadOnly = true;
             // 
@@ -739,6 +388,7 @@
             // 
             this.colModalidad.FillWeight = 75F;
             this.colModalidad.HeaderText = "Modalidad";
+            this.colModalidad.MinimumWidth = 10;
             this.colModalidad.Name = "colModalidad";
             this.colModalidad.ReadOnly = true;
             // 
@@ -746,6 +396,7 @@
             // 
             this.colMarca.FillWeight = 70F;
             this.colMarca.HeaderText = "Marca";
+            this.colMarca.MinimumWidth = 10;
             this.colMarca.Name = "colMarca";
             this.colMarca.ReadOnly = true;
             // 
@@ -753,6 +404,7 @@
             // 
             this.colPoliza.FillWeight = 45F;
             this.colPoliza.HeaderText = "Póliza";
+            this.colPoliza.MinimumWidth = 10;
             this.colPoliza.Name = "colPoliza";
             this.colPoliza.ReadOnly = true;
             // 
@@ -760,6 +412,7 @@
             // 
             this.colIngreso.FillWeight = 95F;
             this.colIngreso.HeaderText = "Ingreso";
+            this.colIngreso.MinimumWidth = 10;
             this.colIngreso.Name = "colIngreso";
             this.colIngreso.ReadOnly = true;
             // 
@@ -769,6 +422,7 @@
             this.colEstado.DefaultCellStyle = dataGridViewCellStyle3;
             this.colEstado.FillWeight = 65F;
             this.colEstado.HeaderText = "Estado";
+            this.colEstado.MinimumWidth = 10;
             this.colEstado.Name = "colEstado";
             this.colEstado.ReadOnly = true;
             // 
@@ -781,7 +435,7 @@
             this.lblEncabezadoLista.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezadoLista.Name = "lblEncabezadoLista";
             this.lblEncabezadoLista.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.lblEncabezadoLista.Size = new System.Drawing.Size(751, 26);
+            this.lblEncabezadoLista.Size = new System.Drawing.Size(736, 26);
             this.lblEncabezadoLista.TabIndex = 0;
             this.lblEncabezadoLista.Text = "Registro de trámites recibidos";
             this.lblEncabezadoLista.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -792,7 +446,7 @@
             this.pnlSeparador.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSeparador.Location = new System.Drawing.Point(302, 10);
             this.pnlSeparador.Name = "pnlSeparador";
-            this.pnlSeparador.Size = new System.Drawing.Size(10, 688);
+            this.pnlSeparador.Size = new System.Drawing.Size(10, 647);
             this.pnlSeparador.TabIndex = 1;
             // 
             // pnlDatos
@@ -805,14 +459,14 @@
             this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlDatos.Location = new System.Drawing.Point(10, 10);
             this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(292, 688);
+            this.pnlDatos.Size = new System.Drawing.Size(292, 647);
             this.pnlDatos.TabIndex = 0;
             // 
             // pnlAviso
             // 
             this.pnlAviso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
+            this.pnlAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pnlAviso.Controls.Add(this.pnlBordeAviso);
             this.pnlAviso.Location = new System.Drawing.Point(8, 518);
             this.pnlAviso.Name = "pnlAviso";
@@ -821,7 +475,7 @@
             // 
             // pnlBordeAviso
             // 
-            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(168)))), ((int)(((byte)(37)))));
+            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.pnlBordeAviso.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBordeAviso.Location = new System.Drawing.Point(0, 0);
             this.pnlBordeAviso.Name = "pnlBordeAviso";
@@ -891,27 +545,27 @@
             // txtHoraIngreso
             // 
             this.txtHoraIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHoraIngreso.Location = new System.Drawing.Point(137, 390);
+            this.txtHoraIngreso.Location = new System.Drawing.Point(137, 664);
             this.txtHoraIngreso.Name = "txtHoraIngreso";
-            this.txtHoraIngreso.Size = new System.Drawing.Size(129, 23);
+            this.txtHoraIngreso.Size = new System.Drawing.Size(129, 39);
             this.txtHoraIngreso.TabIndex = 22;
             // 
             // txtFechaIngreso
             // 
             this.txtFechaIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFechaIngreso.Location = new System.Drawing.Point(3, 390);
+            this.txtFechaIngreso.Location = new System.Drawing.Point(3, 664);
             this.txtFechaIngreso.Name = "txtFechaIngreso";
-            this.txtFechaIngreso.Size = new System.Drawing.Size(128, 23);
+            this.txtFechaIngreso.Size = new System.Drawing.Size(128, 39);
             this.txtFechaIngreso.TabIndex = 21;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label9.Location = new System.Drawing.Point(0, 360);
+            this.label9.Location = new System.Drawing.Point(0, 634);
             this.label9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 15);
+            this.label9.Size = new System.Drawing.Size(117, 25);
             this.label9.TabIndex = 20;
             this.label9.Text = "Fecha de ingreso";
             // 
@@ -919,7 +573,7 @@
             // 
             this.rbCredito.AutoSize = true;
             this.rbCredito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbCredito.Location = new System.Drawing.Point(137, 335);
+            this.rbCredito.Location = new System.Drawing.Point(137, 609);
             this.rbCredito.Name = "rbCredito";
             this.rbCredito.Size = new System.Drawing.Size(129, 19);
             this.rbCredito.TabIndex = 19;
@@ -931,10 +585,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label8.Location = new System.Drawing.Point(134, 360);
+            this.label8.Location = new System.Drawing.Point(134, 634);
             this.label8.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 15);
+            this.label8.Size = new System.Drawing.Size(65, 25);
             this.label8.TabIndex = 17;
             this.label8.Text = "Hora";
             // 
@@ -943,37 +597,37 @@
             this.lblModalidad.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.lblModalidad, 2);
             this.lblModalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblModalidad.Location = new System.Drawing.Point(0, 318);
+            this.lblModalidad.Location = new System.Drawing.Point(0, 592);
             this.lblModalidad.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblModalidad.Name = "lblModalidad";
-            this.lblModalidad.Size = new System.Drawing.Size(64, 12);
+            this.lblModalidad.Size = new System.Drawing.Size(128, 12);
             this.lblModalidad.TabIndex = 16;
             this.lblModalidad.Text = "Modalidad";
             // 
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(137, 289);
+            this.textBox2.Location = new System.Drawing.Point(137, 547);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 23);
+            this.textBox2.Size = new System.Drawing.Size(129, 39);
             this.textBox2.TabIndex = 15;
             // 
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 289);
+            this.textBox1.Location = new System.Drawing.Point(3, 547);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 23);
+            this.textBox1.Size = new System.Drawing.Size(128, 39);
             this.textBox1.TabIndex = 14;
             // 
             // lblColor
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblColor.Location = new System.Drawing.Point(134, 269);
+            this.lblColor.Location = new System.Drawing.Point(134, 510);
             this.lblColor.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(36, 15);
+            this.lblColor.Size = new System.Drawing.Size(71, 32);
             this.lblColor.TabIndex = 13;
             this.lblColor.Text = "Color";
             // 
@@ -985,7 +639,7 @@
             this.lblChasis.Location = new System.Drawing.Point(0, 3);
             this.lblChasis.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblChasis.Name = "lblChasis";
-            this.lblChasis.Size = new System.Drawing.Size(41, 15);
+            this.lblChasis.Size = new System.Drawing.Size(81, 32);
             this.lblChasis.TabIndex = 0;
             this.lblChasis.Text = "Chasis";
             // 
@@ -996,10 +650,10 @@
             this.txtChasis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtChasis.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtChasis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtChasis.Location = new System.Drawing.Point(0, 20);
+            this.txtChasis.Location = new System.Drawing.Point(0, 37);
             this.txtChasis.Margin = new System.Windows.Forms.Padding(0, 0, 0, 7);
             this.txtChasis.Name = "txtChasis";
-            this.txtChasis.Size = new System.Drawing.Size(269, 25);
+            this.txtChasis.Size = new System.Drawing.Size(269, 43);
             this.txtChasis.TabIndex = 0;
             this.txtChasis.Text = "JM7DM2W7AV0700104";
             // 
@@ -1007,10 +661,10 @@
             // 
             this.lblNroContrato.AutoSize = true;
             this.lblNroContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblNroContrato.Location = new System.Drawing.Point(0, 55);
+            this.lblNroContrato.Location = new System.Drawing.Point(0, 90);
             this.lblNroContrato.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblNroContrato.Name = "lblNroContrato";
-            this.lblNroContrato.Size = new System.Drawing.Size(77, 15);
+            this.lblNroContrato.Size = new System.Drawing.Size(107, 64);
             this.lblNroContrato.TabIndex = 1;
             this.lblNroContrato.Text = "Nro Contrato";
             // 
@@ -1020,11 +674,11 @@
             this.txtContrato.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtContrato.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(107)))));
-            this.txtContrato.Location = new System.Drawing.Point(3, 75);
+            this.txtContrato.Location = new System.Drawing.Point(3, 159);
             this.txtContrato.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.txtContrato.Name = "txtContrato";
             this.txtContrato.ReadOnly = true;
-            this.txtContrato.Size = new System.Drawing.Size(128, 25);
+            this.txtContrato.Size = new System.Drawing.Size(128, 43);
             this.txtContrato.TabIndex = 1;
             this.txtContrato.TabStop = false;
             this.txtContrato.Text = "Nro de contrato";
@@ -1033,10 +687,10 @@
             // 
             this.lblDocumento.AutoSize = true;
             this.lblDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblDocumento.Location = new System.Drawing.Point(134, 55);
+            this.lblDocumento.Location = new System.Drawing.Point(134, 90);
             this.lblDocumento.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
             this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(47, 15);
+            this.lblDocumento.Size = new System.Drawing.Size(95, 32);
             this.lblDocumento.TabIndex = 2;
             this.lblDocumento.Text = "NIT / CI";
             // 
@@ -1045,10 +699,10 @@
             this.lblPropietario.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.lblPropietario, 2);
             this.lblPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblPropietario.Location = new System.Drawing.Point(3, 110);
+            this.lblPropietario.Location = new System.Drawing.Point(3, 212);
             this.lblPropietario.Margin = new System.Windows.Forms.Padding(3, 3, 0, 2);
             this.lblPropietario.Name = "lblPropietario";
-            this.lblPropietario.Size = new System.Drawing.Size(113, 15);
+            this.lblPropietario.Size = new System.Drawing.Size(228, 32);
             this.lblPropietario.TabIndex = 3;
             this.lblPropietario.Text = "Cliente / Propietario";
             // 
@@ -1059,11 +713,11 @@
             this.txtPropietario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPropietario.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(107)))));
-            this.txtPropietario.Location = new System.Drawing.Point(0, 127);
+            this.txtPropietario.Location = new System.Drawing.Point(0, 246);
             this.txtPropietario.Margin = new System.Windows.Forms.Padding(0, 0, 3, 7);
             this.txtPropietario.Name = "txtPropietario";
             this.txtPropietario.ReadOnly = true;
-            this.txtPropietario.Size = new System.Drawing.Size(266, 25);
+            this.txtPropietario.Size = new System.Drawing.Size(266, 43);
             this.txtPropietario.TabIndex = 2;
             this.txtPropietario.TabStop = false;
             this.txtPropietario.Text = "Jhon Doe";
@@ -1072,10 +726,10 @@
             // 
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblPlaca.Location = new System.Drawing.Point(0, 162);
+            this.lblPlaca.Location = new System.Drawing.Point(0, 299);
             this.lblPlaca.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblPlaca.Name = "lblPlaca";
-            this.lblPlaca.Size = new System.Drawing.Size(40, 15);
+            this.lblPlaca.Size = new System.Drawing.Size(79, 32);
             this.lblPlaca.TabIndex = 5;
             this.lblPlaca.Text = "Marca";
             // 
@@ -1085,11 +739,11 @@
             this.txtClase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtClase.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtClase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtClase.Location = new System.Drawing.Point(137, 182);
+            this.txtClase.Location = new System.Drawing.Point(137, 336);
             this.txtClase.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.txtClase.MaxLength = 7;
             this.txtClase.Name = "txtClase";
-            this.txtClase.Size = new System.Drawing.Size(129, 25);
+            this.txtClase.Size = new System.Drawing.Size(129, 43);
             this.txtClase.TabIndex = 5;
             this.txtClase.Text = "VAGONETA";
             // 
@@ -1097,10 +751,10 @@
             // 
             this.lblTipoVehiculo.AutoSize = true;
             this.lblTipoVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblTipoVehiculo.Location = new System.Drawing.Point(0, 217);
+            this.lblTipoVehiculo.Location = new System.Drawing.Point(0, 391);
             this.lblTipoVehiculo.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
-            this.lblTipoVehiculo.Size = new System.Drawing.Size(94, 15);
+            this.lblTipoVehiculo.Size = new System.Drawing.Size(105, 64);
             this.lblTipoVehiculo.TabIndex = 6;
             this.lblTipoVehiculo.Text = "Tipo de Vehiculo";
             // 
@@ -1108,10 +762,10 @@
             // 
             this.lblMonto.AutoSize = true;
             this.lblMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblMonto.Location = new System.Drawing.Point(137, 217);
+            this.lblMonto.Location = new System.Drawing.Point(137, 391);
             this.lblMonto.Margin = new System.Windows.Forms.Padding(3, 3, 0, 2);
             this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(61, 15);
+            this.lblMonto.Size = new System.Drawing.Size(124, 32);
             this.lblMonto.TabIndex = 7;
             this.lblMonto.Text = "Nro póliza";
             // 
@@ -1121,10 +775,10 @@
             this.txtDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDocumento.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtDocumento.Location = new System.Drawing.Point(137, 75);
+            this.txtDocumento.Location = new System.Drawing.Point(137, 159);
             this.txtDocumento.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(129, 25);
+            this.txtDocumento.Size = new System.Drawing.Size(129, 43);
             this.txtDocumento.TabIndex = 6;
             this.txtDocumento.Text = "12345678";
             // 
@@ -1133,10 +787,10 @@
             this.txtPoliza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPoliza.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPoliza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtPoliza.Location = new System.Drawing.Point(137, 234);
+            this.txtPoliza.Location = new System.Drawing.Point(137, 457);
             this.txtPoliza.Margin = new System.Windows.Forms.Padding(3, 0, 0, 7);
             this.txtPoliza.Name = "txtPoliza";
-            this.txtPoliza.Size = new System.Drawing.Size(132, 25);
+            this.txtPoliza.Size = new System.Drawing.Size(132, 43);
             this.txtPoliza.TabIndex = 7;
             this.txtPoliza.Text = "450.00";
             this.txtPoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1147,20 +801,20 @@
             this.cbMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(3, 182);
+            this.cbMarca.Location = new System.Drawing.Point(3, 336);
             this.cbMarca.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(128, 25);
+            this.cbMarca.Size = new System.Drawing.Size(128, 45);
             this.cbMarca.TabIndex = 9;
             // 
             // lblYear
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblYear.Location = new System.Drawing.Point(0, 269);
+            this.lblYear.Location = new System.Drawing.Point(0, 510);
             this.lblYear.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(29, 15);
+            this.lblYear.Size = new System.Drawing.Size(57, 32);
             this.lblYear.TabIndex = 11;
             this.lblYear.Text = "Año";
             this.lblYear.Click += new System.EventHandler(this.label7_Click);
@@ -1169,26 +823,26 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label6.Location = new System.Drawing.Point(134, 162);
+            this.label6.Location = new System.Drawing.Point(134, 299);
             this.label6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 15);
+            this.label6.Size = new System.Drawing.Size(70, 32);
             this.label6.TabIndex = 10;
             this.label6.Text = "Clase";
             // 
             // txtTipoVehiculo
             // 
             this.txtTipoVehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTipoVehiculo.Location = new System.Drawing.Point(3, 237);
+            this.txtTipoVehiculo.Location = new System.Drawing.Point(3, 460);
             this.txtTipoVehiculo.Name = "txtTipoVehiculo";
-            this.txtTipoVehiculo.Size = new System.Drawing.Size(128, 23);
+            this.txtTipoVehiculo.Size = new System.Drawing.Size(128, 39);
             this.txtTipoVehiculo.TabIndex = 12;
             // 
             // rbContado
             // 
             this.rbContado.AutoSize = true;
             this.rbContado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbContado.Location = new System.Drawing.Point(3, 335);
+            this.rbContado.Location = new System.Drawing.Point(3, 609);
             this.rbContado.Name = "rbContado";
             this.rbContado.Size = new System.Drawing.Size(128, 19);
             this.rbContado.TabIndex = 18;
@@ -1200,10 +854,10 @@
             // 
             this.chkDespacho.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.chkDespacho, 2);
-            this.chkDespacho.Location = new System.Drawing.Point(3, 422);
+            this.chkDespacho.Location = new System.Drawing.Point(3, 696);
             this.chkDespacho.Name = "chkDespacho";
             this.tlpCampos.SetRowSpan(this.chkDespacho, 2);
-            this.chkDespacho.Size = new System.Drawing.Size(178, 19);
+            this.chkDespacho.Size = new System.Drawing.Size(263, 31);
             this.chkDespacho.TabIndex = 23;
             this.chkDespacho.Text = "Desacho a Alcaldía y Diprove";
             this.chkDespacho.UseVisualStyleBackColor = true;
@@ -1224,23 +878,19 @@
             // 
             // FrmRecepcion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1264, 790);
+            this.ClientSize = new System.Drawing.Size(1060, 749);
             this.Controls.Add(this.pnlCuerpo);
             this.Controls.Add(this.pnlPasos);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.pnlLateral);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(900, 650);
             this.Name = "FrmRecepcion";
-            this.Text = "FrmRecepcion";
+            this.Text = "Recepción";
             this.Load += new System.EventHandler(this.FrmRecepcion_Load);
-            this.pnlLogo.ResumeLayout(false);
-            this.pnlLogo.PerformLayout();
-            this.pnlLateral.ResumeLayout(false);
-            this.pnlUsuario.ResumeLayout(false);
-            this.pnlUsuario.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.pnlPasos.ResumeLayout(false);
@@ -1257,30 +907,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlLogo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlLateral;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnConfiguracion;
-        private System.Windows.Forms.Button btnListadoEntrega;
-        private System.Windows.Forms.Button btnPagosBanco;
-        private System.Windows.Forms.Button btnListadoDespacho;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnSeguimiento;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel pnlUsuario;
-        private System.Windows.Forms.Label lblEmpresaUsuario;
-        private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Label lblAvatar;
-        private System.Windows.Forms.Panel pnlIndicador;
-        private System.Windows.Forms.Button btnEntrega;
-        private System.Windows.Forms.Button btnDiprove;
-        private System.Windows.Forms.Button btnPlacas;
-        private System.Windows.Forms.Button btnRecepcion;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnPanelGeneral;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnGuardar;

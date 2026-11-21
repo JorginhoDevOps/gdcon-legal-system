@@ -16,5 +16,40 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFechaAsignacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAviso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlaca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtChasis_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAviso_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

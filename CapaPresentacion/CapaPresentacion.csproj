@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarraTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmActaContado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +129,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmActaContado.resx">
+      <DependentUpon>FrmActaContado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmActaCredito.resx">
+      <DependentUpon>FrmActaCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsolidado.resx">
+      <DependentUpon>FrmConsolidado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEntregaFinal.resx">
+      <DependentUpon>FrmEntregaFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoBanco.resx">
       <DependentUpon>FrmListadoBanco.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,9 +153,18 @@
 
     <EmbeddedResource Include="FrmPlacasPagos.resx">
       <DependentUpon>FrmPlacasPagos.cs</DependentUpon>
+
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeguimiento.resx">
+      <DependentUpon>FrmSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransito.resx">
+      <DependentUpon>FrmTransito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
+
+      <SubType>Designer</SubType>
     </EmbeddedResource>
 
     <EmbeddedResource Include="FrmRecepcion.resx">
@@ -155,6 +179,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -174,6 +199,18 @@
       <Project>{c945794b-5db5-48d3-9f0e-4f99036b5791}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Iconos\AGREGAR.png" />
+    <Content Include="Resources\Iconos\EDITAR.png" />
+    <Content Include="Resources\Iconos\ELIMINAR.png" />
+    <Content Include="Resources\Iconos\Guaradar.png" />
+    <None Include="Resources\Iconos\icons8-invisible-50.png" />
+    <Content Include="Resources\Iconos\IMPRIMIR.png" />
+    <Content Include="Resources\Iconos\LIMPIAR.png" />
+    <Content Include="Resources\Iconos\SALIR.png" />
+    <Content Include="Resources\Iconos\VISTA PREVIA.png" />
+    <None Include="Resources\VISTA PREVIA.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
