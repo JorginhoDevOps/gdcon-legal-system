@@ -28,13 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTransito));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTransito));
             this.tsAcciones = new System.Windows.Forms.ToolStrip();
+            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsbGuardar = new System.Windows.Forms.ToolStripButton();
+            this.tsbModificar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.tsbLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.pnlPasos = new System.Windows.Forms.Panel();
             this.lblPaso1 = new System.Windows.Forms.Label();
@@ -78,14 +86,6 @@
             this.lblComprobante = new System.Windows.Forms.Label();
             this.txtFechaEnvioTransito = new System.Windows.Forms.TextBox();
             this.lblEncabezadoDatos = new System.Windows.Forms.Label();
-            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tsbGuardar = new System.Windows.Forms.ToolStripButton();
-            this.tsbModificar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.tsbLimpiar = new System.Windows.Forms.ToolStripButton();
-            this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
-            this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
             this.tsAcciones.SuspendLayout();
             this.pnlPasos.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
@@ -120,11 +120,80 @@
             this.tsAcciones.Size = new System.Drawing.Size(1060, 44);
             this.tsAcciones.TabIndex = 1;
             // 
+            // tsbNuevo
+            // 
+            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbNuevo.Name = "tsbNuevo";
+            this.tsbNuevo.Size = new System.Drawing.Size(70, 40);
+            this.tsbNuevo.Text = "Nuevo";
+            this.tsbNuevo.ToolTipText = "Nuevo";
+            // 
+            // tsbGuardar
+            // 
+            this.tsbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tsbGuardar.Image")));
+            this.tsbGuardar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbGuardar.Name = "tsbGuardar";
+            this.tsbGuardar.Size = new System.Drawing.Size(77, 40);
+            this.tsbGuardar.Text = "Guardar";
+            // 
+            // tsbModificar
+            // 
+            this.tsbModificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificar.Image")));
+            this.tsbModificar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbModificar.Name = "tsbModificar";
+            this.tsbModificar.Size = new System.Drawing.Size(86, 40);
+            this.tsbModificar.Text = "Modificar";
+            // 
+            // tsbEliminar
+            // 
+            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbEliminar.Name = "tsbEliminar";
+            this.tsbEliminar.Size = new System.Drawing.Size(78, 40);
+            this.tsbEliminar.Text = "Eliminar";
+            // 
+            // tsbLimpiar
+            // 
+            this.tsbLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("tsbLimpiar.Image")));
+            this.tsbLimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tsbLimpiar.Name = "tsbLimpiar";
+            this.tsbLimpiar.Size = new System.Drawing.Size(75, 40);
+            this.tsbLimpiar.Text = "Limpiar";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(57, 41);
+            this.btnSalir.Text = "Salir";
+            // 
+            // tsbCerrar
+            // 
+            this.tsbCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("tsbCerrar.Image")));
+            this.tsbCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCerrar.Name = "tsbCerrar";
+            this.tsbCerrar.Size = new System.Drawing.Size(43, 41);
+            this.tsbCerrar.Text = "Cerrar";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 44);
+            // 
+            // tsbBuscar
+            // 
+            this.tsbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBuscar.Image")));
+            this.tsbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBuscar.Name = "tsbBuscar";
+            this.tsbBuscar.Size = new System.Drawing.Size(46, 41);
+            this.tsbBuscar.Text = "Buscar";
             // 
             // txtBuscar
             // 
@@ -677,75 +746,6 @@
             this.lblEncabezadoDatos.TabIndex = 0;
             this.lblEncabezadoDatos.Text = "Datos — Diprove y Tránsito";
             this.lblEncabezadoDatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tsbNuevo
-            // 
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
-            this.tsbNuevo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(70, 40);
-            this.tsbNuevo.Text = "Nuevo";
-            this.tsbNuevo.ToolTipText = "Nuevo";
-            // 
-            // tsbGuardar
-            // 
-            this.tsbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tsbGuardar.Image")));
-            this.tsbGuardar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbGuardar.Name = "tsbGuardar";
-            this.tsbGuardar.Size = new System.Drawing.Size(77, 40);
-            this.tsbGuardar.Text = "Guardar";
-            // 
-            // tsbModificar
-            // 
-            this.tsbModificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificar.Image")));
-            this.tsbModificar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbModificar.Name = "tsbModificar";
-            this.tsbModificar.Size = new System.Drawing.Size(86, 40);
-            this.tsbModificar.Text = "Modificar";
-            // 
-            // tsbEliminar
-            // 
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
-            this.tsbEliminar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(78, 40);
-            this.tsbEliminar.Text = "Eliminar";
-            // 
-            // tsbLimpiar
-            // 
-            this.tsbLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("tsbLimpiar.Image")));
-            this.tsbLimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tsbLimpiar.Name = "tsbLimpiar";
-            this.tsbLimpiar.Size = new System.Drawing.Size(75, 40);
-            this.tsbLimpiar.Text = "Limpiar";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(57, 41);
-            this.btnSalir.Text = "Salir";
-            // 
-            // tsbCerrar
-            // 
-            this.tsbCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("tsbCerrar.Image")));
-            this.tsbCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCerrar.Name = "tsbCerrar";
-            this.tsbCerrar.Size = new System.Drawing.Size(43, 41);
-            this.tsbCerrar.Text = "Cerrar";
-            // 
-            // tsbBuscar
-            // 
-            this.tsbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBuscar.Image")));
-            this.tsbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(46, 41);
-            this.tsbBuscar.Text = "Buscar";
             // 
             // FrmTransito
             // 

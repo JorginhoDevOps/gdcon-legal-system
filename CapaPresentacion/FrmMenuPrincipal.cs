@@ -16,7 +16,6 @@ namespace CapaPresentacion
             BarraTitulo.Aplicar(this, Color.White, Color.FromArgb(9, 26, 58));
         }
 
-        // Muestra un formulario dentro del panel contenedor
         public void AbrirFormulario(Form frm)
         {
             if (formularioActual != null) formularioActual.Close();

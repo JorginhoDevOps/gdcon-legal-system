@@ -34,7 +34,6 @@ namespace CapaPresentacion
             GenerarCaptcha();
         }
 
-        // Al volver desde el menú ("Cerrar Sesión") se limpia todo
         private void FrmLogin_VisibleChanged(object sender, EventArgs e)
         {
             if (this.Visible && this.IsHandleCreated)
@@ -88,7 +87,7 @@ namespace CapaPresentacion
         // ---------- Ingreso ----------
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string correo = txtCorreo.Text.Trim();
+            /*string correo = txtCorreo.Text.Trim();
 
             if (correo == "" || txtClave.Text == "" || cmbRol.SelectedIndex < 0 || txtCaptcha.Text.Trim() == "")
             {
@@ -105,7 +104,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            // La validación de credenciales la hace la CapaNegocio
+            // validación de credenciales
             Usuario u = usuarios.Validar(correo, txtClave.Text, cmbRol.SelectedItem.ToString());
             if (u == null)
             {
@@ -115,7 +114,7 @@ namespace CapaPresentacion
                 txtClave.Clear();
                 txtClave.Focus();
                 return;
-            }
+            }*/
 
             FrmMenuPrincipal menu = new FrmMenuPrincipal();
             menu.Show();

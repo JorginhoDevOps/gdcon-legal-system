@@ -260,17 +260,17 @@
   <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJASURBVGhD3Zq/TlRBFMapbI2WBNg7s1uZKI2xolAfSnkC
-        UMMDGIT4EobG4nLnrIRCOzoKAsuc1caGEGMFOcufbL7ZswxBdw77Jb9mb77D72T2wi65M0/29h444vee
-        InviMxPUHB3xO3GbyY0UkkFGqAKvoq8aUyeREBl91aRlW6CvGixaA33VYNEa6KsGi9ZAXzVYtAb6qsGi
-        NdBXDRatgb5qsGgN9FWDxdI4ip89xSXf5ec+xDX0VYODSuJC/Ih+2cFhJamot3jp9Kmi+MV//f0QfdXg
-        sJK0d4464uSIf1y8Fnezl8FhRQnxrTh16t5cK/D+xeuZyyTDyvKn3e2/Eq9bLzNiWFlqPvVN/7W4DS8j
-        b7e5naPH6H+dZJAFaj4ddTJjl0mGWEGWof5LccxaJhlgiBYdnFx53njPYNkaw65jTwaLuczW/NeH+Ga+
-        ezg7/MP+d9STQcFsLn/nl8jIZRLBTK5OoiL+htcmT9y98yKthgmvTZ47LOIpLuORTyr/9K01uNkpLt//
-        m31CaEtUxN8X6PDR9UUsWmI6/iAqH1GSkzC9iPKhUV1CkgwpjfIxfuwSkmRQWabki9W0fNXtdH+1xene
-        //PBbf98OnAKvOGa463sJSQ4rDDr6JedEcPK0vCma/ovXOg9cxQ/oK+aZJAx0FcNFq2BvmqwaA30VYNF
-        a6CvGixaA33VYNEa6KsGi9ZAXzVYtAb6qpFHirBsBdfwMfqqkUeJcIAZAq+grxp5uGuwjKGTkZOQJW7z
-        4Nk5hbFLPIW/SDoAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJBSURBVGhD3ZqxbhNBEIZTpUVJBwr4du0KCWgQVYrAQ0Ge
+        AJKIB0BAxEsgGorjdkyUArp0FChxdpw0NMiKqEDj2JH1r8dsFPBO/Etf49M/+UbrS+zolu4eHCw74m1P
+        kT3xbxPUHB3xlrgt5UYKySAjVIFfoK8aUyeREBl91aRlW6CvGixaA33VYNEa6KsGi9ZAXzVYtAb6qsGi
+        NdBXDRatgb5qsGgN9FWDxdI4iu88xXXf5Yc+xJfoqwYHlcSF+Ar9soPDSlJR78HI6U1F8b3/+OMG+qrB
+        YSVp7x11xMkRfz1/Le5nL4PDihLiM3Hq1L21VuBv569nLpMMK8tZu9t/LF6XXmbKsLLUPPBN/4m4TS4j
+        b7e1vaNV9L9IMsgCNQ+mnczMZZIhVpBlqL8hjlnLJAMM0aLvP8eef71nsGyNSdeZJ4PFXG7W/MuH+PR2
+        9/DW5A/731FPBgWzGf3OL5GpyySCmYxPoiL+jNfmT9y/8iKthgmvzZ8rLOIpbuKRzyv/9K01vNkpbl7/
+        m31OaEtUxF/u0OHKxUUsWmIx/iAqH1GSkzC9iPKhUV1CkgwpjfIxfuYSkmRQWRbki9WifNXtdE/b4nTt
+        //ngPp3cGzoFfuua4w/ZS0hwWGFeo192pgwrS8O7ruk/cqF331HcQV81ySBjoK8aLFoDfdVg0RroqwaL
+        1kBfNVi0BvqqwaI10FcNFq2BvmqwaA30VSOPFGHZCq7hY/RVI48S4QAzBH6Ovmrk4a7hMoZORk5ClrjM
+        g2d/AF4YSzpZ0atIAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="tsbCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
