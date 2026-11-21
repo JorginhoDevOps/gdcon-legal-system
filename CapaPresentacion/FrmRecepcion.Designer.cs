@@ -1,4 +1,4 @@
-﻿namespace CapaPresentacion
+﻿﻿namespace CapaPresentacion
 {
     partial class FrmRecepcion
     {
