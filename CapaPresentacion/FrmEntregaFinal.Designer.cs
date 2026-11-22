@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntregaFinal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsAcciones = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbGuardar = new System.Windows.Forms.ToolStripButton();
@@ -138,7 +138,7 @@
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(126, 40);
+            this.tsbNuevo.Size = new System.Drawing.Size(77, 40);
             this.tsbNuevo.Text = "Agregar";
             // 
             // tsbGuardar
@@ -147,7 +147,7 @@
             this.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbGuardar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbGuardar.Name = "tsbGuardar";
-            this.tsbGuardar.Size = new System.Drawing.Size(126, 40);
+            this.tsbGuardar.Size = new System.Drawing.Size(77, 40);
             this.tsbGuardar.Text = "Guardar";
             // 
             // tsbModificar
@@ -156,7 +156,7 @@
             this.tsbModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbModificar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbModificar.Name = "tsbModificar";
-            this.tsbModificar.Size = new System.Drawing.Size(143, 40);
+            this.tsbModificar.Size = new System.Drawing.Size(86, 40);
             this.tsbModificar.Text = "Modificar";
             // 
             // tsbEliminar
@@ -165,7 +165,7 @@
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(127, 40);
+            this.tsbEliminar.Size = new System.Drawing.Size(78, 40);
             this.tsbEliminar.Text = "Eliminar";
             // 
             // tsbLimpiar
@@ -174,7 +174,7 @@
             this.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbLimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbLimpiar.Name = "tsbLimpiar";
-            this.tsbLimpiar.Size = new System.Drawing.Size(120, 40);
+            this.tsbLimpiar.Size = new System.Drawing.Size(75, 40);
             this.tsbLimpiar.Text = "Limpiar";
             // 
             // tsbCerrar
@@ -184,18 +184,18 @@
             this.tsbCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCerrar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbCerrar.Name = "tsbCerrar";
-            this.tsbCerrar.Size = new System.Drawing.Size(87, 40);
-            this.tsbCerrar.Text = "Salir";
+            this.tsbCerrar.Size = new System.Drawing.Size(67, 40);
+            this.tsbCerrar.Text = "Cerrar";
             this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
             // tsbBuscar
             // 
             this.tsbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbBuscar.Image = global::CapaPresentacion.Properties.Resources.VISTA_PREVIA;
+            this.tsbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBuscar.Image")));
             this.tsbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbBuscar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(111, 40);
+            this.tsbBuscar.Size = new System.Drawing.Size(70, 40);
             this.tsbBuscar.Text = "Buscar";
             // 
             // txtBuscar
@@ -209,10 +209,10 @@
             // 
             // tsbActa
             // 
-            this.tsbActa.Image = global::CapaPresentacion.Properties.Resources.icons8_invisible_50;
+            this.tsbActa.Image = ((System.Drawing.Image)(resources.GetObject("tsbActa.Image")));
             this.tsbActa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbActa.Name = "tsbActa";
-            this.tsbActa.Size = new System.Drawing.Size(126, 38);
+            this.tsbActa.Size = new System.Drawing.Size(76, 41);
             this.tsbActa.Text = "Ver acta";
             this.tsbActa.Click += new System.EventHandler(this.tsbActa_Click);
             // 
@@ -246,19 +246,19 @@
             this.dgvEntregas.AllowUserToAddRows = false;
             this.dgvEntregas.AllowUserToDeleteRows = false;
             this.dgvEntregas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvEntregas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.dgvEntregas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntregas.BackgroundColor = System.Drawing.Color.White;
             this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvEntregas.ColumnHeadersHeight = 30;
             this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEntregas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -271,14 +271,14 @@
             this.colRuat,
             this.colActa,
             this.colEntrega});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle36;
             this.dgvEntregas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEntregas.EnableHeadersVisualStyles = false;
             this.dgvEntregas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -295,8 +295,8 @@
             // 
             // colChasis
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colChasis.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colChasis.DefaultCellStyle = dataGridViewCellStyle27;
             this.colChasis.HeaderText = "Chasis";
             this.colChasis.MinimumWidth = 10;
             this.colChasis.Name = "colChasis";
@@ -304,8 +304,8 @@
             // 
             // colPlaca
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPlaca.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPlaca.DefaultCellStyle = dataGridViewCellStyle28;
             this.colPlaca.HeaderText = "Placa";
             this.colPlaca.MinimumWidth = 10;
             this.colPlaca.Name = "colPlaca";
@@ -313,8 +313,8 @@
             // 
             // colCliente
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colCliente.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colCliente.DefaultCellStyle = dataGridViewCellStyle29;
             this.colCliente.HeaderText = "Cliente";
             this.colCliente.MinimumWidth = 10;
             this.colCliente.Name = "colCliente";
@@ -322,8 +322,8 @@
             // 
             // colModalidad
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colModalidad.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colModalidad.DefaultCellStyle = dataGridViewCellStyle30;
             this.colModalidad.HeaderText = "Modalidad";
             this.colModalidad.MinimumWidth = 10;
             this.colModalidad.Name = "colModalidad";
@@ -331,8 +331,8 @@
             // 
             // colResolucion
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colResolucion.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colResolucion.DefaultCellStyle = dataGridViewCellStyle31;
             this.colResolucion.HeaderText = "Resolución";
             this.colResolucion.MinimumWidth = 10;
             this.colResolucion.Name = "colResolucion";
@@ -340,8 +340,8 @@
             // 
             // colPlacas
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPlacas.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPlacas.DefaultCellStyle = dataGridViewCellStyle32;
             this.colPlacas.HeaderText = "Placas";
             this.colPlacas.MinimumWidth = 10;
             this.colPlacas.Name = "colPlacas";
@@ -349,8 +349,8 @@
             // 
             // colRuat
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colRuat.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colRuat.DefaultCellStyle = dataGridViewCellStyle33;
             this.colRuat.HeaderText = "RUAT";
             this.colRuat.MinimumWidth = 10;
             this.colRuat.Name = "colRuat";
@@ -358,8 +358,8 @@
             // 
             // colActa
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colActa.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colActa.DefaultCellStyle = dataGridViewCellStyle34;
             this.colActa.HeaderText = "Acta";
             this.colActa.MinimumWidth = 10;
             this.colActa.Name = "colActa";
@@ -367,8 +367,8 @@
             // 
             // colEntrega
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colEntrega.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colEntrega.DefaultCellStyle = dataGridViewCellStyle35;
             this.colEntrega.HeaderText = "Entrega";
             this.colEntrega.MinimumWidth = 10;
             this.colEntrega.Name = "colEntrega";
@@ -453,9 +453,9 @@
             this.tlpCampos.SetColumnSpan(this.lblChasis, 2);
             this.lblChasis.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChasis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblChasis.Location = new System.Drawing.Point(15, 8);
+            this.lblChasis.Location = new System.Drawing.Point(15, 15);
             this.lblChasis.Name = "lblChasis";
-            this.lblChasis.Size = new System.Drawing.Size(81, 30);
+            this.lblChasis.Size = new System.Drawing.Size(41, 15);
             this.lblChasis.TabIndex = 0;
             this.lblChasis.Text = "Chasis";
             // 
@@ -468,7 +468,7 @@
             this.txtChasis.Location = new System.Drawing.Point(15, 41);
             this.txtChasis.MaxLength = 17;
             this.txtChasis.Name = "txtChasis";
-            this.txtChasis.Size = new System.Drawing.Size(310, 42);
+            this.txtChasis.Size = new System.Drawing.Size(310, 25);
             this.txtChasis.TabIndex = 0;
             // 
             // lblPlaca
@@ -477,9 +477,9 @@
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblPlaca.Location = new System.Drawing.Point(15, 68);
+            this.lblPlaca.Location = new System.Drawing.Point(15, 75);
             this.lblPlaca.Name = "lblPlaca";
-            this.lblPlaca.Size = new System.Drawing.Size(68, 30);
+            this.lblPlaca.Size = new System.Drawing.Size(35, 15);
             this.lblPlaca.TabIndex = 2;
             this.lblPlaca.Text = "Placa";
             // 
@@ -489,9 +489,9 @@
             this.lblModalidad.AutoSize = true;
             this.lblModalidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblModalidad.Location = new System.Drawing.Point(173, 68);
+            this.lblModalidad.Location = new System.Drawing.Point(173, 75);
             this.lblModalidad.Name = "lblModalidad";
-            this.lblModalidad.Size = new System.Drawing.Size(128, 30);
+            this.lblModalidad.Size = new System.Drawing.Size(64, 15);
             this.lblModalidad.TabIndex = 3;
             this.lblModalidad.Text = "Modalidad";
             // 
@@ -503,7 +503,7 @@
             this.txtPlaca.Location = new System.Drawing.Point(15, 101);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.ReadOnly = true;
-            this.txtPlaca.Size = new System.Drawing.Size(152, 31);
+            this.txtPlaca.Size = new System.Drawing.Size(152, 20);
             this.txtPlaca.TabIndex = 4;
             this.txtPlaca.TabStop = false;
             // 
@@ -529,7 +529,7 @@
             this.chkDocsIniciales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.chkDocsIniciales.Location = new System.Drawing.Point(6, 65);
             this.chkDocsIniciales.Name = "chkDocsIniciales";
-            this.chkDocsIniciales.Size = new System.Drawing.Size(273, 36);
+            this.chkDocsIniciales.Size = new System.Drawing.Size(139, 19);
             this.chkDocsIniciales.TabIndex = 2;
             this.chkDocsIniciales.Text = "Documentos iniciales";
             this.chkDocsIniciales.UseVisualStyleBackColor = true;
@@ -541,7 +541,7 @@
             this.chkComprobanteCopia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.chkComprobanteCopia.Location = new System.Drawing.Point(6, 42);
             this.chkComprobanteCopia.Name = "chkComprobanteCopia";
-            this.chkComprobanteCopia.Size = new System.Drawing.Size(271, 36);
+            this.chkComprobanteCopia.Size = new System.Drawing.Size(140, 19);
             this.chkComprobanteCopia.TabIndex = 1;
             this.chkComprobanteCopia.Text = "Comprobante (copia)";
             this.chkComprobanteCopia.UseVisualStyleBackColor = true;
@@ -553,7 +553,7 @@
             this.chkActaImpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.chkActaImpresa.Location = new System.Drawing.Point(6, 19);
             this.chkActaImpresa.Name = "chkActaImpresa";
-            this.chkActaImpresa.Size = new System.Drawing.Size(183, 36);
+            this.chkActaImpresa.Size = new System.Drawing.Size(95, 19);
             this.chkActaImpresa.TabIndex = 0;
             this.chkActaImpresa.Text = "Acta impresa";
             this.chkActaImpresa.UseVisualStyleBackColor = true;
@@ -581,7 +581,7 @@
             this.chkPolizaOriginal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.chkPolizaOriginal.Location = new System.Drawing.Point(3, 91);
             this.chkPolizaOriginal.Name = "chkPolizaOriginal";
-            this.chkPolizaOriginal.Size = new System.Drawing.Size(194, 36);
+            this.chkPolizaOriginal.Size = new System.Drawing.Size(100, 19);
             this.chkPolizaOriginal.TabIndex = 3;
             this.chkPolizaOriginal.Text = "Póliza original";
             this.chkPolizaOriginal.UseVisualStyleBackColor = true;
@@ -593,7 +593,7 @@
             this.chkRuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.chkRuat.Location = new System.Drawing.Point(3, 67);
             this.chkRuat.Name = "chkRuat";
-            this.chkRuat.Size = new System.Drawing.Size(101, 36);
+            this.chkRuat.Size = new System.Drawing.Size(55, 19);
             this.chkRuat.TabIndex = 2;
             this.chkRuat.Text = "RUAT";
             this.chkRuat.UseVisualStyleBackColor = true;
@@ -605,7 +605,7 @@
             this.chkPlacasMetalicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.chkPlacasMetalicas.Location = new System.Drawing.Point(3, 43);
             this.chkPlacasMetalicas.Name = "chkPlacasMetalicas";
-            this.chkPlacasMetalicas.Size = new System.Drawing.Size(216, 36);
+            this.chkPlacasMetalicas.Size = new System.Drawing.Size(112, 19);
             this.chkPlacasMetalicas.TabIndex = 1;
             this.chkPlacasMetalicas.Text = "Placas metálicas";
             this.chkPlacasMetalicas.UseVisualStyleBackColor = true;
@@ -617,7 +617,7 @@
             this.chkResolucion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.chkResolucion.Location = new System.Drawing.Point(3, 19);
             this.chkResolucion.Name = "chkResolucion";
-            this.chkResolucion.Size = new System.Drawing.Size(161, 36);
+            this.chkResolucion.Size = new System.Drawing.Size(84, 19);
             this.chkResolucion.TabIndex = 0;
             this.chkResolucion.Text = "Resolución";
             this.chkResolucion.UseVisualStyleBackColor = true;
@@ -629,9 +629,9 @@
             this.tlpCampos.SetColumnSpan(this.lblEntregadoA, 2);
             this.lblEntregadoA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntregadoA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblEntregadoA.Location = new System.Drawing.Point(15, 356);
+            this.lblEntregadoA.Location = new System.Drawing.Point(15, 363);
             this.lblEntregadoA.Name = "lblEntregadoA";
-            this.lblEntregadoA.Size = new System.Drawing.Size(142, 30);
+            this.lblEntregadoA.Size = new System.Drawing.Size(70, 15);
             this.lblEntregadoA.TabIndex = 8;
             this.lblEntregadoA.Text = "Entregado a";
             // 
@@ -643,7 +643,7 @@
             this.txtEntregadoA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.txtEntregadoA.Location = new System.Drawing.Point(15, 389);
             this.txtEntregadoA.Name = "txtEntregadoA";
-            this.txtEntregadoA.Size = new System.Drawing.Size(310, 42);
+            this.txtEntregadoA.Size = new System.Drawing.Size(310, 25);
             this.txtEntregadoA.TabIndex = 1;
             // 
             // lblFechaEntrega
@@ -653,9 +653,9 @@
             this.tlpCampos.SetColumnSpan(this.lblFechaEntrega, 2);
             this.lblFechaEntrega.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblFechaEntrega.Location = new System.Drawing.Point(15, 416);
+            this.lblFechaEntrega.Location = new System.Drawing.Point(15, 423);
             this.lblFechaEntrega.Name = "lblFechaEntrega";
-            this.lblFechaEntrega.Size = new System.Drawing.Size(273, 30);
+            this.lblFechaEntrega.Size = new System.Drawing.Size(133, 15);
             this.lblFechaEntrega.TabIndex = 10;
             this.lblFechaEntrega.Text = "Fecha y hora de entrega";
             // 
@@ -668,7 +668,7 @@
             this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaEntrega.Location = new System.Drawing.Point(15, 449);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
-            this.dtpFechaEntrega.Size = new System.Drawing.Size(310, 42);
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(310, 25);
             this.dtpFechaEntrega.TabIndex = 2;
             // 
             // pnlAviso
@@ -731,7 +731,7 @@
             this.txtModalidad.Location = new System.Drawing.Point(173, 101);
             this.txtModalidad.Name = "txtModalidad";
             this.txtModalidad.ReadOnly = true;
-            this.txtModalidad.Size = new System.Drawing.Size(152, 31);
+            this.txtModalidad.Size = new System.Drawing.Size(152, 20);
             this.txtModalidad.TabIndex = 13;
             this.txtModalidad.TabStop = false;
             // 
@@ -779,7 +779,7 @@
             this.lblPaso1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso1.Location = new System.Drawing.Point(200, 15);
             this.lblPaso1.Name = "lblPaso1";
-            this.lblPaso1.Size = new System.Drawing.Size(232, 32);
+            this.lblPaso1.Size = new System.Drawing.Size(114, 15);
             this.lblPaso1.TabIndex = 6;
             this.lblPaso1.Text = "① Recepción   ─────";
             // 
@@ -790,7 +790,7 @@
             this.lblPaso2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso2.Location = new System.Drawing.Point(345, 15);
             this.lblPaso2.Name = "lblPaso2";
-            this.lblPaso2.Size = new System.Drawing.Size(228, 32);
+            this.lblPaso2.Size = new System.Drawing.Size(111, 15);
             this.lblPaso2.TabIndex = 7;
             this.lblPaso2.Text = "② Despacho   ─────";
             // 
@@ -801,7 +801,7 @@
             this.lblPaso3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso3.Location = new System.Drawing.Point(490, 15);
             this.lblPaso3.Name = "lblPaso3";
-            this.lblPaso3.Size = new System.Drawing.Size(275, 32);
+            this.lblPaso3.Size = new System.Drawing.Size(136, 15);
             this.lblPaso3.TabIndex = 8;
             this.lblPaso3.Text = "③ Placas y Pagos   ─────";
             // 
@@ -812,7 +812,7 @@
             this.lblPaso4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso4.Location = new System.Drawing.Point(675, 15);
             this.lblPaso4.Name = "lblPaso4";
-            this.lblPaso4.Size = new System.Drawing.Size(206, 32);
+            this.lblPaso4.Size = new System.Drawing.Size(101, 15);
             this.lblPaso4.TabIndex = 9;
             this.lblPaso4.Text = "④ Tránsito   ─────";
             // 
@@ -823,7 +823,7 @@
             this.lblPaso5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
             this.lblPaso5.Location = new System.Drawing.Point(805, 15);
             this.lblPaso5.Name = "lblPaso5";
-            this.lblPaso5.Size = new System.Drawing.Size(123, 32);
+            this.lblPaso5.Size = new System.Drawing.Size(60, 15);
             this.lblPaso5.TabIndex = 10;
             this.lblPaso5.Text = "⑤ Entrega";
             // 
