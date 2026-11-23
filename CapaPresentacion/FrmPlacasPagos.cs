@@ -15,6 +15,7 @@ namespace CapaPresentacion
         public FrmPlacasPagos()
         {
             InitializeComponent();
+            EstiloUI.Aplicar(this, 3);
         }
     }
 }

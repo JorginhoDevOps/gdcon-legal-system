@@ -15,6 +15,7 @@ namespace CapaPresentacion
         public FrmTransito()
         {
             InitializeComponent();
+            EstiloUI.Aplicar(this, 4);
         }
 
         private void label2_Click(object sender, EventArgs e)

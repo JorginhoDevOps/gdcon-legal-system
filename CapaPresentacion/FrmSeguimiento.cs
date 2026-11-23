@@ -18,6 +18,7 @@ namespace CapaPresentacion
         public FrmSeguimiento()
         {
             InitializeComponent();
+            EstiloUI.SoloBarra(this);
 
             circulos = new[] { lblCirculo1, lblCirculo2, lblCirculo3, lblCirculo4, lblCirculo5 };
             nombres = new[] { lblPaso1, lblPaso2, lblPaso3, lblPaso4, lblPaso5 };

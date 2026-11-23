@@ -15,6 +15,7 @@ namespace CapaPresentacion
         public FrmRecepcion()
         {
             InitializeComponent();
+            EstiloUI.Aplicar(this, 1, 2);
         }
 
         private void FrmRecepcion_Load(object sender, EventArgs e)

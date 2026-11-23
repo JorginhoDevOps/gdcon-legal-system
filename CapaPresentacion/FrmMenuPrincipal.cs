@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -23,6 +24,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             BarraTitulo.Aplicar(this, Color.White, Color.FromArgb(9, 26, 58));
+            RedondearAvatar();
 
             botonesMenu = new Button[]
             {
@@ -39,7 +41,43 @@ namespace CapaPresentacion
 
             MarcarActivo(btnPanelGeneral);
         }
+        public Usuario UsuarioActual;
 
+        public bool EsAdministrador()
+        {
+            return UsuarioActual != null && UsuarioActual.Rol == "Administrador";
+        }
+
+        public FrmMenuPrincipal(Usuario usuario) : this()
+        {
+            UsuarioActual = usuario;
+            AplicarPermisosUsuario();
+        }
+
+        private void AplicarPermisosUsuario()
+        {
+            if (UsuarioActual == null) return;
+
+            lblNombreUsuario.AutoSize = false;
+            lblNombreUsuario.Width = pnlUsuario.Width - lblNombreUsuario.Left - 8;
+            lblNombreUsuario.Height = 18;
+            lblNombreUsuario.AutoEllipsis = true;
+            lblNombreUsuario.Text = UsuarioActual.Nombre;
+            lblEmpresaUsuario.Text = "Rol: " + UsuarioActual.Rol;
+            lblAvatar.Text = ObtenerIniciales(UsuarioActual.Nombre);
+            lblAvatar.Invalidate();
+
+            // Solo el Administrador puede entrar a Configuración
+            btnConfiguracion.Visible = EsAdministrador();
+        }
+        private string ObtenerIniciales(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(nombre)) return "US";
+            string[] partes = nombre.Trim().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            if (partes.Length == 1)
+                return partes[0].Substring(0, Math.Min(2, partes[0].Length)).ToUpper();
+            return (partes[0][0].ToString() + partes[1][0].ToString()).ToUpper();
+        }
         // Pinta el botón elegido como activo y deja los demás normales
         private void MarcarActivo(Button activo)
         {
@@ -58,14 +96,31 @@ namespace CapaPresentacion
             pnlIndicador.Top = activo.Top;
             pnlIndicador.Height = activo.Height;
             pnlIndicador.BringToFront();
+
+
+        }
+        private void RedondearAvatar()
+        {
+            
+            lblAvatar.BackColor = lblAvatar.Parent.BackColor;
+
+            lblAvatar.Paint += (s, e) =>
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                using (SolidBrush pincel = new SolidBrush(Color.FromArgb(31, 61, 112)))
+                {
+                    e.Graphics.FillEllipse(pincel, 0, 0, lblAvatar.Width - 1, lblAvatar.Height - 1);
+                }
+                TextRenderer.DrawText(e.Graphics, lblAvatar.Text, lblAvatar.Font,
+                    lblAvatar.ClientRectangle, Color.White,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+            };
         }
 
-        // origen = botón del menú que abrió el formulario (opcional).
-        // Si se abre desde otro formulario (ej. un acta), no se cambia el botón activo.
         public void AbrirFormulario(Form frm, Button origen = null)
         {
             Form anterior = formularioActual;
-            formularioActual = null;            // evita que el cierre del anterior muestre el panel general
+            formularioActual = null;           
             if (anterior != null) anterior.Close();
 
             formularioActual = frm;
@@ -156,7 +211,7 @@ namespace CapaPresentacion
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmUsuarios(), btnConfiguracion);
+            AbrirFormulario(new FrmUsuarios(UsuarioActual), btnConfiguracion);
         }
     }
 }

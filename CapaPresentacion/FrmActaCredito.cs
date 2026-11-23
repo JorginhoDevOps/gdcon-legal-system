@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Windows.Forms;
+using CapaNegocio;
+using QRCoder;
 
 namespace CapaPresentacion
 {
@@ -10,10 +13,15 @@ namespace CapaPresentacion
         public FrmActaCredito()
         {
             InitializeComponent();
+            EstiloUI.SoloBarra(this);
             CargarEjemplo();
         }
 
-        // Datos de EJEMPLO (ficticios). Luego se reemplazan por los del trámite entregado.
+        public FrmActaCredito(Tramite t) : this()
+        {
+            if (t != null) CargarTramite(t);
+        }
+
         private void CargarEjemplo()
         {
             lblClienteV.Text = "Cliente de ejemplo";
@@ -26,7 +34,45 @@ namespace CapaPresentacion
             lblClase.Text = "Clase: CAMIONETA";
             lblChasis.Text = "Chasis: CHASIS-EJEMPLO-001";
             lblDoc4.Text = "4. PAR DE PLACAS N° 1234ABC (Original)";
-            // QR: se genera con QRCoder (paso de NuGet) y se asigna a picQr.Image
+        }
+
+        public void CargarTramite(Tramite t)
+        {
+            string placa = string.IsNullOrWhiteSpace(t.Placa) ? "S/P" : t.Placa;
+            string modelo = ((t.TipoVehiculo ?? "") + " " + (t.Anio ?? "")).Trim();
+            if (modelo == "") modelo = "-";
+
+            if (!string.IsNullOrWhiteSpace(t.Empresa))
+                lblLogo.Text = t.Empresa.ToUpper();
+
+            lblClienteV.Text = string.IsNullOrWhiteSpace(t.Cliente) ? "-" : t.Cliente;
+            lblNitCiV.Text = string.IsNullOrWhiteSpace(t.NitCi) ? "-" : t.NitCi;
+            lblNitCiFirma.Text = "NIT/CI: " + (string.IsNullOrWhiteSpace(t.NitCi) ? "-" : t.NitCi);
+            lblPlaca.Text = "Placa: " + placa;
+            lblModelo.Text = "Modelo: " + modelo;
+            lblMarca.Text = "Marca: " + (string.IsNullOrWhiteSpace(t.Marca) ? "-" : t.Marca);
+            lblColor.Text = "Color: " + (string.IsNullOrWhiteSpace(t.Color) ? "-" : t.Color);
+            lblClase.Text = "Clase: " + (string.IsNullOrWhiteSpace(t.Clase) ? "-" : t.Clase);
+            lblChasis.Text = "Chasis: " + (string.IsNullOrWhiteSpace(t.Chasis) ? "-" : t.Chasis);
+            lblDoc4.Text = "4. PAR DE PLACAS N° " + placa + " (Original)";
+
+            DateTime fecha = (t.FechaEntrega == DateTime.MinValue) ? DateTime.Now : t.FechaEntrega;
+            lblLugarFecha.Text = "Santa Cruz, " + fecha.ToString("dd 'de' MMMM 'de' yyyy", new CultureInfo("es-BO"));
+
+            string datosQr = "GDCON | " + t.NroTramite + " | " + t.Empresa +
+                             " | Chasis: " + t.Chasis + " | Placa: " + placa +
+                             " | Modalidad: CREDITO | Cliente: " + t.Cliente;
+            GenerarQr(datosQr);
+        }
+
+        private void GenerarQr(string texto)
+        {
+            using (QRCodeGenerator gen = new QRCodeGenerator())
+            using (QRCodeData data = gen.CreateQrCode(texto, QRCodeGenerator.ECCLevel.Q))
+            using (QRCode qr = new QRCode(data))
+            {
+                picQr.Image = qr.GetGraphic(5);
+            }
         }
 
         private PrintDocument CrearDocumento()

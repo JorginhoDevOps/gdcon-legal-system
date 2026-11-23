@@ -15,6 +15,7 @@ namespace CapaPresentacion
         public FrmListadoBanco()
         {
             InitializeComponent();
+            EstiloUI.SoloBarra(this);
         }
     }
 }

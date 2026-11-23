@@ -8,6 +8,7 @@ namespace CapaPresentacion
         public FrmConsolidado()
         {
             InitializeComponent();
+            EstiloUI.SoloBarra(this);
             lblFecha.Text = "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy");
         }
 

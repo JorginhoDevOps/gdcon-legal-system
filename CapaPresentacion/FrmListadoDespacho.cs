@@ -10,6 +10,7 @@ namespace CapaPresentacion
         public FrmListadoDespacho()
         {
             InitializeComponent();
+            EstiloUI.SoloBarra(this);
             lblFecha.Text = "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy");
             CargarEjemplo();
         }
