@@ -52,7 +52,7 @@
             this.pnlBordePasos = new System.Windows.Forms.Panel();
             this.pnlCuerpo = new System.Windows.Forms.Panel();
             this.pnlLista = new System.Windows.Forms.Panel();
-            this.dgvPlacas = new System.Windows.Forms.DataGridView();
+            this.dgvRecepciones = new System.Windows.Forms.DataGridView();
             this.colChasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colModalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,14 +66,11 @@
             this.pnlAviso = new System.Windows.Forms.Panel();
             this.pnlBordeAviso = new System.Windows.Forms.Panel();
             this.tlpCampos = new System.Windows.Forms.TableLayoutPanel();
-            this.txtHoraIngreso = new System.Windows.Forms.TextBox();
-            this.txtFechaIngreso = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.rbCredito = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
             this.lblModalidad = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtColor = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.lblColor = new System.Windows.Forms.Label();
             this.lblChasis = new System.Windows.Forms.Label();
             this.txtChasis = new System.Windows.Forms.TextBox();
@@ -95,11 +92,12 @@
             this.rbContado = new System.Windows.Forms.RadioButton();
             this.chkDespacho = new System.Windows.Forms.CheckBox();
             this.lblEncabezadoDatos = new System.Windows.Forms.Label();
+            this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
             this.pnlPasos.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
             this.pnlLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlacas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepciones)).BeginInit();
             this.pnlDatos.SuspendLayout();
             this.pnlAviso.SuspendLayout();
             this.tlpCampos.SuspendLayout();
@@ -149,6 +147,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(85, 44);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
@@ -269,7 +268,7 @@
             this.lblPaso4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(167)))), ((int)(((byte)(182)))));
             this.lblPaso4.Location = new System.Drawing.Point(570, 12);
             this.lblPaso4.Name = "lblPaso4";
-            this.lblPaso4.Size = new System.Drawing.Size(101, 15);
+            this.lblPaso4.Size = new System.Drawing.Size(100, 15);
             this.lblPaso4.TabIndex = 4;
             this.lblPaso4.Text = "④ Tránsito   ─────";
             // 
@@ -309,7 +308,7 @@
             // 
             this.pnlLista.BackColor = System.Drawing.Color.White;
             this.pnlLista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlLista.Controls.Add(this.dgvPlacas);
+            this.pnlLista.Controls.Add(this.dgvRecepciones);
             this.pnlLista.Controls.Add(this.lblEncabezadoLista);
             this.pnlLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLista.Location = new System.Drawing.Point(312, 10);
@@ -317,17 +316,17 @@
             this.pnlLista.Size = new System.Drawing.Size(738, 647);
             this.pnlLista.TabIndex = 2;
             // 
-            // dgvPlacas
+            // dgvRecepciones
             // 
-            this.dgvPlacas.AllowUserToAddRows = false;
-            this.dgvPlacas.AllowUserToDeleteRows = false;
-            this.dgvPlacas.AllowUserToResizeRows = false;
+            this.dgvRecepciones.AllowUserToAddRows = false;
+            this.dgvRecepciones.AllowUserToDeleteRows = false;
+            this.dgvRecepciones.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvPlacas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPlacas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPlacas.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPlacas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPlacas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvRecepciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRecepciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRecepciones.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRecepciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRecepciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -335,10 +334,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlacas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPlacas.ColumnHeadersHeight = 30;
-            this.dgvPlacas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvPlacas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRecepciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRecepciones.ColumnHeadersHeight = 30;
+            this.dgvRecepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvRecepciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChasis,
             this.colCliente,
             this.colModalidad,
@@ -353,20 +352,20 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPlacas.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPlacas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPlacas.EnableHeadersVisualStyles = false;
-            this.dgvPlacas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
-            this.dgvPlacas.Location = new System.Drawing.Point(0, 26);
-            this.dgvPlacas.MultiSelect = false;
-            this.dgvPlacas.Name = "dgvPlacas";
-            this.dgvPlacas.ReadOnly = true;
-            this.dgvPlacas.RowHeadersVisible = false;
-            this.dgvPlacas.RowHeadersWidth = 82;
-            this.dgvPlacas.RowTemplate.Height = 28;
-            this.dgvPlacas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlacas.Size = new System.Drawing.Size(736, 619);
-            this.dgvPlacas.TabIndex = 1;
+            this.dgvRecepciones.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvRecepciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRecepciones.EnableHeadersVisualStyles = false;
+            this.dgvRecepciones.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
+            this.dgvRecepciones.Location = new System.Drawing.Point(0, 26);
+            this.dgvRecepciones.MultiSelect = false;
+            this.dgvRecepciones.Name = "dgvRecepciones";
+            this.dgvRecepciones.ReadOnly = true;
+            this.dgvRecepciones.RowHeadersVisible = false;
+            this.dgvRecepciones.RowHeadersWidth = 82;
+            this.dgvRecepciones.RowTemplate.Height = 28;
+            this.dgvRecepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRecepciones.Size = new System.Drawing.Size(736, 619);
+            this.dgvRecepciones.TabIndex = 1;
             // 
             // colChasis
             // 
@@ -489,14 +488,11 @@
             this.tlpCampos.ColumnCount = 2;
             this.tlpCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCampos.Controls.Add(this.txtHoraIngreso, 1, 15);
-            this.tlpCampos.Controls.Add(this.txtFechaIngreso, 0, 15);
             this.tlpCampos.Controls.Add(this.label9, 0, 14);
             this.tlpCampos.Controls.Add(this.rbCredito, 1, 13);
-            this.tlpCampos.Controls.Add(this.label8, 1, 14);
             this.tlpCampos.Controls.Add(this.lblModalidad, 0, 12);
-            this.tlpCampos.Controls.Add(this.textBox2, 1, 11);
-            this.tlpCampos.Controls.Add(this.textBox1, 0, 11);
+            this.tlpCampos.Controls.Add(this.txtColor, 1, 11);
+            this.tlpCampos.Controls.Add(this.txtYear, 0, 11);
             this.tlpCampos.Controls.Add(this.lblColor, 1, 10);
             this.tlpCampos.Controls.Add(this.lblChasis, 0, 0);
             this.tlpCampos.Controls.Add(this.txtChasis, 0, 1);
@@ -517,6 +513,7 @@
             this.tlpCampos.Controls.Add(this.txtTipoVehiculo, 0, 9);
             this.tlpCampos.Controls.Add(this.rbContado, 0, 13);
             this.tlpCampos.Controls.Add(this.chkDespacho, 0, 16);
+            this.tlpCampos.Controls.Add(this.dtpIngreso, 1, 14);
             this.tlpCampos.Location = new System.Drawing.Point(10, 36);
             this.tlpCampos.Name = "tlpCampos";
             this.tlpCampos.RowCount = 17;
@@ -538,29 +535,15 @@
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCampos.Size = new System.Drawing.Size(269, 477);
             this.tlpCampos.TabIndex = 1;
             this.tlpCampos.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpCampos_Paint);
             // 
-            // txtHoraIngreso
-            // 
-            this.txtHoraIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHoraIngreso.Location = new System.Drawing.Point(137, 390);
-            this.txtHoraIngreso.Name = "txtHoraIngreso";
-            this.txtHoraIngreso.Size = new System.Drawing.Size(129, 23);
-            this.txtHoraIngreso.TabIndex = 22;
-            // 
-            // txtFechaIngreso
-            // 
-            this.txtFechaIngreso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFechaIngreso.Location = new System.Drawing.Point(3, 390);
-            this.txtFechaIngreso.Name = "txtFechaIngreso";
-            this.txtFechaIngreso.Size = new System.Drawing.Size(128, 23);
-            this.txtFechaIngreso.TabIndex = 21;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.tlpCampos.SetColumnSpan(this.label9, 2);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.label9.Location = new System.Drawing.Point(0, 360);
             this.label9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
@@ -581,17 +564,6 @@
             this.rbCredito.Text = "Crédito";
             this.rbCredito.UseVisualStyleBackColor = true;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label8.Location = new System.Drawing.Point(134, 360);
-            this.label8.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 15);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Hora";
-            // 
             // lblModalidad
             // 
             this.lblModalidad.AutoSize = true;
@@ -604,21 +576,21 @@
             this.lblModalidad.TabIndex = 16;
             this.lblModalidad.Text = "Modalidad";
             // 
-            // textBox2
+            // txtColor
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(137, 289);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 23);
-            this.textBox2.TabIndex = 15;
+            this.txtColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtColor.Location = new System.Drawing.Point(137, 289);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(129, 23);
+            this.txtColor.TabIndex = 15;
             // 
-            // textBox1
+            // txtYear
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 289);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 23);
-            this.textBox1.TabIndex = 14;
+            this.txtYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtYear.Location = new System.Drawing.Point(3, 289);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(128, 23);
+            this.txtYear.TabIndex = 14;
             // 
             // lblColor
             // 
@@ -690,7 +662,7 @@
             this.lblDocumento.Location = new System.Drawing.Point(134, 55);
             this.lblDocumento.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
             this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(48, 15);
+            this.lblDocumento.Size = new System.Drawing.Size(47, 15);
             this.lblDocumento.TabIndex = 2;
             this.lblDocumento.Text = "NIT / CI";
             // 
@@ -754,7 +726,7 @@
             this.lblTipoVehiculo.Location = new System.Drawing.Point(0, 217);
             this.lblTipoVehiculo.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
-            this.lblTipoVehiculo.Size = new System.Drawing.Size(95, 15);
+            this.lblTipoVehiculo.Size = new System.Drawing.Size(94, 15);
             this.lblTipoVehiculo.TabIndex = 6;
             this.lblTipoVehiculo.Text = "Tipo de Vehiculo";
             // 
@@ -792,7 +764,6 @@
             this.txtPoliza.Name = "txtPoliza";
             this.txtPoliza.Size = new System.Drawing.Size(132, 25);
             this.txtPoliza.TabIndex = 7;
-            this.txtPoliza.Text = "450.00";
             this.txtPoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbMarca
@@ -857,9 +828,9 @@
             this.chkDespacho.Location = new System.Drawing.Point(3, 422);
             this.chkDespacho.Name = "chkDespacho";
             this.tlpCampos.SetRowSpan(this.chkDespacho, 2);
-            this.chkDespacho.Size = new System.Drawing.Size(178, 19);
+            this.chkDespacho.Size = new System.Drawing.Size(198, 19);
             this.chkDespacho.TabIndex = 23;
-            this.chkDespacho.Text = "Desacho a Alcaldía y Diprove";
+            this.chkDespacho.Text = "Despachado a Alcaldía y Diprove";
             this.chkDespacho.UseVisualStyleBackColor = true;
             // 
             // lblEncabezadoDatos
@@ -875,6 +846,14 @@
             this.lblEncabezadoDatos.TabIndex = 0;
             this.lblEncabezadoDatos.Text = "Datos del trámite — Recepción y Despacho";
             this.lblEncabezadoDatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dtpIngreso
+            // 
+            this.tlpCampos.SetColumnSpan(this.dtpIngreso, 2);
+            this.dtpIngreso.Location = new System.Drawing.Point(3, 390);
+            this.dtpIngreso.Name = "dtpIngreso";
+            this.dtpIngreso.Size = new System.Drawing.Size(262, 23);
+            this.dtpIngreso.TabIndex = 24;
             // 
             // FrmRecepcion
             // 
@@ -897,7 +876,7 @@
             this.pnlPasos.PerformLayout();
             this.pnlCuerpo.ResumeLayout(false);
             this.pnlLista.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlacas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepciones)).EndInit();
             this.pnlDatos.ResumeLayout(false);
             this.pnlAviso.ResumeLayout(false);
             this.tlpCampos.ResumeLayout(false);
@@ -926,7 +905,7 @@
         private System.Windows.Forms.Panel pnlBordePasos;
         private System.Windows.Forms.Panel pnlCuerpo;
         private System.Windows.Forms.Panel pnlLista;
-        private System.Windows.Forms.DataGridView dgvPlacas;
+        private System.Windows.Forms.DataGridView dgvRecepciones;
         private System.Windows.Forms.Label lblEncabezadoLista;
         private System.Windows.Forms.Panel pnlSeparador;
         private System.Windows.Forms.Panel pnlDatos;
@@ -951,14 +930,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.TextBox txtTipoVehiculo;
-        private System.Windows.Forms.TextBox txtHoraIngreso;
-        private System.Windows.Forms.TextBox txtFechaIngreso;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rbCredito;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblModalidad;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtColor;
+        private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.RadioButton rbContado;
         private System.Windows.Forms.CheckBox chkDespacho;
@@ -969,5 +945,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPoliza;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
+        private System.Windows.Forms.DateTimePicker dtpIngreso;
     }
 }
