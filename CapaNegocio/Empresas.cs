@@ -2,6 +2,8 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Text.Json;
 
 namespace CapaNegocio
 {
@@ -107,60 +109,51 @@ namespace CapaNegocio
         }
         #endregion
 
-        #region "ARCHIVO TIPO TEXTO"
-        string Archivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "Empresas.txt");
+        #region "ARCHIVO JSON"
+        string Archivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "Empresas.json");
+        JsonSerializerOptions OpcionesJson = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            IncludeFields = true
+        };
 
         public void VectorEmpresas_Archivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            using (StreamWriter Obj = File.CreateText(Archivo))
-            {
-                string Linea;
-                for (int V = 0; V <= Vis; V++)
-                {
-                    Linea = VEmpresas[V].Codigo.ToString() + "*" +
-                        Limpiar(VEmpresas[V].Nombre) + "*" +
-                        Limpiar(VEmpresas[V].Nit) + "*" +
-                        VEmpresas[V].HonorarioContado.ToString(CultureInfo.InvariantCulture) + "*" +
-                        VEmpresas[V].HonorarioCredito.ToString(CultureInfo.InvariantCulture) + "*";
-                    Obj.WriteLine(Linea);
-                }
-            }
+            List<Empresa> Lista = new List<Empresa>();
+            for (int V = 0; V <= Vis; V++)
+                Lista.Add(VEmpresas[V]);
+
+            string Json = JsonSerializer.Serialize(Lista, OpcionesJson);
+            File.WriteAllText(Archivo, Json);
         }
 
         public void Archivo_VectorEmpresas()
         {
             Vis = -1;
             if (!File.Exists(Archivo))
+            {
                 CrearArchivo();
+            }
             else
             {
-                using (StreamReader Obj = File.OpenText(Archivo))
+                try
                 {
-                    string Linea;
-                    string[] Separados;
-                    while ((Linea = Obj.ReadLine()) != null)
+                    string Json = File.ReadAllText(Archivo);
+                    List<Empresa> Lista = JsonSerializer.Deserialize<List<Empresa>>(Json, OpcionesJson);
+                    if (Lista != null)
                     {
-                        if (!HayEspacio()) break;
-                        Separados = Linea.Split('*');
-                        if (Separados.Length < 5) continue;
-                        Empresa E;
-                        try
+                        for (int I = 0; I < Lista.Count; I++)
                         {
-                            E = new Empresa();
-                            E.Codigo = Convert.ToInt32(Separados[0]);
-                            E.Nombre = Separados[1];
-                            E.Nit = Separados[2];
-                            E.HonorarioContado = double.Parse(Separados[3], CultureInfo.InvariantCulture);
-                            E.HonorarioCredito = double.Parse(Separados[4], CultureInfo.InvariantCulture);
+                            if (!HayEspacio()) break;
+                            Incrementar();
+                            VEmpresas[Vis] = Lista[I];
                         }
-                        catch (FormatException)
-                        {
-                            continue;
-                        }
-                        Incrementar();
-                        VEmpresas[Vis] = E;
                     }
+                }
+                catch
+                {
+                    CrearArchivo();
                 }
             }
             if (Vis == -1) CrearEmpresasPrueba();
@@ -169,8 +162,7 @@ namespace CapaNegocio
         public void CrearArchivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            using (StreamWriter Obj = File.CreateText(Archivo))
-            { }
+            File.WriteAllText(Archivo, "[]");
         }
 
         // Valores de PRUEBA: el administrador los cambiará con los honorarios reales
@@ -184,12 +176,6 @@ namespace CapaNegocio
             Incrementar();
             Guardar(new Empresa { Nombre = "OVANDO", Nit = "", HonorarioContado = 800, HonorarioCredito = 950 });
             VectorEmpresas_Archivo();
-        }
-
-        static string Limpiar(string Texto)
-        {
-            if (Texto == null) return "";
-            return Texto.Replace("*", " ").Replace("\r", " ").Replace("\n", " ");
         }
         #endregion
     }

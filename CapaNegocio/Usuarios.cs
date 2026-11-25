@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text.Json;
 
 namespace CapaNegocio
 {
@@ -15,12 +16,14 @@ namespace CapaNegocio
         Usuario[] VUsuarios = new Usuario[30];
         int Vis;
         #endregion
+
         #region "CONSTRUCTOR"
         public Usuarios()
         {
             Vis = -1;
         }
         #endregion
+
         #region "METODOS"
         public void Incrementar()
         {
@@ -101,65 +104,62 @@ namespace CapaNegocio
         }
         #endregion
 
-        #region "ARCHIVO TIPO TEXTO"
-       
-        string Archivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "Usuarios.txt");
+        #region "ARCHIVO JSON"
+        string Archivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "Usuarios.json");
+        JsonSerializerOptions OpcionesJson = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            IncludeFields = true
+        };
 
         public void VectorUsuarios_Archivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            using (StreamWriter Obj = File.CreateText(Archivo))
-            {
-                string Linea;
-                for (int V = 0; V <= Vis; V++)
-                {
-                    Linea = VUsuarios[V].Codigo.ToString() + "*" +
-                        VUsuarios[V].Ci + "*" +
-                        VUsuarios[V].Nombre + "*" +
-                        VUsuarios[V].Correo + "*" +
-                        VUsuarios[V].ClaveHash + "*" +
-                        VUsuarios[V].Rol + "*";
-                    Obj.WriteLine(Linea);
-                }
-            }
+            List<Usuario> Lista = new List<Usuario>();
+            for (int V = 0; V <= Vis; V++)
+                Lista.Add(VUsuarios[V]);
+
+            string Json = JsonSerializer.Serialize(Lista, OpcionesJson);
+            File.WriteAllText(Archivo, Json);
         }
 
         public void Archivo_VectorUsuarios()
         {
             Vis = -1;
-            try
-            {
-                using (StreamReader Obj = File.OpenText(Archivo))
-                {
-                    string Linea;
-                    string[] Separados = new string[6];
-                    while ((Linea = Obj.ReadLine()) != null)
-                    {
-                        if (!HayEspacio()) break;
-                        Separados = Linea.Split('*');
-                        Incrementar();
-                        VUsuarios[Vis] = new Usuario();
-                        VUsuarios[Vis].Codigo = Convert.ToInt32(Separados[0]);
-                        VUsuarios[Vis].Ci = Separados[1];
-                        VUsuarios[Vis].Nombre = Separados[2];
-                        VUsuarios[Vis].Correo = Separados[3];
-                        VUsuarios[Vis].ClaveHash = Separados[4];
-                        VUsuarios[Vis].Rol = Separados[5];
-                    }
-                }
-            }
-            catch
+            if (!File.Exists(Archivo))
             {
                 CrearArchivo();
             }
+            else
+            {
+                try
+                {
+                    string Json = File.ReadAllText(Archivo);
+                    List<Usuario> Lista = JsonSerializer.Deserialize<List<Usuario>>(Json, OpcionesJson);
+                    if (Lista != null)
+                    {
+                        for (int I = 0; I < Lista.Count; I++)
+                        {
+                            if (!HayEspacio()) break;
+                            Incrementar();
+                            VUsuarios[Vis] = Lista[I];
+                        }
+                    }
+                }
+                catch
+                {
+                    CrearArchivo();
+                }
+            }
             if (Vis == -1) CrearUsuariosPrueba();
         }
+
         public void CrearArchivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            using (StreamWriter Obj = File.CreateText(Archivo))
-            { }
+            File.WriteAllText(Archivo, "[]");
         }
+
         void CrearUsuariosPrueba()
         {
             Vis = -1;

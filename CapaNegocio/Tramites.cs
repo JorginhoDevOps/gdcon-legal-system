@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
+using System.Text.Json;
 
 namespace CapaNegocio
 {
@@ -78,8 +79,7 @@ namespace CapaNegocio
         #endregion
 
         #region "RECEPCION (RF-01)"
-        // Devuelve la lista de errores: cada elemento es (campo, mensaje).
-        // Lista vacía = datos válidos. PosActual = -1 si es un trámite nuevo.
+      
         public List<KeyValuePair<string, string>> Validar(Tramite T, int PosActual)
         {
             List<KeyValuePair<string, string>> Errores = new List<KeyValuePair<string, string>>();
@@ -457,32 +457,23 @@ namespace CapaNegocio
         }
         #endregion
 
-        #region "ARCHIVO TIPO TEXTO"
-        string Archivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "Tramites.txt");
+        #region "ARCHIVO JSON"
+        string Archivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "Tramites.json");
+        JsonSerializerOptions OpcionesJson = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            IncludeFields = true
+        };
 
         public void VectorTramites_Archivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            using (StreamWriter Obj = File.CreateText(Archivo))
-            {
-                for (int V = 0; V <= Vis; V++)
-                {
-                    Tramite T = VTramites[V];
-                    string Linea =
-                        T.Codigo.ToString() + "*" +
-                        L(T.NroTramite) + "*" + L(T.Empresa) + "*" + L(T.Chasis) + "*" +
-                        L(T.NitCi) + "*" + L(T.Cliente) + "*" + L(T.Poliza) + "*" +
-                        L(T.Modalidad) + "*" + L(T.Marca) + "*" + L(T.Clase) + "*" +
-                        L(T.TipoVehiculo) + "*" + L(T.Anio) + "*" + L(T.Color) + "*" +
-                        F(T.FechaIngreso) + "*" + L(T.Estado) + "*" + F(T.FechaDespacho) + "*" +
-                        N(T.Honorario) + "*" +
-                        L(T.Placa) + "*" + B(T.Ruat) + "*" + L(T.Comprobante) + "*" +
-                        N(T.MontoPago) + "*" + B(T.PagoRealizado) + "*" +
-                        L(T.InformeDiprove) + "*" + F(T.FechaRetorno) + "*" + F(T.FechaEnvioTransito) + "*" +
-                        L(T.EntregadoA) + "*" + F(T.FechaEntrega) + "*" + L(T.Requisitos) + "*";
-                    Obj.WriteLine(Linea);
-                }
-            }
+            List<Tramite> Lista = new List<Tramite>();
+            for (int V = 0; V <= Vis; V++)
+                Lista.Add(VTramites[V]);
+
+            string Json = JsonSerializer.Serialize(Lista, OpcionesJson);
+            File.WriteAllText(Archivo, Json);
         }
 
         public void Archivo_VectorTramites()
@@ -493,63 +484,30 @@ namespace CapaNegocio
                 CrearArchivo();
                 return;
             }
-            using (StreamReader Obj = File.OpenText(Archivo))
+            try
             {
-                string Linea;
-                string[] S;
-                while ((Linea = Obj.ReadLine()) != null)
+                string Json = File.ReadAllText(Archivo);
+                List<Tramite> Lista = JsonSerializer.Deserialize<List<Tramite>>(Json, OpcionesJson);
+                if (Lista != null)
                 {
-                    if (!HayEspacio()) break;
-                    S = Linea.Split('*');
-                    if (S.Length < 2) continue;
-                    Tramite T;
-                    try
+                    for (int I = 0; I < Lista.Count; I++)
                     {
-                        T = new Tramite();
-                        T.Codigo = Convert.ToInt32(G(S, 0));
-                        T.NroTramite = G(S, 1);
-                        T.Empresa = G(S, 2);
-                        T.Chasis = G(S, 3);
-                        T.NitCi = G(S, 4);
-                        T.Cliente = G(S, 5);
-                        T.Poliza = G(S, 6);
-                        T.Modalidad = G(S, 7);
-                        T.Marca = G(S, 8);
-                        T.Clase = G(S, 9);
-                        T.TipoVehiculo = G(S, 10);
-                        T.Anio = G(S, 11);
-                        T.Color = G(S, 12);
-                        T.FechaIngreso = D(G(S, 13));
-                        T.Estado = G(S, 14);
-                        T.FechaDespacho = D(G(S, 15));
-                        T.Honorario = Num(G(S, 16));
-                        T.Placa = G(S, 17);
-                        T.Ruat = G(S, 18) == "1";
-                        T.Comprobante = G(S, 19);
-                        T.MontoPago = Num(G(S, 20));
-                        T.PagoRealizado = G(S, 21) == "1";
-                        T.InformeDiprove = G(S, 22);
-                        T.FechaRetorno = D(G(S, 23));
-                        T.FechaEnvioTransito = D(G(S, 24));
-                        T.EntregadoA = G(S, 25);
-                        T.FechaEntrega = D(G(S, 26));
-                        T.Requisitos = G(S, 27);
+                        if (!HayEspacio()) break;
+                        Incrementar();
+                        VTramites[Vis] = Lista[I];
                     }
-                    catch (FormatException)
-                    {
-                        continue;   // línea dañada: se salta, no se borra el archivo
-                    }
-                    Incrementar();
-                    VTramites[Vis] = T;
                 }
+            }
+            catch
+            {
+                CrearArchivo();
             }
         }
 
         public void CrearArchivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            using (StreamWriter Obj = File.CreateText(Archivo))
-            { }
+            File.WriteAllText(Archivo, "[]");
         }
         #endregion
 
