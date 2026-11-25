@@ -2,15 +2,8 @@
 {
     partial class FrmUsuarios
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,20 +15,22 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarios));
+            this.pnlGuia = new System.Windows.Forms.Panel();
+            this.lblSubtituloModulo = new System.Windows.Forms.Label();
+            this.lblTituloModulo = new System.Windows.Forms.Label();
             this.pnlCuerpo = new System.Windows.Forms.Panel();
+            this.pnlLista = new System.Windows.Forms.Panel();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.colCI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlEncabezadoLista = new System.Windows.Forms.Panel();
+            this.lblTituloLista = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.cmbRol = new System.Windows.Forms.ComboBox();
@@ -57,25 +52,93 @@
             this.btnLimpiar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.pnlGuia.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
+            this.pnlLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.pnlEncabezadoLista.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlEncabezadoDatos.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // pnlGuia
+            // 
+            this.pnlGuia.BackColor = System.Drawing.Color.White;
+            this.pnlGuia.Controls.Add(this.lblSubtituloModulo);
+            this.pnlGuia.Controls.Add(this.lblTituloModulo);
+            this.pnlGuia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlGuia.Location = new System.Drawing.Point(0, 44);
+            this.pnlGuia.Name = "pnlGuia";
+            this.pnlGuia.Padding = new System.Windows.Forms.Padding(16, 10, 16, 8);
+            this.pnlGuia.Size = new System.Drawing.Size(1000, 58);
+            this.pnlGuia.TabIndex = 1;
+            // 
+            // lblTituloModulo
+            // 
+            this.lblTituloModulo.AutoSize = true;
+            this.lblTituloModulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTituloModulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            this.lblTituloModulo.Location = new System.Drawing.Point(16, 8);
+            this.lblTituloModulo.Name = "lblTituloModulo";
+            this.lblTituloModulo.Size = new System.Drawing.Size(232, 21);
+            this.lblTituloModulo.TabIndex = 0;
+            this.lblTituloModulo.Text = "Gestión de Usuarios y Accesos";
+            // 
+            // lblSubtituloModulo
+            // 
+            this.lblSubtituloModulo.AutoSize = true;
+            this.lblSubtituloModulo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblSubtituloModulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.lblSubtituloModulo.Location = new System.Drawing.Point(16, 32);
+            this.lblSubtituloModulo.Name = "lblSubtituloModulo";
+            this.lblSubtituloModulo.Size = new System.Drawing.Size(610, 15);
+            this.lblSubtituloModulo.TabIndex = 1;
+            this.lblSubtituloModulo.Text = "Presiona Agregar para registrar un nuevo usuario, o haz clic en una fila de la tabla para modificarlo o eliminarlo.";
+            // 
             // pnlCuerpo
             // 
             this.pnlCuerpo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCuerpo.Controls.Add(this.dgvUsuarios);
+            this.pnlCuerpo.Controls.Add(this.pnlLista);
             this.pnlCuerpo.Controls.Add(this.panel1);
             this.pnlCuerpo.Controls.Add(this.pnlDatos);
             this.pnlCuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCuerpo.Location = new System.Drawing.Point(0, 44);
+            this.pnlCuerpo.Location = new System.Drawing.Point(0, 102);
             this.pnlCuerpo.Name = "pnlCuerpo";
             this.pnlCuerpo.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlCuerpo.Size = new System.Drawing.Size(1000, 606);
-            this.pnlCuerpo.TabIndex = 1;
+            this.pnlCuerpo.Size = new System.Drawing.Size(1000, 548);
+            this.pnlCuerpo.TabIndex = 2;
+            // 
+            // pnlLista
+            // 
+            this.pnlLista.Controls.Add(this.dgvUsuarios);
+            this.pnlLista.Controls.Add(this.pnlEncabezadoLista);
+            this.pnlLista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLista.Location = new System.Drawing.Point(377, 12);
+            this.pnlLista.Name = "pnlLista";
+            this.pnlLista.Size = new System.Drawing.Size(609, 522);
+            this.pnlLista.TabIndex = 2;
+            // 
+            // pnlEncabezadoLista
+            // 
+            this.pnlEncabezadoLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            this.pnlEncabezadoLista.Controls.Add(this.lblTituloLista);
+            this.pnlEncabezadoLista.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlEncabezadoLista.Location = new System.Drawing.Point(0, 0);
+            this.pnlEncabezadoLista.Name = "pnlEncabezadoLista";
+            this.pnlEncabezadoLista.Size = new System.Drawing.Size(609, 35);
+            this.pnlEncabezadoLista.TabIndex = 1;
+            // 
+            // lblTituloLista
+            // 
+            this.lblTituloLista.AutoSize = true;
+            this.lblTituloLista.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloLista.ForeColor = System.Drawing.Color.White;
+            this.lblTituloLista.Location = new System.Drawing.Point(10, 8);
+            this.lblTituloLista.Name = "lblTituloLista";
+            this.lblTituloLista.Size = new System.Drawing.Size(305, 17);
+            this.lblTituloLista.TabIndex = 0;
+            this.lblTituloLista.Text = "Usuarios registrados (clic en una fila para editar)";
             // 
             // dgvUsuarios
             // 
@@ -100,10 +163,10 @@
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.EnableHeadersVisualStyles = false;
             this.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dgvUsuarios.Location = new System.Drawing.Point(377, 12);
+            this.dgvUsuarios.Location = new System.Drawing.Point(0, 35);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(609, 580);
-            this.dgvUsuarios.TabIndex = 2;
+            this.dgvUsuarios.Size = new System.Drawing.Size(609, 487);
+            this.dgvUsuarios.TabIndex = 0;
             // 
             // colCI
             // 
@@ -131,7 +194,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(362, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(15, 580);
+            this.panel1.Size = new System.Drawing.Size(15, 522);
             this.panel1.TabIndex = 1;
             // 
             // pnlDatos
@@ -151,7 +214,7 @@
             this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlDatos.Location = new System.Drawing.Point(12, 12);
             this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(350, 580);
+            this.pnlDatos.Size = new System.Drawing.Size(350, 522);
             this.pnlDatos.TabIndex = 0;
             // 
             // cmbRol
@@ -351,12 +414,18 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.pnlCuerpo);
+            this.Controls.Add(this.pnlGuia);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUsuarios";
             this.Text = "FrmUsuarios";
+            this.pnlGuia.ResumeLayout(false);
+            this.pnlGuia.PerformLayout();
             this.pnlCuerpo.ResumeLayout(false);
+            this.pnlLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.pnlEncabezadoLista.ResumeLayout(false);
+            this.pnlEncabezadoLista.PerformLayout();
             this.pnlDatos.ResumeLayout(false);
             this.pnlDatos.PerformLayout();
             this.pnlEncabezadoDatos.ResumeLayout(false);
@@ -364,12 +433,17 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel pnlGuia;
+        private System.Windows.Forms.Label lblTituloModulo;
+        private System.Windows.Forms.Label lblSubtituloModulo;
         private System.Windows.Forms.Panel pnlCuerpo;
+        private System.Windows.Forms.Panel pnlLista;
+        private System.Windows.Forms.Panel pnlEncabezadoLista;
+        private System.Windows.Forms.Label lblTituloLista;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnModificar;

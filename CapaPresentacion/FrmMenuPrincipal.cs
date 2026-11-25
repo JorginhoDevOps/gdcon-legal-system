@@ -69,6 +69,7 @@ namespace CapaPresentacion
 
             // Solo el Administrador puede entrar a Configuración
             btnConfiguracion.Visible = EsAdministrador();
+            btnEmpresas.Visible = EsAdministrador();
         }
         private string ObtenerIniciales(string nombre)
         {
@@ -212,6 +213,11 @@ namespace CapaPresentacion
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmUsuarios(UsuarioActual), btnConfiguracion);
+        }
+
+        private void btnEmpresas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmEmpresas(), btnEmpresas);
         }
     }
 }

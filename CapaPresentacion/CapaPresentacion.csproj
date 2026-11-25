@@ -74,6 +74,12 @@
     <Compile Include="FrmConsolidado.Designer.cs">
       <DependentUpon>FrmConsolidado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmpresas.Designer.cs">
+      <DependentUpon>FrmEmpresas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEntregaFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     </Compile>
     <Compile Include="FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevaEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevaEmpresa.Designer.cs">
+      <DependentUpon>FrmNuevaEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNuevoUsuario.cs">
       <SubType>Form</SubType>

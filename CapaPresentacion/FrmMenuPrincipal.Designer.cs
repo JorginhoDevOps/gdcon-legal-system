@@ -104,6 +104,7 @@
             this.pnlTituloPagina = new System.Windows.Forms.Panel();
             this.lblTituloPagina = new System.Windows.Forms.Label();
             this.lblFechaActual = new System.Windows.Forms.Label();
+            this.btnEmpresas = new System.Windows.Forms.Button();
             this.pnlLateral.SuspendLayout();
             this.pnlUsuario.SuspendLayout();
             this.pnlLogo.SuspendLayout();
@@ -124,6 +125,7 @@
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            this.pnlLateral.Controls.Add(this.btnEmpresas);
             this.pnlLateral.Controls.Add(this.btnSalir);
             this.pnlLateral.Controls.Add(this.btnConfiguracion);
             this.pnlLateral.Controls.Add(this.btnListadoEntrega);
@@ -293,7 +295,7 @@
             this.lblEmpresaUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblEmpresaUsuario.Location = new System.Drawing.Point(60, 40);
             this.lblEmpresaUsuario.Name = "lblEmpresaUsuario";
-            this.lblEmpresaUsuario.Size = new System.Drawing.Size(292, 25);
+            this.lblEmpresaUsuario.Size = new System.Drawing.Size(151, 12);
             this.lblEmpresaUsuario.TabIndex = 2;
             this.lblEmpresaUsuario.Text = "Gestión de trámites para IMCRUZ";
             // 
@@ -304,7 +306,7 @@
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
             this.lblNombreUsuario.Location = new System.Drawing.Point(60, 22);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(180, 32);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(86, 15);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "Administrador";
             // 
@@ -443,7 +445,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(193)))), ((int)(((byte)(227)))));
             this.label2.Location = new System.Drawing.Point(0, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(394, 30);
+            this.label2.Size = new System.Drawing.Size(206, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Sistema de Gestión de Trámites Legales";
             // 
@@ -454,7 +456,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(24, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 51);
+            this.label1.Size = new System.Drawing.Size(159, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "GDCON SYSTEM";
             // 
@@ -660,9 +662,9 @@
             this.lblResumenRecibidos.AutoSize = true;
             this.lblResumenRecibidos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblResumenRecibidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblResumenRecibidos.Location = new System.Drawing.Point(15, 12);
+            this.lblResumenRecibidos.Location = new System.Drawing.Point(15, 20);
             this.lblResumenRecibidos.Name = "lblResumenRecibidos";
-            this.lblResumenRecibidos.Size = new System.Drawing.Size(162, 32);
+            this.lblResumenRecibidos.Size = new System.Drawing.Size(81, 15);
             this.lblResumenRecibidos.TabIndex = 0;
             this.lblResumenRecibidos.Text = "Recibidos hoy";
             // 
@@ -672,9 +674,9 @@
             this.lblResumenRecibidosValor.AutoSize = true;
             this.lblResumenRecibidosValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblResumenRecibidosValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblResumenRecibidosValor.Location = new System.Drawing.Point(222, 12);
+            this.lblResumenRecibidosValor.Location = new System.Drawing.Point(238, 18);
             this.lblResumenRecibidosValor.Name = "lblResumenRecibidosValor";
-            this.lblResumenRecibidosValor.Size = new System.Drawing.Size(33, 32);
+            this.lblResumenRecibidosValor.Size = new System.Drawing.Size(17, 19);
             this.lblResumenRecibidosValor.TabIndex = 1;
             this.lblResumenRecibidosValor.Text = "5";
             // 
@@ -684,9 +686,9 @@
             this.lblResumenDespachados.AutoSize = true;
             this.lblResumenDespachados.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblResumenDespachados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblResumenDespachados.Location = new System.Drawing.Point(15, 44);
+            this.lblResumenDespachados.Location = new System.Drawing.Point(15, 52);
             this.lblResumenDespachados.Name = "lblResumenDespachados";
-            this.lblResumenDespachados.Size = new System.Drawing.Size(162, 32);
+            this.lblResumenDespachados.Size = new System.Drawing.Size(100, 15);
             this.lblResumenDespachados.TabIndex = 2;
             this.lblResumenDespachados.Text = "Despachados hoy";
             // 
@@ -696,9 +698,9 @@
             this.lblResumenDespachadosValor.AutoSize = true;
             this.lblResumenDespachadosValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblResumenDespachadosValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblResumenDespachadosValor.Location = new System.Drawing.Point(222, 44);
+            this.lblResumenDespachadosValor.Location = new System.Drawing.Point(238, 50);
             this.lblResumenDespachadosValor.Name = "lblResumenDespachadosValor";
-            this.lblResumenDespachadosValor.Size = new System.Drawing.Size(33, 32);
+            this.lblResumenDespachadosValor.Size = new System.Drawing.Size(17, 19);
             this.lblResumenDespachadosValor.TabIndex = 3;
             this.lblResumenDespachadosValor.Text = "4";
             // 
@@ -708,9 +710,9 @@
             this.lblResumenPlacaPago.AutoSize = true;
             this.lblResumenPlacaPago.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblResumenPlacaPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblResumenPlacaPago.Location = new System.Drawing.Point(15, 76);
+            this.lblResumenPlacaPago.Location = new System.Drawing.Point(15, 84);
             this.lblResumenPlacaPago.Name = "lblResumenPlacaPago";
-            this.lblResumenPlacaPago.Size = new System.Drawing.Size(145, 32);
+            this.lblResumenPlacaPago.Size = new System.Drawing.Size(99, 15);
             this.lblResumenPlacaPago.TabIndex = 4;
             this.lblResumenPlacaPago.Text = "Con placa y pago";
             // 
@@ -720,9 +722,9 @@
             this.lblResumenPlacaPagoValor.AutoSize = true;
             this.lblResumenPlacaPagoValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblResumenPlacaPagoValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblResumenPlacaPagoValor.Location = new System.Drawing.Point(222, 76);
+            this.lblResumenPlacaPagoValor.Location = new System.Drawing.Point(238, 82);
             this.lblResumenPlacaPagoValor.Name = "lblResumenPlacaPagoValor";
-            this.lblResumenPlacaPagoValor.Size = new System.Drawing.Size(33, 32);
+            this.lblResumenPlacaPagoValor.Size = new System.Drawing.Size(17, 19);
             this.lblResumenPlacaPagoValor.TabIndex = 5;
             this.lblResumenPlacaPagoValor.Text = "4";
             // 
@@ -732,9 +734,9 @@
             this.lblResumenTransito.AutoSize = true;
             this.lblResumenTransito.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblResumenTransito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblResumenTransito.Location = new System.Drawing.Point(15, 108);
+            this.lblResumenTransito.Location = new System.Drawing.Point(15, 116);
             this.lblResumenTransito.Name = "lblResumenTransito";
-            this.lblResumenTransito.Size = new System.Drawing.Size(130, 32);
+            this.lblResumenTransito.Size = new System.Drawing.Size(65, 15);
             this.lblResumenTransito.TabIndex = 6;
             this.lblResumenTransito.Text = "En Tránsito";
             // 
@@ -744,9 +746,9 @@
             this.lblResumenTransitoValor.AutoSize = true;
             this.lblResumenTransitoValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblResumenTransitoValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblResumenTransitoValor.Location = new System.Drawing.Point(222, 108);
+            this.lblResumenTransitoValor.Location = new System.Drawing.Point(238, 114);
             this.lblResumenTransitoValor.Name = "lblResumenTransitoValor";
-            this.lblResumenTransitoValor.Size = new System.Drawing.Size(33, 32);
+            this.lblResumenTransitoValor.Size = new System.Drawing.Size(17, 19);
             this.lblResumenTransitoValor.TabIndex = 7;
             this.lblResumenTransitoValor.Text = "3";
             // 
@@ -756,9 +758,9 @@
             this.lblResumenEntregados.AutoSize = true;
             this.lblResumenEntregados.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblResumenEntregados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblResumenEntregados.Location = new System.Drawing.Point(15, 140);
+            this.lblResumenEntregados.Location = new System.Drawing.Point(15, 148);
             this.lblResumenEntregados.Name = "lblResumenEntregados";
-            this.lblResumenEntregados.Size = new System.Drawing.Size(159, 32);
+            this.lblResumenEntregados.Size = new System.Drawing.Size(122, 15);
             this.lblResumenEntregados.TabIndex = 8;
             this.lblResumenEntregados.Text = "Entregados a IMCRUZ";
             // 
@@ -768,9 +770,9 @@
             this.lblResumenEntregadosValor.AutoSize = true;
             this.lblResumenEntregadosValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblResumenEntregadosValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblResumenEntregadosValor.Location = new System.Drawing.Point(222, 140);
+            this.lblResumenEntregadosValor.Location = new System.Drawing.Point(238, 146);
             this.lblResumenEntregadosValor.Name = "lblResumenEntregadosValor";
-            this.lblResumenEntregadosValor.Size = new System.Drawing.Size(33, 32);
+            this.lblResumenEntregadosValor.Size = new System.Drawing.Size(17, 19);
             this.lblResumenEntregadosValor.TabIndex = 9;
             this.lblResumenEntregadosValor.Text = "3";
             // 
@@ -790,9 +792,9 @@
             this.lblResumenActasContado.AutoSize = true;
             this.lblResumenActasContado.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblResumenActasContado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblResumenActasContado.Location = new System.Drawing.Point(15, 192);
+            this.lblResumenActasContado.Location = new System.Drawing.Point(15, 200);
             this.lblResumenActasContado.Name = "lblResumenActasContado";
-            this.lblResumenActasContado.Size = new System.Drawing.Size(105, 32);
+            this.lblResumenActasContado.Size = new System.Drawing.Size(85, 15);
             this.lblResumenActasContado.TabIndex = 11;
             this.lblResumenActasContado.Text = "Actas Contado";
             // 
@@ -802,9 +804,9 @@
             this.lblResumenActasContadoValor.AutoSize = true;
             this.lblResumenActasContadoValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblResumenActasContadoValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblResumenActasContadoValor.Location = new System.Drawing.Point(222, 192);
+            this.lblResumenActasContadoValor.Location = new System.Drawing.Point(238, 198);
             this.lblResumenActasContadoValor.Name = "lblResumenActasContadoValor";
-            this.lblResumenActasContadoValor.Size = new System.Drawing.Size(33, 32);
+            this.lblResumenActasContadoValor.Size = new System.Drawing.Size(17, 19);
             this.lblResumenActasContadoValor.TabIndex = 12;
             this.lblResumenActasContadoValor.Text = "2";
             // 
@@ -814,9 +816,9 @@
             this.lblResumenActasCredito.AutoSize = true;
             this.lblResumenActasCredito.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblResumenActasCredito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblResumenActasCredito.Location = new System.Drawing.Point(15, 226);
+            this.lblResumenActasCredito.Location = new System.Drawing.Point(15, 234);
             this.lblResumenActasCredito.Name = "lblResumenActasCredito";
-            this.lblResumenActasCredito.Size = new System.Drawing.Size(155, 32);
+            this.lblResumenActasCredito.Size = new System.Drawing.Size(78, 15);
             this.lblResumenActasCredito.TabIndex = 13;
             this.lblResumenActasCredito.Text = "Actas Crédito";
             // 
@@ -826,9 +828,9 @@
             this.lblResumenActasCreditoValor.AutoSize = true;
             this.lblResumenActasCreditoValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblResumenActasCreditoValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            this.lblResumenActasCreditoValor.Location = new System.Drawing.Point(222, 224);
+            this.lblResumenActasCreditoValor.Location = new System.Drawing.Point(238, 232);
             this.lblResumenActasCreditoValor.Name = "lblResumenActasCreditoValor";
-            this.lblResumenActasCreditoValor.Size = new System.Drawing.Size(33, 36);
+            this.lblResumenActasCreditoValor.Size = new System.Drawing.Size(17, 19);
             this.lblResumenActasCreditoValor.TabIndex = 14;
             this.lblResumenActasCreditoValor.Text = "1";
             // 
@@ -886,7 +888,7 @@
             this.lblKpiUnidadVencidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblKpiUnidadVencidos.Location = new System.Drawing.Point(16, 88);
             this.lblKpiUnidadVencidos.Name = "lblKpiUnidadVencidos";
-            this.lblKpiUnidadVencidos.Size = new System.Drawing.Size(100, 32);
+            this.lblKpiUnidadVencidos.Size = new System.Drawing.Size(50, 15);
             this.lblKpiUnidadVencidos.TabIndex = 3;
             this.lblKpiUnidadVencidos.Text = "trámites";
             // 
@@ -897,7 +899,7 @@
             this.lblKpiValorVencidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             this.lblKpiValorVencidos.Location = new System.Drawing.Point(12, 32);
             this.lblKpiValorVencidos.Name = "lblKpiValorVencidos";
-            this.lblKpiValorVencidos.Size = new System.Drawing.Size(94, 114);
+            this.lblKpiValorVencidos.Size = new System.Drawing.Size(48, 59);
             this.lblKpiValorVencidos.TabIndex = 2;
             this.lblKpiValorVencidos.Text = "7";
             // 
@@ -908,7 +910,7 @@
             this.lblKpiTituloVencidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblKpiTituloVencidos.Location = new System.Drawing.Point(16, 14);
             this.lblKpiTituloVencidos.Name = "lblKpiTituloVencidos";
-            this.lblKpiTituloVencidos.Size = new System.Drawing.Size(296, 32);
+            this.lblKpiTituloVencidos.Size = new System.Drawing.Size(143, 15);
             this.lblKpiTituloVencidos.TabIndex = 1;
             this.lblKpiTituloVencidos.Text = "VENCIDOS (más de 48 h)";
             // 
@@ -942,7 +944,7 @@
             this.lblKpiUnidadPorVencer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblKpiUnidadPorVencer.Location = new System.Drawing.Point(16, 88);
             this.lblKpiUnidadPorVencer.Name = "lblKpiUnidadPorVencer";
-            this.lblKpiUnidadPorVencer.Size = new System.Drawing.Size(100, 32);
+            this.lblKpiUnidadPorVencer.Size = new System.Drawing.Size(50, 15);
             this.lblKpiUnidadPorVencer.TabIndex = 3;
             this.lblKpiUnidadPorVencer.Text = "trámites";
             // 
@@ -953,7 +955,7 @@
             this.lblKpiValorPorVencer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             this.lblKpiValorPorVencer.Location = new System.Drawing.Point(12, 32);
             this.lblKpiValorPorVencer.Name = "lblKpiValorPorVencer";
-            this.lblKpiValorPorVencer.Size = new System.Drawing.Size(140, 114);
+            this.lblKpiValorPorVencer.Size = new System.Drawing.Size(71, 59);
             this.lblKpiValorPorVencer.TabIndex = 2;
             this.lblKpiValorPorVencer.Text = "28";
             // 
@@ -964,7 +966,7 @@
             this.lblKpiTituloPorVencer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblKpiTituloPorVencer.Location = new System.Drawing.Point(16, 14);
             this.lblKpiTituloPorVencer.Name = "lblKpiTituloPorVencer";
-            this.lblKpiTituloPorVencer.Size = new System.Drawing.Size(291, 32);
+            this.lblKpiTituloPorVencer.Size = new System.Drawing.Size(139, 15);
             this.lblKpiTituloPorVencer.TabIndex = 1;
             this.lblKpiTituloPorVencer.Text = "POR VENCER (24 a 48 h)";
             // 
@@ -998,7 +1000,7 @@
             this.lblKpiUnidadEnTiempo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblKpiUnidadEnTiempo.Location = new System.Drawing.Point(16, 88);
             this.lblKpiUnidadEnTiempo.Name = "lblKpiUnidadEnTiempo";
-            this.lblKpiUnidadEnTiempo.Size = new System.Drawing.Size(100, 32);
+            this.lblKpiUnidadEnTiempo.Size = new System.Drawing.Size(50, 15);
             this.lblKpiUnidadEnTiempo.TabIndex = 3;
             this.lblKpiUnidadEnTiempo.Text = "trámites";
             // 
@@ -1009,7 +1011,7 @@
             this.lblKpiValorEnTiempo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             this.lblKpiValorEnTiempo.Location = new System.Drawing.Point(12, 32);
             this.lblKpiValorEnTiempo.Name = "lblKpiValorEnTiempo";
-            this.lblKpiValorEnTiempo.Size = new System.Drawing.Size(186, 114);
+            this.lblKpiValorEnTiempo.Size = new System.Drawing.Size(94, 59);
             this.lblKpiValorEnTiempo.TabIndex = 2;
             this.lblKpiValorEnTiempo.Text = "142";
             // 
@@ -1020,7 +1022,7 @@
             this.lblKpiTituloEnTiempo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblKpiTituloEnTiempo.Location = new System.Drawing.Point(16, 14);
             this.lblKpiTituloEnTiempo.Name = "lblKpiTituloEnTiempo";
-            this.lblKpiTituloEnTiempo.Size = new System.Drawing.Size(285, 32);
+            this.lblKpiTituloEnTiempo.Size = new System.Drawing.Size(136, 15);
             this.lblKpiTituloEnTiempo.TabIndex = 1;
             this.lblKpiTituloEnTiempo.Text = "EN TIEMPO (hasta 24 h)";
             // 
@@ -1051,7 +1053,7 @@
             this.lblTituloPagina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
             this.lblTituloPagina.Location = new System.Drawing.Point(16, 12);
             this.lblTituloPagina.Name = "lblTituloPagina";
-            this.lblTituloPagina.Size = new System.Drawing.Size(267, 51);
+            this.lblTituloPagina.Size = new System.Drawing.Size(135, 25);
             this.lblTituloPagina.TabIndex = 0;
             this.lblTituloPagina.Text = "Panel General";
             // 
@@ -1063,13 +1065,30 @@
             this.lblFechaActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
             this.lblFechaActual.Location = new System.Drawing.Point(1048, 20);
             this.lblFechaActual.Name = "lblFechaActual";
-            this.lblFechaActual.Size = new System.Drawing.Size(404, 32);
+            this.lblFechaActual.Size = new System.Drawing.Size(195, 15);
             this.lblFechaActual.TabIndex = 1;
             this.lblFechaActual.Text = "Miércoles, 18 de noviembre de 2026";
             // 
+            // btnEmpresas
+            // 
+            this.btnEmpresas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            this.btnEmpresas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpresas.FlatAppearance.BorderSize = 0;
+            this.btnEmpresas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpresas.ForeColor = System.Drawing.Color.White;
+            this.btnEmpresas.Location = new System.Drawing.Point(0, 540);
+            this.btnEmpresas.Name = "btnEmpresas";
+            this.btnEmpresas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnEmpresas.Size = new System.Drawing.Size(220, 36);
+            this.btnEmpresas.TabIndex = 19;
+            this.btnEmpresas.Text = "Empresas y Honorarios";
+            this.btnEmpresas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpresas.UseVisualStyleBackColor = false;
+            this.btnEmpresas.Click += new System.EventHandler(this.btnEmpresas_Click);
+            // 
             // FrmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 36F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1475, 943);
             this.Controls.Add(this.pnlContenedor);
@@ -1182,5 +1201,6 @@
         private System.Windows.Forms.Label lblResumenActasContadoValor;
         private System.Windows.Forms.Label lblResumenActasCredito;
         private System.Windows.Forms.Label lblResumenActasCreditoValor;
+        private System.Windows.Forms.Button btnEmpresas;
     }
 }
