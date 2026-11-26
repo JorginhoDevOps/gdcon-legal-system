@@ -20,7 +20,7 @@ namespace CapaPresentacion
         public static readonly Color Seleccion = Color.FromArgb(205, 238, 247);
         public static readonly Color LineaGrilla = Color.FromArgb(227, 233, 240);
 
-        //Paleta de colores que se aplica a los avisos 
+        //Paleta de colores que se aplica a los avisos
         public static readonly Color SoloLecturaFondo = Color.FromArgb(238, 242, 246);
         public static readonly Color SoloLecturaTexto = Color.FromArgb(75, 90, 107);
         public static readonly Color EditableFondo = Color.White;

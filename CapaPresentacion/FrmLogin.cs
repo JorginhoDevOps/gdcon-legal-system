@@ -117,7 +117,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            FrmMenuPrincipal menu = new FrmMenuPrincipal();
+            FrmMenuPrincipal menu = new FrmMenuPrincipal(u);
             menu.Show();
             this.Hide();
         }

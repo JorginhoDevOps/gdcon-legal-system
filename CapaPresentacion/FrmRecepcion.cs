@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 
@@ -13,228 +8,398 @@ namespace CapaPresentacion
 {
     public partial class FrmRecepcion : Form
     {
-        int indiceSeleccionado = -1;
-        bool modoEdicion = false;
+        private readonly Recepciones recepciones = new Recepciones();
+        private readonly Empresas empresas = new Empresas();
+        private int indiceSeleccionado = -1;
+        private string tramiteActual = "";
+
         public FrmRecepcion()
         {
             InitializeComponent();
             EstiloUI.Aplicar(this, 1, 2);
-            tramites.Archivo_VectorTramites();
         }
-        Tramites tramites = new Tramites();
-        Recepciones recepciones = new Recepciones();
-        string tramiteActual = "";
-        private ErrorProvider errorProvider1 = new ErrorProvider();
-
 
         private void FrmRecepcion_Load(object sender, EventArgs e)
         {
+            CargarEmpresas();
             mostrarRecepciones();
-            chkDespacho.Visible = false;
-            pnlAviso.Visible = false;
-            btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnNuevo.Enabled = false;
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void btnPanelGeneral_Click(object sender, EventArgs e)
-        {
-            FrmMenuPrincipal menu = new FrmMenuPrincipal();
-            menu.Show();
-            this.Hide();
-        }
-
-        private void btnPlacas_Click(object sender, EventArgs e)
-        {
-            FrmPlacasPagos placas = new FrmPlacasPagos();
-            placas.Show();
-            this.Hide();
-        }
-
-        private void btnDiprove_Click(object sender, EventArgs e)
-        {
-            FrmPlacasPagos placasPagos = new FrmPlacasPagos();
-            placasPagos.Show();
-            this.Hide();
-        }
-
-        private void tlpCampos_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (!ValidarCamposTramite(out string mensajeError, out Control controlConError))
-            {
-                MostrarAviso(mensajeError, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
-                controlConError?.Focus();
-                return;
-            }
-
-            string modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
-
-            Tramite nuevoTramite = new Tramite
-            {
-                Chasis = txtChasis.Text.Trim(),
-                NroContrato = txtContrato.Text.Trim(),
-                NitCi = txtDocumento.Text.Trim(),
-                Cliente = txtPropietario.Text.Trim(),
-                Marca = cbMarca.Text.Trim(),
-                Clase = txtClase.Text.Trim(),
-                TipoVehiculo = txtTipoVehiculo.Text.Trim(),
-                Poliza = txtPoliza.Text.Trim(),
-                Anio = txtYear.Text.Trim(),
-                Color = txtColor.Text.Trim(),
-                Modalidad = modalidad,
-                DespachoAlcaldia = chkDespacho.Checked
-            };
-
-            tramites.Incrementar();
-            tramites.Guardar(nuevoTramite);
-
-            mostrarRecepciones();
-            MostrarAviso("Registro guardado exitosamente", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
             limpiarFormulario();
+            OcultarAviso();
         }
 
+        private void CargarEmpresas()
+        {
+            empresas.Archivo_VectorEmpresas();
+            cmbEmpresa.Items.Clear();
+            string[] nombres = empresas.Nombres();
+            for (int i = 0; i < nombres.Length; i++)
+                cmbEmpresa.Items.Add(nombres[i]);
+
+            if (cmbEmpresa.Items.Count > 0)
+                cmbEmpresa.SelectedIndex = 0;
+        }
+
+        #region "GRILLA Y BUSQUEDA (SOBRECARGA)"
         public void mostrarRecepciones()
         {
-            List<Tramite> ListaTramites = recepciones.ObtenerTodos();
+            mostrarRecepciones("");
+        }
+
+        public void mostrarRecepciones(string filtro)
+        {
+            List<Tramite> listaTramites = recepciones.ObtenerTodos();
             dgvRecepciones.Rows.Clear();
 
-            if (ListaTramites == null || ListaTramites.Count == 0)
+            if (listaTramites == null || listaTramites.Count == 0)
                 return;
 
-            dgvRecepciones.RowCount = ListaTramites.Count;
+            string criterio = (filtro ?? "").Trim();
 
-            for (int V = 0; V < ListaTramites.Count; V++)
+            for (int i = 0; i < listaTramites.Count; i++)
             {
-                dgvRecepciones[0, V].Value = ListaTramites[V].Chasis;
-                dgvRecepciones[1, V].Value = ListaTramites[V].Cliente;
-                dgvRecepciones[2, V].Value = ListaTramites[V].Modalidad;
-                dgvRecepciones[3, V].Value = ListaTramites[V].Marca;
-                dgvRecepciones[4, V].Value = ListaTramites[V].Poliza;
-                dgvRecepciones[5, V].Value = ListaTramites[V].FechaIngreso.ToString("dd/MM/yyyy HH:mm");
-                dgvRecepciones[6, V].Value = ListaTramites[V].Estado;
+                Tramite t = listaTramites[i];
+                if (t == null) continue;
+
+                if (criterio != "" && !CoincideFiltro(t, criterio))
+                    continue;
+
+                int fila = dgvRecepciones.Rows.Add(
+                    t.Chasis,
+                    t.Cliente,
+                    t.Modalidad,
+                    t.Marca,
+                    t.Poliza,
+                    t.FechaIngreso.ToString("dd/MM/yyyy HH:mm"),
+                    t.Estado);
+
+                dgvRecepciones.Rows[fila].Tag = i;
             }
+
+            dgvRecepciones.ClearSelection();
+        }
+
+        private bool CoincideFiltro(Tramite t, string criterio)
+        {
+            return Contiene(t.Chasis, criterio)
+                || Contiene(t.Cliente, criterio)
+                || Contiene(t.Poliza, criterio)
+                || Contiene(t.NroContrato, criterio)
+                || Contiene(t.NroTramite, criterio)
+                || Contiene(t.NitCi, criterio)
+                || Contiene(t.Marca, criterio)
+                || Contiene(t.Estado, criterio);
+        }
+
+        private bool Contiene(string origen, string texto)
+        {
+            if (string.IsNullOrEmpty(origen)) return false;
+            return origen.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         private void dgvRecepciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            indiceSeleccionado = e.RowIndex;
-            Tramite tramite = recepciones.ObtenerParaEditar(indiceSeleccionado, out string mensaje);
+            if (e.RowIndex < 0 || dgvRecepciones.Rows[e.RowIndex].Tag == null)
+                return;
+
+            int posReal = (int)dgvRecepciones.Rows[e.RowIndex].Tag;
+            string mensaje;
+            Tramite tramite = recepciones.ObtenerParaEditar(posReal, out mensaje);
+
             if (tramite == null)
             {
-                MostrarAviso("Edición de datos no permitida", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                MostrarAviso(mensaje, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
                 limpiarFormulario();
                 return;
             }
+
             OcultarAviso();
+            indiceSeleccionado = posReal;
+            tramiteActual = tramite.NroTramite;
             mostrarDatosEditar(tramite);
+
             btnGuardar.Enabled = false;
             btnNuevo.Enabled = true;
             btnEditar.Enabled = true;
-            btnEliminar.Enabled = true;
-            tramiteActual = tramite.NroTramite;
+            btnEliminar.Enabled = (tramite.Estado == Tramites.Recibido);
+        }
+        #endregion
+
+        #region "ACCIONES CRUD E IMPORTACION EXCEL"
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string mensajeError;
+            Control controlConError;
+            if (!ValidarCamposTramite(out mensajeError, out controlConError))
+            {
+                MostrarAviso(mensajeError, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                if (controlConError != null) controlConError.Focus();
+                return;
+            }
+
+            Tramite nuevoTramite = ArmarObjetoDesdeFormulario();
+            nuevoTramite.DespachoAlcaldia = false;
+
+            List<KeyValuePair<string, string>> errores = recepciones.GuardarRecepcion(nuevoTramite);
+            if (errores.Count > 0)
+            {
+                MostrarAviso(errores[0].Value, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                return;
+            }
+
+            mostrarRecepciones(txtBuscar.Text);
+            limpiarFormulario();
+            MostrarAviso("Registro guardado exitosamente.", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (indiceSeleccionado < 0 || string.IsNullOrWhiteSpace(tramiteActual))
+            {
+                MostrarAviso("Selecciona un trámite de la tabla para modificar.", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                return;
+            }
+
+            string mensajeError;
+            Control controlConError;
+            if (!ValidarCamposTramite(out mensajeError, out controlConError))
+            {
+                MostrarAviso(mensajeError, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                if (controlConError != null) controlConError.Focus();
+                return;
+            }
 
             Tramite datosEditados = ArmarObjetoDesdeFormulario();
+            string msgNegocio;
 
-            if (recepciones.EditarRecepcion(datosEditados)) {
-                MostrarAviso("Actualización exitosa", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
+            if (recepciones.EditarRecepcion(datosEditados, out msgNegocio))
+            {
+                mostrarRecepciones(txtBuscar.Text);
+                limpiarFormulario();
+                MostrarAviso("Actualización exitosa.", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
             }
             else
             {
-                MostrarAviso("No se pudo actualizar", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
-
-            }
-            mostrarRecepciones();
-            limpiarFormulario();
-        }
-
-        private void mostrarDatosEditar(Tramite tramite)
-        {
-            if (tramite != null)
-            {
-                txtChasis.Text = tramite.Chasis;
-                txtContrato.Text = tramite.NroContrato;
-                txtDocumento.Text = tramite.NitCi;
-                txtPropietario.Text = tramite.Cliente;
-                cbMarca.Text = tramite.Marca;
-                txtClase.Text = tramite.Clase;
-                txtTipoVehiculo.Text = tramite.TipoVehiculo;
-                txtPoliza.Text = tramite.Poliza;
-                txtYear.Text = tramite.Anio;
-                txtColor.Text = tramite.Color;
-
-                rbContado.Checked = tramite.Modalidad == "Contado";
-                rbCredito.Checked = tramite.Modalidad == "Crédito";
-
-                chkDespacho.Checked = tramite.DespachoAlcaldia;
-                chkDespacho.Enabled = tramite.Estado == Tramites.Recibido;
-                chkDespacho.Visible = true;
-                txtChasis.ReadOnly = false;
+                MostrarAviso(string.IsNullOrWhiteSpace(msgNegocio) ? "No se pudo actualizar." : msgNegocio,
+                    EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (indiceSeleccionado >= 0)
+            if (indiceSeleccionado < 0)
             {
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar el trámite seleccionado?", "Confirmar eliminación", buttons, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    /*recepciones.Eliminar(indiceSeleccionado);
-                    ListaTramites.RemoveAt(indiceSeleccionado);
-                    actualizarGrilla();*/
-                }
+                MostrarAviso("Seleccione un trámite para eliminar.", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "¿Está seguro de que desea eliminar el trámite seleccionado?",
+                "GDCON Legal System",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes) return;
+
+            string msgError;
+            if (recepciones.EliminarRecepcion(indiceSeleccionado, out msgError))
+            {
+                mostrarRecepciones(txtBuscar.Text);
+                limpiarFormulario();
+                MostrarAviso("Trámite eliminado correctamente.", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
             }
             else
             {
-                MostrarAviso("Seleccione un trámite para eliminar.", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoInfoBorde, EstiloUI.AvisoAlertaTexto);
+                MostrarAviso(msgError, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+            }
+        }
+
+        private void btnImportarExcel_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Seleccionar archivo Excel de trámites";
+                dlg.Filter = "Archivos de Excel (*.xlsx;*.xlsm)|*.xlsx;*.xlsm|Todos los archivos (*.*)|*.*";
+                dlg.Multiselect = false;
+
+                if (dlg.ShowDialog(this) != DialogResult.OK)
+                    return;
+
+                string empresaSeleccionada = cmbEmpresa.SelectedItem != null
+                    ? cmbEmpresa.SelectedItem.ToString()
+                    : "IMCRUZ";
+
+                DialogResult respuestaDespacho = MessageBox.Show(
+                    "Se importarán los trámites para la empresa '" + empresaSeleccionada + "'.\n\n" +
+                    "¿Deseas despachar automáticamente los trámites completos a Alcaldía y Diprove?\n\n" +
+                    "• Sí: importa y despacha (quedan listos en Placas y Pagos).\n" +
+                    "• No: importa únicamente en estado 'Recibido'.\n" +
+                    "• Cancelar: cancela la importación.",
+                    "Importar desde Excel — GDCON Legal System",
+                    MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question);
+
+                if (respuestaDespacho == DialogResult.Cancel)
+                    return;
+
+                bool despachar = (respuestaDespacho == DialogResult.Yes);
+
+                try
+                {
+                    Cursor = Cursors.WaitCursor;
+                    ResultadoImportacionExcel resultado = GestorExcel.ImportarTramites(
+                        dlg.FileName,
+                        empresaSeleccionada,
+                        despachar);
+
+                    txtBuscar.Text = "";
+                    mostrarRecepciones();
+                    limpiarFormulario();
+
+                    if (resultado.Importados > 0)
+                    {
+                        MostrarAviso(
+                            "Importados: " + resultado.Importados + " | Omitidos: " + resultado.Omitidos,
+                            EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
+                    }
+                    else
+                    {
+                        MostrarAviso(
+                            "No se importaron registros nuevos (omitidos: " + resultado.Omitidos + ").",
+                            EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                    }
+
+                    MessageBox.Show(
+                        resultado.ConstruirResumen(),
+                        "GDCON Legal System",
+                        MessageBoxButtons.OK,
+                        resultado.Importados > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+                }
+                catch (Exception ex)
+                {
+                    MostrarAviso("Error al importar el archivo Excel.", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                    MessageBox.Show(
+                        "No se pudo importar el archivo Excel:\n" + ex.Message,
+                        "GDCON Legal System",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string criterio = txtBuscar.Text.Trim();
+            if (criterio == "")
+            {
+                mostrarRecepciones();
+                OcultarAviso();
+                return;
+            }
+
+            mostrarRecepciones(criterio);
+            if (dgvRecepciones.Rows.Count == 0)
+            {
+                MostrarAviso("No se encontraron trámites con ese criterio.", EstiloUI.AvisoInfoFondo, EstiloUI.AvisoInfoBorde, EstiloUI.AvisoInfoTexto);
+                txtBuscar.Text = "";
+                mostrarRecepciones();
+            }
+            else
+            {
+                OcultarAviso();
+            }
+        }
+
+        private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                btnBuscar_Click(sender, e);
             }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            txtBuscar.Text = "";
+            mostrarRecepciones();
             limpiarFormulario();
-            txtChasis.ReadOnly = false;
+            OcultarAviso();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             limpiarFormulario();
-            chkDespacho.Visible = false;
-            txtChasis.ReadOnly = false;
+            OcultarAviso();
+            txtChasis.Focus();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region "FORMULARIO Y VALIDACIONES"
+        private void mostrarDatosEditar(Tramite tramite)
+        {
+            if (tramite == null) return;
+
+            errorProvider1.Clear();
+            bool esRecibido = tramite.Estado == Tramites.Recibido;
+
+            txtChasis.Text = tramite.Chasis ?? "";
+            txtContrato.Text = tramite.NroContrato ?? "";
+            txtDocumento.Text = tramite.NitCi ?? "";
+            txtPropietario.Text = tramite.Cliente ?? "";
+            cbMarca.Text = tramite.Marca ?? "";
+            txtClase.Text = tramite.Clase ?? "";
+            txtTipoVehiculo.Text = tramite.TipoVehiculo ?? "";
+            txtPoliza.Text = tramite.Poliza ?? "";
+            txtYear.Text = tramite.Anio ?? "";
+            txtColor.Text = tramite.Color ?? "";
+
+            rbContado.Checked = string.Equals(tramite.Modalidad, "Contado", StringComparison.OrdinalIgnoreCase);
+            rbCredito.Checked = string.Equals(tramite.Modalidad, "Crédito", StringComparison.OrdinalIgnoreCase)
+                             || string.Equals(tramite.Modalidad, "Credito", StringComparison.OrdinalIgnoreCase);
+
+            if (!string.IsNullOrWhiteSpace(tramite.Empresa))
+            {
+                int idx = cmbEmpresa.FindStringExact(tramite.Empresa);
+                if (idx >= 0) cmbEmpresa.SelectedIndex = idx;
+                else
+                {
+                    cmbEmpresa.Items.Add(tramite.Empresa);
+                    cmbEmpresa.SelectedItem = tramite.Empresa;
+                }
+            }
+
+            chkDespacho.Checked = tramite.DespachoAlcaldia || tramite.Estado != Tramites.Recibido;
+            chkDespacho.Enabled = esRecibido;
+            chkDespacho.Visible = true;
+
+            AplicarSoloLecturaCampo(txtChasis, !esRecibido);
+            AplicarSoloLecturaCampo(txtPoliza, !esRecibido);
+            rbContado.Enabled = esRecibido;
+            rbCredito.Enabled = esRecibido;
+            cmbEmpresa.Enabled = esRecibido;
         }
 
         private void limpiarFormulario()
         {
+            indiceSeleccionado = -1;
+            tramiteActual = "";
+            errorProvider1.Clear();
+
             txtChasis.Clear();
             txtContrato.Clear();
             txtDocumento.Clear();
             txtPropietario.Clear();
             cbMarca.SelectedIndex = -1;
+            cbMarca.Text = "";
             txtClase.Clear();
             txtTipoVehiculo.Clear();
             txtPoliza.Clear();
@@ -242,7 +407,33 @@ namespace CapaPresentacion
             txtColor.Clear();
             rbContado.Checked = false;
             rbCredito.Checked = false;
+
+            if (cmbEmpresa.Items.Count > 0)
+                cmbEmpresa.SelectedIndex = 0;
+
             chkDespacho.Checked = false;
+            chkDespacho.Enabled = true;
+            chkDespacho.Visible = false;
+
+            AplicarSoloLecturaCampo(txtChasis, false);
+            AplicarSoloLecturaCampo(txtPoliza, false);
+            rbContado.Enabled = true;
+            rbCredito.Enabled = true;
+            cmbEmpresa.Enabled = true;
+
+            btnGuardar.Enabled = true;
+            btnNuevo.Enabled = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+
+            dgvRecepciones.ClearSelection();
+        }
+
+        private void AplicarSoloLecturaCampo(TextBox txt, bool soloLectura)
+        {
+            txt.ReadOnly = soloLectura;
+            txt.BackColor = soloLectura ? EstiloUI.SoloLecturaFondo : EstiloUI.EditableFondo;
+            txt.ForeColor = soloLectura ? EstiloUI.SoloLecturaTexto : EstiloUI.EditableTexto;
         }
 
         private void MostrarAviso(string texto, Color fondo, Color borde, Color colorTexto)
@@ -263,28 +454,36 @@ namespace CapaPresentacion
 
         private Tramite ArmarObjetoDesdeFormulario()
         {
+            string empresa = cmbEmpresa.SelectedItem != null ? cmbEmpresa.SelectedItem.ToString() : "IMCRUZ";
+            string modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
+
             return new Tramite
             {
                 NroTramite = tramiteActual,
-                Chasis = txtChasis.Text.Trim(),
+                Empresa = empresa,
+                NroContrato = txtContrato.Text.Trim(),
+                Chasis = txtChasis.Text.Trim().ToUpperInvariant(),
                 NitCi = txtDocumento.Text.Trim(),
                 Cliente = txtPropietario.Text.Trim(),
-                Marca = cbMarca.Text.Trim(),
-                Clase = txtClase.Text.Trim(),
+                Marca = cbMarca.Text.Trim().ToUpperInvariant(),
+                Clase = txtClase.Text.Trim().ToUpperInvariant(),
                 TipoVehiculo = txtTipoVehiculo.Text.Trim(),
                 Poliza = txtPoliza.Text.Trim(),
                 Anio = txtYear.Text.Trim(),
                 Color = txtColor.Text.Trim(),
-                Modalidad = rbContado.Checked ? "Contado" : "Crédito",
-                Estado = (chkDespacho.Checked == true) ? "Despachado" : "Recibido"
+                Modalidad = modalidad,
+                Honorario = empresas.Honorario(empresa, modalidad),
+                DespachoAlcaldia = chkDespacho.Checked
             };
         }
+
         private bool ValidarCamposTramite(out string mensajeError, out Control controlConError)
         {
+            errorProvider1.Clear();
             controlConError = null;
 
             var reglas = new (Control control, string valor, string mensaje)[]
-             {
+            {
                 (txtChasis, txtChasis.Text, "Ingrese el número de chasis."),
                 (txtContrato, txtContrato.Text, "Ingrese el número de contrato."),
                 (txtDocumento, txtDocumento.Text, "Ingrese el NIT o CI."),
@@ -301,6 +500,7 @@ namespace CapaPresentacion
             {
                 if (string.IsNullOrWhiteSpace(regla.valor))
                 {
+                    errorProvider1.SetError(regla.control, regla.mensaje);
                     mensajeError = regla.mensaje;
                     controlConError = regla.control;
                     return false;
@@ -309,12 +509,23 @@ namespace CapaPresentacion
 
             if (!rbContado.Checked && !rbCredito.Checked)
             {
+                errorProvider1.SetError(rbCredito, "Seleccione la modalidad (Contado o Crédito).");
                 mensajeError = "Seleccione la modalidad (Contado o Crédito).";
+                controlConError = rbContado;
+                return false;
+            }
+
+            if (cmbEmpresa.SelectedIndex < 0)
+            {
+                errorProvider1.SetError(cmbEmpresa, "Seleccione la empresa.");
+                mensajeError = "Seleccione la empresa.";
+                controlConError = cmbEmpresa;
                 return false;
             }
 
             mensajeError = string.Empty;
             return true;
         }
+        #endregion
     }
 }

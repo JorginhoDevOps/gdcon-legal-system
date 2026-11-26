@@ -1,4 +1,4 @@
-﻿﻿namespace CapaPresentacion
+﻿namespace CapaPresentacion
 {
     partial class FrmRecepcion
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecepcion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +40,8 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.tssImportar = new System.Windows.Forms.ToolStripSeparator();
+            this.btnImportarExcel = new System.Windows.Forms.ToolStripButton();
             this.btnCerrar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
@@ -64,34 +67,37 @@
             this.pnlSeparador = new System.Windows.Forms.Panel();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.pnlAviso = new System.Windows.Forms.Panel();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.pnlBordeAviso = new System.Windows.Forms.Panel();
             this.tlpCampos = new System.Windows.Forms.TableLayoutPanel();
-            this.rbCredito = new System.Windows.Forms.RadioButton();
-            this.lblModalidad = new System.Windows.Forms.Label();
-            this.txtColor = new System.Windows.Forms.TextBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.lblColor = new System.Windows.Forms.Label();
             this.lblChasis = new System.Windows.Forms.Label();
             this.txtChasis = new System.Windows.Forms.TextBox();
             this.lblNroContrato = new System.Windows.Forms.Label();
-            this.txtContrato = new System.Windows.Forms.TextBox();
             this.lblDocumento = new System.Windows.Forms.Label();
+            this.txtContrato = new System.Windows.Forms.TextBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
             this.lblPropietario = new System.Windows.Forms.Label();
             this.txtPropietario = new System.Windows.Forms.TextBox();
             this.lblPlaca = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
             this.txtClase = new System.Windows.Forms.TextBox();
             this.lblTipoVehiculo = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
-            this.txtDocumento = new System.Windows.Forms.TextBox();
-            this.txtPoliza = new System.Windows.Forms.TextBox();
-            this.cbMarca = new System.Windows.Forms.ComboBox();
-            this.lblYear = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
+            this.txtPoliza = new System.Windows.Forms.TextBox();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.lblColor = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.txtColor = new System.Windows.Forms.TextBox();
+            this.lblModalidad = new System.Windows.Forms.Label();
             this.rbContado = new System.Windows.Forms.RadioButton();
+            this.rbCredito = new System.Windows.Forms.RadioButton();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
             this.chkDespacho = new System.Windows.Forms.CheckBox();
             this.lblEncabezadoDatos = new System.Windows.Forms.Label();
-            this.lblAviso = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             this.pnlPasos.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
@@ -100,19 +106,22 @@
             this.pnlDatos.SuspendLayout();
             this.pnlAviso.SuspendLayout();
             this.tlpCampos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnGuardar,
             this.btnEditar,
             this.btnEliminar,
             this.btnLimpiar,
+            this.tssImportar,
+            this.btnImportarExcel,
             this.btnCerrar,
             this.toolStripSeparator1,
             this.btnBuscar,
@@ -124,7 +133,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1060, 44);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // btnNuevo
             // 
@@ -182,6 +190,26 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // tssImportar
+            // 
+            this.tssImportar.Name = "tssImportar";
+            this.tssImportar.Size = new System.Drawing.Size(6, 44);
+            // 
+            // btnImportarExcel
+            // 
+            this.btnImportarExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
+            this.btnImportarExcel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnImportarExcel.Image = global::CapaPresentacion.Properties.Resources.IcoAgregar;
+            this.btnImportarExcel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.SizeToFit;
+            this.btnImportarExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImportarExcel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnImportarExcel.Name = "btnImportarExcel";
+            this.btnImportarExcel.Size = new System.Drawing.Size(112, 40);
+            this.btnImportarExcel.Text = "Importar Excel";
+            this.btnImportarExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImportarExcel.ToolTipText = "Importar trámites desde archivo Excel (.xlsx / .xlsm)";
+            this.btnImportarExcel.Click += new System.EventHandler(this.btnImportarExcel_Click);
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -207,15 +235,19 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(78, 44);
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
             this.txtBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtBuscar.AutoSize = false;
+            this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(189, 28);
+            this.txtBuscar.Size = new System.Drawing.Size(189, 24);
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
             // pnlPasos
             // 
@@ -314,9 +346,9 @@
             this.pnlLista.Controls.Add(this.dgvRecepciones);
             this.pnlLista.Controls.Add(this.lblEncabezadoLista);
             this.pnlLista.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLista.Location = new System.Drawing.Point(312, 10);
+            this.pnlLista.Location = new System.Drawing.Point(322, 10);
             this.pnlLista.Name = "pnlLista";
-            this.pnlLista.Size = new System.Drawing.Size(738, 647);
+            this.pnlLista.Size = new System.Drawing.Size(728, 647);
             this.pnlLista.TabIndex = 2;
             // 
             // dgvRecepciones
@@ -367,7 +399,7 @@
             this.dgvRecepciones.RowHeadersWidth = 82;
             this.dgvRecepciones.RowTemplate.Height = 28;
             this.dgvRecepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecepciones.Size = new System.Drawing.Size(736, 619);
+            this.dgvRecepciones.Size = new System.Drawing.Size(726, 619);
             this.dgvRecepciones.TabIndex = 1;
             this.dgvRecepciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecepciones_CellClick);
             // 
@@ -405,7 +437,7 @@
             // 
             // colPoliza
             // 
-            this.colPoliza.FillWeight = 45F;
+            this.colPoliza.FillWeight = 65F;
             this.colPoliza.HeaderText = "Póliza";
             this.colPoliza.MinimumWidth = 10;
             this.colPoliza.Name = "colPoliza";
@@ -421,9 +453,9 @@
             // 
             // colEstado
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.colEstado.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colEstado.FillWeight = 65F;
+            this.colEstado.FillWeight = 85F;
             this.colEstado.HeaderText = "Estado";
             this.colEstado.MinimumWidth = 10;
             this.colEstado.Name = "colEstado";
@@ -438,7 +470,7 @@
             this.lblEncabezadoLista.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezadoLista.Name = "lblEncabezadoLista";
             this.lblEncabezadoLista.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.lblEncabezadoLista.Size = new System.Drawing.Size(736, 26);
+            this.lblEncabezadoLista.Size = new System.Drawing.Size(726, 26);
             this.lblEncabezadoLista.TabIndex = 0;
             this.lblEncabezadoLista.Text = "Registro de trámites recibidos";
             this.lblEncabezadoLista.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -447,7 +479,7 @@
             // 
             this.pnlSeparador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.pnlSeparador.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSeparador.Location = new System.Drawing.Point(302, 10);
+            this.pnlSeparador.Location = new System.Drawing.Point(312, 10);
             this.pnlSeparador.Name = "pnlSeparador";
             this.pnlSeparador.Size = new System.Drawing.Size(10, 647);
             this.pnlSeparador.TabIndex = 1;
@@ -462,63 +494,77 @@
             this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlDatos.Location = new System.Drawing.Point(10, 10);
             this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(292, 647);
+            this.pnlDatos.Size = new System.Drawing.Size(302, 647);
             this.pnlDatos.TabIndex = 0;
             // 
             // pnlAviso
             // 
-            this.pnlAviso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlAviso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
             this.pnlAviso.Controls.Add(this.lblAviso);
             this.pnlAviso.Controls.Add(this.pnlBordeAviso);
-            this.pnlAviso.Location = new System.Drawing.Point(8, 518);
+            this.pnlAviso.Location = new System.Drawing.Point(10, 502);
             this.pnlAviso.Name = "pnlAviso";
-            this.pnlAviso.Size = new System.Drawing.Size(269, 36);
+            this.pnlAviso.Size = new System.Drawing.Size(280, 44);
             this.pnlAviso.TabIndex = 2;
             this.pnlAviso.Visible = false;
             // 
+            // lblAviso
+            // 
+            this.lblAviso.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAviso.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.lblAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(74)))), ((int)(((byte)(0)))));
+            this.lblAviso.Location = new System.Drawing.Point(4, 0);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
+            this.lblAviso.Size = new System.Drawing.Size(276, 44);
+            this.lblAviso.TabIndex = 1;
+            this.lblAviso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pnlBordeAviso
             // 
-            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnlBordeAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(168)))), ((int)(((byte)(37)))));
             this.pnlBordeAviso.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBordeAviso.Location = new System.Drawing.Point(0, 0);
             this.pnlBordeAviso.Name = "pnlBordeAviso";
-            this.pnlBordeAviso.Size = new System.Drawing.Size(3, 36);
+            this.pnlBordeAviso.Size = new System.Drawing.Size(4, 44);
             this.pnlBordeAviso.TabIndex = 0;
             // 
             // tlpCampos
             // 
-            this.tlpCampos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpCampos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpCampos.ColumnCount = 2;
             this.tlpCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCampos.Controls.Add(this.rbCredito, 1, 13);
-            this.tlpCampos.Controls.Add(this.lblModalidad, 0, 12);
-            this.tlpCampos.Controls.Add(this.txtColor, 1, 11);
-            this.tlpCampos.Controls.Add(this.txtYear, 0, 11);
-            this.tlpCampos.Controls.Add(this.lblColor, 1, 10);
             this.tlpCampos.Controls.Add(this.lblChasis, 0, 0);
             this.tlpCampos.Controls.Add(this.txtChasis, 0, 1);
             this.tlpCampos.Controls.Add(this.lblNroContrato, 0, 2);
-            this.tlpCampos.Controls.Add(this.txtContrato, 0, 3);
             this.tlpCampos.Controls.Add(this.lblDocumento, 1, 2);
+            this.tlpCampos.Controls.Add(this.txtContrato, 0, 3);
+            this.tlpCampos.Controls.Add(this.txtDocumento, 1, 3);
             this.tlpCampos.Controls.Add(this.lblPropietario, 0, 4);
             this.tlpCampos.Controls.Add(this.txtPropietario, 0, 5);
             this.tlpCampos.Controls.Add(this.lblPlaca, 0, 6);
+            this.tlpCampos.Controls.Add(this.label6, 1, 6);
+            this.tlpCampos.Controls.Add(this.cbMarca, 0, 7);
             this.tlpCampos.Controls.Add(this.txtClase, 1, 7);
             this.tlpCampos.Controls.Add(this.lblTipoVehiculo, 0, 8);
             this.tlpCampos.Controls.Add(this.lblMonto, 1, 8);
-            this.tlpCampos.Controls.Add(this.txtDocumento, 1, 3);
-            this.tlpCampos.Controls.Add(this.txtPoliza, 1, 9);
-            this.tlpCampos.Controls.Add(this.cbMarca, 0, 7);
-            this.tlpCampos.Controls.Add(this.lblYear, 0, 10);
-            this.tlpCampos.Controls.Add(this.label6, 1, 6);
             this.tlpCampos.Controls.Add(this.txtTipoVehiculo, 0, 9);
+            this.tlpCampos.Controls.Add(this.txtPoliza, 1, 9);
+            this.tlpCampos.Controls.Add(this.lblYear, 0, 10);
+            this.tlpCampos.Controls.Add(this.lblColor, 1, 10);
+            this.tlpCampos.Controls.Add(this.txtYear, 0, 11);
+            this.tlpCampos.Controls.Add(this.txtColor, 1, 11);
+            this.tlpCampos.Controls.Add(this.lblModalidad, 0, 12);
             this.tlpCampos.Controls.Add(this.rbContado, 0, 13);
-            this.tlpCampos.Controls.Add(this.chkDespacho, 0, 15);
-            this.tlpCampos.Location = new System.Drawing.Point(10, 36);
+            this.tlpCampos.Controls.Add(this.rbCredito, 1, 13);
+            this.tlpCampos.Controls.Add(this.lblEmpresa, 0, 14);
+            this.tlpCampos.Controls.Add(this.cmbEmpresa, 0, 15);
+            this.tlpCampos.Controls.Add(this.chkDespacho, 0, 16);
+            this.tlpCampos.Location = new System.Drawing.Point(10, 38);
             this.tlpCampos.Name = "tlpCampos";
             this.tlpCampos.RowCount = 17;
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -533,77 +579,21 @@
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
-            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCampos.Size = new System.Drawing.Size(269, 477);
+            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tlpCampos.Size = new System.Drawing.Size(280, 456);
             this.tlpCampos.TabIndex = 1;
-            this.tlpCampos.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpCampos_Paint);
-            // 
-            // rbCredito
-            // 
-            this.rbCredito.AutoSize = true;
-            this.rbCredito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbCredito.Location = new System.Drawing.Point(137, 335);
-            this.rbCredito.Name = "rbCredito";
-            this.rbCredito.Size = new System.Drawing.Size(129, 19);
-            this.rbCredito.TabIndex = 19;
-            this.rbCredito.TabStop = true;
-            this.rbCredito.Text = "Crédito";
-            this.rbCredito.UseVisualStyleBackColor = true;
-            // 
-            // lblModalidad
-            // 
-            this.lblModalidad.AutoSize = true;
-            this.tlpCampos.SetColumnSpan(this.lblModalidad, 2);
-            this.lblModalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblModalidad.Location = new System.Drawing.Point(0, 318);
-            this.lblModalidad.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
-            this.lblModalidad.Name = "lblModalidad";
-            this.lblModalidad.Size = new System.Drawing.Size(64, 12);
-            this.lblModalidad.TabIndex = 16;
-            this.lblModalidad.Text = "Modalidad";
-            // 
-            // txtColor
-            // 
-            this.txtColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtColor.Location = new System.Drawing.Point(137, 289);
-            this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(129, 23);
-            this.txtColor.TabIndex = 15;
-            // 
-            // txtYear
-            // 
-            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtYear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtYear.Location = new System.Drawing.Point(3, 289);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(128, 23);
-            this.txtYear.TabIndex = 14;
-            // 
-            // lblColor
-            // 
-            this.lblColor.AutoSize = true;
-            this.lblColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblColor.Location = new System.Drawing.Point(134, 269);
-            this.lblColor.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
-            this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(36, 15);
-            this.lblColor.TabIndex = 13;
-            this.lblColor.Text = "Color";
             // 
             // lblChasis
             // 
             this.lblChasis.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.lblChasis, 2);
             this.lblChasis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblChasis.Location = new System.Drawing.Point(0, 3);
-            this.lblChasis.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
+            this.lblChasis.Location = new System.Drawing.Point(0, 2);
+            this.lblChasis.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.lblChasis.Name = "lblChasis";
             this.lblChasis.Size = new System.Drawing.Size(41, 15);
             this.lblChasis.TabIndex = 0;
@@ -611,224 +601,312 @@
             // 
             // txtChasis
             // 
-            this.txtChasis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            this.txtChasis.BackColor = System.Drawing.Color.White;
             this.txtChasis.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tlpCampos.SetColumnSpan(this.txtChasis, 2);
             this.txtChasis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtChasis.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtChasis.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtChasis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtChasis.Location = new System.Drawing.Point(0, 20);
-            this.txtChasis.Margin = new System.Windows.Forms.Padding(0, 0, 0, 7);
+            this.txtChasis.Location = new System.Drawing.Point(0, 19);
+            this.txtChasis.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.txtChasis.Name = "txtChasis";
-            this.txtChasis.Size = new System.Drawing.Size(269, 25);
-            this.txtChasis.TabIndex = 0;
+            this.txtChasis.Size = new System.Drawing.Size(280, 24);
+            this.txtChasis.TabIndex = 1;
             // 
             // lblNroContrato
             // 
             this.lblNroContrato.AutoSize = true;
             this.lblNroContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblNroContrato.Location = new System.Drawing.Point(0, 55);
-            this.lblNroContrato.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
+            this.lblNroContrato.Location = new System.Drawing.Point(0, 51);
+            this.lblNroContrato.Margin = new System.Windows.Forms.Padding(0, 2, 4, 2);
             this.lblNroContrato.Name = "lblNroContrato";
             this.lblNroContrato.Size = new System.Drawing.Size(77, 15);
-            this.lblNroContrato.TabIndex = 1;
+            this.lblNroContrato.TabIndex = 2;
             this.lblNroContrato.Text = "Nro Contrato";
-            // 
-            // txtContrato
-            // 
-            this.txtContrato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtContrato.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtContrato.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(107)))));
-            this.txtContrato.Location = new System.Drawing.Point(3, 75);
-            this.txtContrato.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
-            this.txtContrato.Name = "txtContrato";
-            this.txtContrato.Size = new System.Drawing.Size(128, 25);
-            this.txtContrato.TabIndex = 1;
-            this.txtContrato.TabStop = false;
             // 
             // lblDocumento
             // 
             this.lblDocumento.AutoSize = true;
             this.lblDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblDocumento.Location = new System.Drawing.Point(134, 55);
-            this.lblDocumento.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
+            this.lblDocumento.Location = new System.Drawing.Point(144, 51);
+            this.lblDocumento.Margin = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.lblDocumento.Name = "lblDocumento";
             this.lblDocumento.Size = new System.Drawing.Size(47, 15);
-            this.lblDocumento.TabIndex = 2;
+            this.lblDocumento.TabIndex = 3;
             this.lblDocumento.Text = "NIT / CI";
+            // 
+            // txtContrato
+            // 
+            this.txtContrato.BackColor = System.Drawing.Color.White;
+            this.txtContrato.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContrato.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtContrato.Location = new System.Drawing.Point(0, 68);
+            this.txtContrato.Margin = new System.Windows.Forms.Padding(0, 0, 4, 6);
+            this.txtContrato.Name = "txtContrato";
+            this.txtContrato.Size = new System.Drawing.Size(136, 24);
+            this.txtContrato.TabIndex = 4;
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.BackColor = System.Drawing.Color.White;
+            this.txtDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDocumento.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtDocumento.Location = new System.Drawing.Point(144, 68);
+            this.txtDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 0, 6);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(136, 24);
+            this.txtDocumento.TabIndex = 5;
             // 
             // lblPropietario
             // 
             this.lblPropietario.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.lblPropietario, 2);
             this.lblPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblPropietario.Location = new System.Drawing.Point(3, 110);
-            this.lblPropietario.Margin = new System.Windows.Forms.Padding(3, 3, 0, 2);
+            this.lblPropietario.Location = new System.Drawing.Point(0, 100);
+            this.lblPropietario.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.lblPropietario.Name = "lblPropietario";
             this.lblPropietario.Size = new System.Drawing.Size(113, 15);
-            this.lblPropietario.TabIndex = 3;
+            this.lblPropietario.TabIndex = 6;
             this.lblPropietario.Text = "Cliente / Propietario";
             // 
             // txtPropietario
             // 
-            this.txtPropietario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            this.txtPropietario.BackColor = System.Drawing.Color.White;
             this.tlpCampos.SetColumnSpan(this.txtPropietario, 2);
             this.txtPropietario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPropietario.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(107)))));
-            this.txtPropietario.Location = new System.Drawing.Point(0, 127);
-            this.txtPropietario.Margin = new System.Windows.Forms.Padding(0, 0, 3, 7);
+            this.txtPropietario.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtPropietario.Location = new System.Drawing.Point(0, 117);
+            this.txtPropietario.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.txtPropietario.Name = "txtPropietario";
-            this.txtPropietario.Size = new System.Drawing.Size(266, 25);
-            this.txtPropietario.TabIndex = 2;
-            this.txtPropietario.TabStop = false;
+            this.txtPropietario.Size = new System.Drawing.Size(280, 24);
+            this.txtPropietario.TabIndex = 7;
             // 
             // lblPlaca
             // 
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblPlaca.Location = new System.Drawing.Point(0, 162);
-            this.lblPlaca.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
+            this.lblPlaca.Location = new System.Drawing.Point(0, 149);
+            this.lblPlaca.Margin = new System.Windows.Forms.Padding(0, 2, 4, 2);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(40, 15);
-            this.lblPlaca.TabIndex = 5;
+            this.lblPlaca.TabIndex = 8;
             this.lblPlaca.Text = "Marca";
-            // 
-            // txtClase
-            // 
-            this.txtClase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtClase.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtClase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtClase.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtClase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtClase.Location = new System.Drawing.Point(137, 182);
-            this.txtClase.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
-            this.txtClase.MaxLength = 7;
-            this.txtClase.Name = "txtClase";
-            this.txtClase.Size = new System.Drawing.Size(129, 25);
-            this.txtClase.TabIndex = 5;
-            // 
-            // lblTipoVehiculo
-            // 
-            this.lblTipoVehiculo.AutoSize = true;
-            this.lblTipoVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblTipoVehiculo.Location = new System.Drawing.Point(0, 217);
-            this.lblTipoVehiculo.Margin = new System.Windows.Forms.Padding(0, 3, 3, 2);
-            this.lblTipoVehiculo.Name = "lblTipoVehiculo";
-            this.lblTipoVehiculo.Size = new System.Drawing.Size(94, 15);
-            this.lblTipoVehiculo.TabIndex = 6;
-            this.lblTipoVehiculo.Text = "Tipo de Vehiculo";
-            // 
-            // lblMonto
-            // 
-            this.lblMonto.AutoSize = true;
-            this.lblMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblMonto.Location = new System.Drawing.Point(137, 217);
-            this.lblMonto.Margin = new System.Windows.Forms.Padding(3, 3, 0, 2);
-            this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(61, 15);
-            this.lblMonto.TabIndex = 7;
-            this.lblMonto.Text = "Nro póliza";
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDocumento.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtDocumento.Location = new System.Drawing.Point(137, 75);
-            this.txtDocumento.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(129, 25);
-            this.txtDocumento.TabIndex = 6;
-            // 
-            // txtPoliza
-            // 
-            this.txtPoliza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.txtPoliza.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPoliza.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPoliza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.txtPoliza.Location = new System.Drawing.Point(137, 234);
-            this.txtPoliza.Margin = new System.Windows.Forms.Padding(3, 0, 0, 7);
-            this.txtPoliza.Name = "txtPoliza";
-            this.txtPoliza.Size = new System.Drawing.Size(132, 25);
-            this.txtPoliza.TabIndex = 7;
-            this.txtPoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // cbMarca
-            // 
-            this.cbMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
-            this.cbMarca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Items.AddRange(new object[] {
-            "SUZUKI",
-            "NISSAN",
-            "MAZDA",
-            "CHEVROLET",
-            "GAC",
-            "CHERY"});
-            this.cbMarca.Location = new System.Drawing.Point(3, 182);
-            this.cbMarca.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
-            this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(128, 25);
-            this.cbMarca.TabIndex = 9;
-            // 
-            // lblYear
-            // 
-            this.lblYear.AutoSize = true;
-            this.lblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.lblYear.Location = new System.Drawing.Point(0, 269);
-            this.lblYear.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(29, 15);
-            this.lblYear.TabIndex = 11;
-            this.lblYear.Text = "Año";
-            this.lblYear.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label6.Location = new System.Drawing.Point(134, 162);
-            this.label6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
+            this.label6.Location = new System.Drawing.Point(144, 149);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 15);
-            this.label6.TabIndex = 10;
+            this.label6.TabIndex = 9;
             this.label6.Text = "Clase";
+            // 
+            // cbMarca
+            // 
+            this.cbMarca.BackColor = System.Drawing.Color.White;
+            this.cbMarca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbMarca.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cbMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Items.AddRange(new object[] {
+            "SUZUKI",
+            "JAC CARS",
+            "MAZDA",
+            "CHANGAN",
+            "NISSAN",
+            "CHEVROLET",
+            "TOYOTA",
+            "GAC",
+            "CHERY"});
+            this.cbMarca.Location = new System.Drawing.Point(0, 166);
+            this.cbMarca.Margin = new System.Windows.Forms.Padding(0, 0, 4, 6);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(136, 24);
+            this.cbMarca.TabIndex = 10;
+            // 
+            // txtClase
+            // 
+            this.txtClase.BackColor = System.Drawing.Color.White;
+            this.txtClase.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtClase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtClase.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtClase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtClase.Location = new System.Drawing.Point(144, 166);
+            this.txtClase.Margin = new System.Windows.Forms.Padding(4, 0, 0, 6);
+            this.txtClase.MaxLength = 50;
+            this.txtClase.Name = "txtClase";
+            this.txtClase.Size = new System.Drawing.Size(136, 24);
+            this.txtClase.TabIndex = 11;
+            // 
+            // lblTipoVehiculo
+            // 
+            this.lblTipoVehiculo.AutoSize = true;
+            this.lblTipoVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.lblTipoVehiculo.Location = new System.Drawing.Point(0, 198);
+            this.lblTipoVehiculo.Margin = new System.Windows.Forms.Padding(0, 2, 4, 2);
+            this.lblTipoVehiculo.Name = "lblTipoVehiculo";
+            this.lblTipoVehiculo.Size = new System.Drawing.Size(94, 15);
+            this.lblTipoVehiculo.TabIndex = 12;
+            this.lblTipoVehiculo.Text = "Tipo de Vehículo";
+            // 
+            // lblMonto
+            // 
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.lblMonto.Location = new System.Drawing.Point(144, 198);
+            this.lblMonto.Margin = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(61, 15);
+            this.lblMonto.TabIndex = 13;
+            this.lblMonto.Text = "Nro póliza";
             // 
             // txtTipoVehiculo
             // 
-            this.txtTipoVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
+            this.txtTipoVehiculo.BackColor = System.Drawing.Color.White;
             this.txtTipoVehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTipoVehiculo.Location = new System.Drawing.Point(3, 237);
+            this.txtTipoVehiculo.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtTipoVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtTipoVehiculo.Location = new System.Drawing.Point(0, 215);
+            this.txtTipoVehiculo.Margin = new System.Windows.Forms.Padding(0, 0, 4, 6);
             this.txtTipoVehiculo.Name = "txtTipoVehiculo";
-            this.txtTipoVehiculo.Size = new System.Drawing.Size(128, 23);
-            this.txtTipoVehiculo.TabIndex = 12;
+            this.txtTipoVehiculo.Size = new System.Drawing.Size(136, 24);
+            this.txtTipoVehiculo.TabIndex = 14;
+            // 
+            // txtPoliza
+            // 
+            this.txtPoliza.BackColor = System.Drawing.Color.White;
+            this.txtPoliza.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPoliza.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtPoliza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtPoliza.Location = new System.Drawing.Point(144, 215);
+            this.txtPoliza.Margin = new System.Windows.Forms.Padding(4, 0, 0, 6);
+            this.txtPoliza.Name = "txtPoliza";
+            this.txtPoliza.Size = new System.Drawing.Size(136, 24);
+            this.txtPoliza.TabIndex = 15;
+            // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.lblYear.Location = new System.Drawing.Point(0, 247);
+            this.lblYear.Margin = new System.Windows.Forms.Padding(0, 2, 4, 2);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(29, 15);
+            this.lblYear.TabIndex = 16;
+            this.lblYear.Text = "Año";
+            // 
+            // lblColor
+            // 
+            this.lblColor.AutoSize = true;
+            this.lblColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.lblColor.Location = new System.Drawing.Point(144, 247);
+            this.lblColor.Margin = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.lblColor.Name = "lblColor";
+            this.lblColor.Size = new System.Drawing.Size(36, 15);
+            this.lblColor.TabIndex = 17;
+            this.lblColor.Text = "Color";
+            // 
+            // txtYear
+            // 
+            this.txtYear.BackColor = System.Drawing.Color.White;
+            this.txtYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtYear.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtYear.Location = new System.Drawing.Point(0, 264);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(0, 0, 4, 6);
+            this.txtYear.MaxLength = 4;
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(136, 24);
+            this.txtYear.TabIndex = 18;
+            // 
+            // txtColor
+            // 
+            this.txtColor.BackColor = System.Drawing.Color.White;
+            this.txtColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtColor.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.txtColor.Location = new System.Drawing.Point(144, 264);
+            this.txtColor.Margin = new System.Windows.Forms.Padding(4, 0, 0, 6);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(136, 24);
+            this.txtColor.TabIndex = 19;
+            // 
+            // lblModalidad
+            // 
+            this.lblModalidad.AutoSize = true;
+            this.tlpCampos.SetColumnSpan(this.lblModalidad, 2);
+            this.lblModalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.lblModalidad.Location = new System.Drawing.Point(0, 296);
+            this.lblModalidad.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.lblModalidad.Name = "lblModalidad";
+            this.lblModalidad.Size = new System.Drawing.Size(64, 15);
+            this.lblModalidad.TabIndex = 20;
+            this.lblModalidad.Text = "Modalidad";
             // 
             // rbContado
             // 
             this.rbContado.AutoSize = true;
             this.rbContado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbContado.Location = new System.Drawing.Point(3, 335);
+            this.rbContado.Location = new System.Drawing.Point(3, 317);
             this.rbContado.Name = "rbContado";
-            this.rbContado.Size = new System.Drawing.Size(128, 19);
-            this.rbContado.TabIndex = 18;
+            this.rbContado.Size = new System.Drawing.Size(134, 19);
+            this.rbContado.TabIndex = 21;
             this.rbContado.TabStop = true;
             this.rbContado.Text = "Contado";
             this.rbContado.UseVisualStyleBackColor = true;
+            // 
+            // rbCredito
+            // 
+            this.rbCredito.AutoSize = true;
+            this.rbCredito.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbCredito.Location = new System.Drawing.Point(143, 317);
+            this.rbCredito.Name = "rbCredito";
+            this.rbCredito.Size = new System.Drawing.Size(134, 19);
+            this.rbCredito.TabIndex = 22;
+            this.rbCredito.TabStop = true;
+            this.rbCredito.Text = "Crédito";
+            this.rbCredito.UseVisualStyleBackColor = true;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.tlpCampos.SetColumnSpan(this.lblEmpresa, 2);
+            this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.lblEmpresa.Location = new System.Drawing.Point(0, 341);
+            this.lblEmpresa.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(51, 15);
+            this.lblEmpresa.TabIndex = 23;
+            this.lblEmpresa.Text = "Empresa";
+            // 
+            // cmbEmpresa
+            // 
+            this.cmbEmpresa.BackColor = System.Drawing.Color.White;
+            this.tlpCampos.SetColumnSpan(this.cmbEmpresa, 2);
+            this.cmbEmpresa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cmbEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            this.cmbEmpresa.FormattingEnabled = true;
+            this.cmbEmpresa.Location = new System.Drawing.Point(0, 359);
+            this.cmbEmpresa.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
+            this.cmbEmpresa.Name = "cmbEmpresa";
+            this.cmbEmpresa.Size = new System.Drawing.Size(280, 24);
+            this.cmbEmpresa.TabIndex = 24;
             // 
             // chkDespacho
             // 
             this.chkDespacho.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.chkDespacho, 2);
-            this.chkDespacho.Location = new System.Drawing.Point(3, 390);
+            this.chkDespacho.Location = new System.Drawing.Point(3, 394);
             this.chkDespacho.Name = "chkDespacho";
-            this.tlpCampos.SetRowSpan(this.chkDespacho, 2);
             this.chkDespacho.Size = new System.Drawing.Size(198, 19);
-            this.chkDespacho.TabIndex = 23;
+            this.chkDespacho.TabIndex = 25;
             this.chkDespacho.Text = "Despachado a Alcaldía y Diprove";
             this.chkDespacho.UseVisualStyleBackColor = true;
             // 
@@ -841,18 +919,15 @@
             this.lblEncabezadoDatos.Location = new System.Drawing.Point(0, 0);
             this.lblEncabezadoDatos.Name = "lblEncabezadoDatos";
             this.lblEncabezadoDatos.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.lblEncabezadoDatos.Size = new System.Drawing.Size(290, 26);
+            this.lblEncabezadoDatos.Size = new System.Drawing.Size(300, 26);
             this.lblEncabezadoDatos.TabIndex = 0;
             this.lblEncabezadoDatos.Text = "Datos del trámite — Recepción y Despacho";
             this.lblEncabezadoDatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblAviso
+            // errorProvider1
             // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.Location = new System.Drawing.Point(9, 10);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(0, 15);
-            this.lblAviso.TabIndex = 1;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmRecepcion
             // 
@@ -878,9 +953,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecepciones)).EndInit();
             this.pnlDatos.ResumeLayout(false);
             this.pnlAviso.ResumeLayout(false);
-            this.pnlAviso.PerformLayout();
             this.tlpCampos.ResumeLayout(false);
             this.tlpCampos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -892,6 +967,8 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnLimpiar;
+        private System.Windows.Forms.ToolStripSeparator tssImportar;
+        private System.Windows.Forms.ToolStripButton btnImportarExcel;
         private System.Windows.Forms.ToolStripButton btnCerrar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnBuscar;
@@ -936,6 +1013,8 @@
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.RadioButton rbContado;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.ComboBox cmbEmpresa;
         private System.Windows.Forms.CheckBox chkDespacho;
         private System.Windows.Forms.DataGridViewTextBoxColumn colChasis;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
@@ -945,5 +1024,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
         private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
