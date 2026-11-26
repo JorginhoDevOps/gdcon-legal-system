@@ -1,20 +1,44 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
 using CapaNegocio;
+using PdfSharp;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using QRCoder;
 
 namespace CapaPresentacion
 {
     public partial class FrmActaCredito : Form
     {
+        private string nroTramiteActual = "EJEMPLO";
+
         public FrmActaCredito()
         {
             InitializeComponent();
+            BloquearCasillasConformidad(pnlHoja);
+            AgregarBotonPdf();
             EstiloUI.SoloBarra(this);
             CargarEjemplo();
+        }
+        private void BloquearCasillasConformidad(Control contenedor)
+        {
+            foreach (Control c in contenedor.Controls)
+            {
+                CheckBox chk = c as CheckBox;
+                if (chk != null)
+                {
+                    chk.Checked = false;
+                    chk.AutoCheck = false;
+                    chk.TabStop = false;
+                }
+                if (c.HasChildren)
+                    BloquearCasillasConformidad(c);
+            }
         }
 
         public FrmActaCredito(Tramite t) : this()
@@ -38,6 +62,9 @@ namespace CapaPresentacion
 
         public void CargarTramite(Tramite t)
         {
+            if (!string.IsNullOrWhiteSpace(t.NroTramite))
+                nroTramiteActual = t.NroTramite;
+
             string placa = string.IsNullOrWhiteSpace(t.Placa) ? "S/P" : t.Placa;
             string modelo = ((t.TipoVehiculo ?? "") + " " + (t.Anio ?? "")).Trim();
             if (modelo == "") modelo = "-";
@@ -72,6 +99,78 @@ namespace CapaPresentacion
             using (QRCode qr = new QRCode(data))
             {
                 picQr.Image = qr.GetGraphic(5);
+            }
+        }
+
+        private void AgregarBotonPdf()
+        {
+            ToolStripButton tsbPdf = new ToolStripButton();
+            tsbPdf.Name = "tsbExportarPdf";
+            tsbPdf.Text = "Exportar PDF";
+            tsbPdf.Image = Properties.Resources.PDF;
+            tsbPdf.Click += new EventHandler(tsbExportarPdf_Click);
+            tsBarra.Items.Insert(2, tsbPdf);
+        }
+
+        private void tsbExportarPdf_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog dlg = new SaveFileDialog())
+            {
+                dlg.Title = "Guardar Acta de Entrega (Crédito) en PDF";
+                dlg.Filter = "Archivo PDF (*.pdf)|*.pdf";
+                dlg.FileName = "Acta_Credito_" + nroTramiteActual + ".pdf";
+
+                if (dlg.ShowDialog() != DialogResult.OK) return;
+
+                try
+                {
+                    ExportarHojaPdf(dlg.FileName);
+                    MessageBox.Show("Acta exportada correctamente en PDF:\n" + dlg.FileName,
+                        "GDCON Legal System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo generar el PDF:\n" + ex.Message,
+                        "GDCON Legal System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void ExportarHojaPdf(string rutaArchivo)
+        {
+            using (Bitmap bmp = new Bitmap(pnlHoja.Width, pnlHoja.Height))
+            {
+                pnlHoja.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    bmp.Save(ms, ImageFormat.Png);
+                    ms.Position = 0;
+
+                    using (PdfDocument pdf = new PdfDocument())
+                    {
+                        pdf.Info.Title = "Acta de Entrega - " + nroTramiteActual;
+                        PdfPage pagina = pdf.AddPage();
+                        pagina.Size = PageSize.Letter;
+
+                        using (XGraphics gfx = XGraphics.FromPdfPage(pagina))
+                        using (XImage img = XImage.FromStream(ms))
+                        {
+                            double margen = 30;
+                            double anchoDisp = pagina.Width.Point - (margen * 2);
+                            double altoDisp = pagina.Height.Point - (margen * 2);
+                            double escala = Math.Min(anchoDisp / img.PixelWidth, altoDisp / img.PixelHeight);
+
+                            double anchoFinal = img.PixelWidth * escala;
+                            double altoFinal = img.PixelHeight * escala;
+                            double x = (pagina.Width.Point - anchoFinal) / 2;
+
+                            gfx.DrawImage(img, x, margen, anchoFinal, altoFinal);
+                        }
+
+                        pdf.Save(rutaArchivo);
+                    }
+                }
             }
         }
 

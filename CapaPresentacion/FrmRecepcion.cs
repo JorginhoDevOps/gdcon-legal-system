@@ -17,13 +17,15 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             EstiloUI.Aplicar(this, 1, 2);
+            tramites.Archivo_VectorTramites();
         }
+        Tramites tramites = new Tramites();
         Recepciones recepciones = new Recepciones();
+
 
         private void FrmRecepcion_Load(object sender, EventArgs e)
         {
-            recepciones.cargarDocumento();
-            recepciones.mostrarRecepciones(dgvRecepciones);
+            mostrarRecepciones();
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -69,26 +71,47 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            recepciones.incrementar();
-            Recepcion nuevaRecepcion = new Recepcion();
+            tramites.Incrementar();
+            Tramite nuevoTramite = new Tramite();
 
-            nuevaRecepcion.chasis = txtChasis.Text;
-            nuevaRecepcion.nroContrato = txtContrato.Text;
-            nuevaRecepcion.documento = txtDocumento.Text;
-            nuevaRecepcion.cliente = txtPropietario.Text;
-            nuevaRecepcion.marca = cbMarca.Text;
-            nuevaRecepcion.clase = txtClase.Text;
-            nuevaRecepcion.tipoVehiculo = txtTipoVehiculo.Text;
-            nuevaRecepcion.poliza = txtPoliza.Text;
-            nuevaRecepcion.year = (txtYear.Text);
-            nuevaRecepcion.color = txtColor.Text;
-            nuevaRecepcion.modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
-            nuevaRecepcion.ingreso = dtpIngreso.Value;
-            nuevaRecepcion.despachoAlcaldia = chkDespacho.Checked;
-            nuevaRecepcion.status = "test";
-            recepciones.guardar(nuevaRecepcion);
-            recepciones.mostrarRecepciones(dgvRecepciones);
-            recepciones.guardarDocumento();
+            nuevoTramite.Chasis = txtChasis.Text;
+            nuevoTramite.NroContrato = txtContrato.Text;
+            nuevoTramite.NitCi = txtDocumento.Text;
+            nuevoTramite.Cliente = txtPropietario.Text;
+            nuevoTramite.Marca = cbMarca.Text;
+            nuevoTramite.Clase = txtClase.Text;
+            nuevoTramite.TipoVehiculo = txtTipoVehiculo.Text;
+            nuevoTramite.Poliza = txtPoliza.Text;
+            nuevoTramite.Anio = (txtYear.Text);
+            nuevoTramite.Color = txtColor.Text;
+            nuevoTramite.Modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
+            nuevoTramite.FechaIngreso = dtpIngreso.Value;
+            nuevoTramite.DespachoAlcaldia = chkDespacho.Checked;
+            nuevoTramite.Estado = "test";
+            tramites.Guardar(nuevoTramite);
+            mostrarRecepciones();
+        }
+
+        public void mostrarRecepciones()
+        {
+            List<Tramite> ListaTramites = recepciones.ObtenerTodos();
+            dgvRecepciones.Rows.Clear();
+
+            if (ListaTramites == null || ListaTramites.Count == 0)
+                return;
+
+            dgvRecepciones.RowCount = ListaTramites.Count;
+
+            for (int V = 0; V < ListaTramites.Count; V++)
+            {
+                dgvRecepciones[0, V].Value = ListaTramites[V].Chasis;
+                dgvRecepciones[1, V].Value = ListaTramites[V].Cliente;
+                dgvRecepciones[2, V].Value = ListaTramites[V].Modalidad;
+                dgvRecepciones[3, V].Value = ListaTramites[V].Marca;
+                dgvRecepciones[4, V].Value = ListaTramites[V].Poliza;
+                dgvRecepciones[5, V].Value = ListaTramites[V].FechaIngreso.ToString("dd/MM/yyyy HH:mm");
+                dgvRecepciones[6, V].Value = ListaTramites[V].Estado;
+            }
         }
     }
 }

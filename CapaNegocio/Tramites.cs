@@ -1,17 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Windows.Forms;
 using System.Text.Json;
+using System.Windows.Forms;
 
 namespace CapaNegocio
 {
     public class Tramites
     {
         #region "ATRIBUTOS"
-        Tramite[] VTramites = new Tramite[100];
-        int Vis;
+        List<Tramite> ListaTramites = new List<Tramite>();
         #endregion
 
         #region "ESTADOS"
@@ -25,27 +23,27 @@ namespace CapaNegocio
         #region "CONSTRUCTOR"
         public Tramites()
         {
-            Vis = -1;
+            ListaTramites = new List<Tramite>();
         }
         #endregion
 
         #region "METODOS BASICOS"
         public void Incrementar()
         {
-            Vis++;
+            // Con List<T> la capacidad crece automáticamente al usar Add()
         }
         public bool HayEspacio()
         {
-            return Vis < VTramites.Length - 1;
+            return true;
         }
         public int Cantidad()
         {
-            return Vis + 1;
+            return ListaTramites.Count;
         }
         public Tramite Obtener(int Pos)
         {
-            if (Pos < 0 || Pos > Vis) return null;
-            return VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) return null;
+            return ListaTramites[Pos];
         }
 
         // Busca por chasis, N° de trámite o NIT/CI. Devuelve la posición o -1.
@@ -53,33 +51,34 @@ namespace CapaNegocio
         {
             if (string.IsNullOrWhiteSpace(Texto)) return -1;
             Texto = Texto.Trim();
-            for (int V = 0; V <= Vis; V++)
-                if (Igual(VTramites[V].Chasis, Texto) ||
-                    Igual(VTramites[V].NroTramite, Texto) ||
-                    Igual(VTramites[V].NitCi, Texto))
+            for (int V = 0; V < ListaTramites.Count; V++)
+                if (Igual(ListaTramites[V].Chasis, Texto) ||
+                    Igual(ListaTramites[V].NroTramite, Texto) ||
+                    Igual(ListaTramites[V].NitCi, Texto))
                     return V;
             return -1;
         }
+
         // Posiciones de los trámites que están en alguno de los estados indicados
         public List<int> Posiciones(params string[] Estados)
         {
             List<int> Lista = new List<int>();
-            for (int V = 0; V <= Vis; V++)
-                if (Array.IndexOf(Estados, VTramites[V].Estado) >= 0)
+            for (int V = 0; V < ListaTramites.Count; V++)
+                if (Array.IndexOf(Estados, ListaTramites[V].Estado) >= 0)
                     Lista.Add(V);
             return Lista;
         }
+
         public int BuscarChasis(string Chasis)
         {
-            for (int V = 0; V <= Vis; V++)
-                if (Igual(VTramites[V].Chasis, Chasis))
+            for (int V = 0; V < ListaTramites.Count; V++)
+                if (Igual(ListaTramites[V].Chasis, Chasis))
                     return V;
             return -1;
         }
         #endregion
 
         #region "RECEPCION (RF-01)"
-      
         public List<KeyValuePair<string, string>> Validar(Tramite T, int PosActual)
         {
             List<KeyValuePair<string, string>> Errores = new List<KeyValuePair<string, string>>();
@@ -91,36 +90,30 @@ namespace CapaNegocio
             if (Vacio(T.Poliza)) Errores.Add(Error("Poliza", "Ingresa el N° de póliza."));
             if (Vacio(T.Modalidad)) Errores.Add(Error("Modalidad", "Selecciona la modalidad (Contado o Crédito)."));
 
-            for (int V = 0; V <= Vis; V++)
+            for (int V = 0; V < ListaTramites.Count; V++)
             {
                 if (V == PosActual) continue;
-                if (!Vacio(T.Chasis) && Igual(VTramites[V].Chasis, T.Chasis))
-                    Errores.Add(Error("Chasis", "Ya existe un trámite con ese chasis (" + VTramites[V].NroTramite + ")."));
-                if (!Vacio(T.Poliza) && Igual(VTramites[V].Poliza, T.Poliza))
-                    Errores.Add(Error("Poliza", "Ya existe un trámite con esa póliza (" + VTramites[V].NroTramite + ")."));
+                if (!Vacio(T.Chasis) && Igual(ListaTramites[V].Chasis, T.Chasis))
+                    Errores.Add(Error("Chasis", "Ya existe un trámite con ese chasis (" + ListaTramites[V].NroTramite + ")."));
+                if (!Vacio(T.Poliza) && Igual(ListaTramites[V].Poliza, T.Poliza))
+                    Errores.Add(Error("Poliza", "Ya existe un trámite con esa póliza (" + ListaTramites[V].NroTramite + ")."));
             }
             return Errores;
         }
 
-        // Marca, clase, tipo, año y color: se pueden completar después, pero son
-        // obligatorios para despachar.
         public bool DatosCompletos(Tramite T)
         {
             return !Vacio(T.Marca) && !Vacio(T.Clase) && !Vacio(T.TipoVehiculo) &&
                    !Vacio(T.Anio) && !Vacio(T.Color);
         }
 
-        // Une Incrementar + Guardar: asigna N° de trámite, estado inicial "Recibido"
-        // y fecha de ingreso. El estado inicial NUNCA lo elige el usuario (RN-01).
         public bool Guardar(Tramite T)
         {
-            if (!HayEspacio()) return false;
             T.NroTramite = GenerarNroTramite();
             T.Estado = Recibido;
             T.FechaIngreso = DateTime.Now;
-            T.Codigo = Vis + 2;
-            Incrementar();
-            VTramites[Vis] = T;
+            T.Codigo = ListaTramites.Count + 1;
+            ListaTramites.Add(T);
             return true;
         }
 
@@ -128,9 +121,9 @@ namespace CapaNegocio
         {
             string Prefijo = "TRM-" + DateTime.Now.Year.ToString() + "-";
             int Max = 0;
-            for (int V = 0; V <= Vis; V++)
+            for (int V = 0; V < ListaTramites.Count; V++)
             {
-                string Nro = VTramites[V].NroTramite;
+                string Nro = ListaTramites[V].NroTramite;
                 int Secuencia;
                 if (Nro != null && Nro.StartsWith(Prefijo) &&
                     int.TryParse(Nro.Substring(Prefijo.Length), out Secuencia) && Secuencia > Max)
@@ -139,20 +132,16 @@ namespace CapaNegocio
             return Prefijo + (Max + 1).ToString("0000");
         }
 
-        // ¿Esta persona puede modificar este trámite?
-        // Recibido: cualquiera. Después de Despachado: solo el Administrador.
         public bool PuedeModificar(int Pos, bool EsAdministrador)
         {
-            if (Pos < 0 || Pos > Vis) return false;
-            return VTramites[Pos].Estado == Recibido || EsAdministrador;
+            if (Pos < 0 || Pos >= ListaTramites.Count) return false;
+            return ListaTramites[Pos].Estado == Recibido || EsAdministrador;
         }
 
-        // Cambia solo los datos editables. N° de trámite, estado y fecha de ingreso nunca cambian.
-        // Chasis, empresa, póliza, modalidad y honorario solo cambian mientras el trámite esté Recibido.
         public bool Modificar(int Pos, Tramite Nuevo, bool EsAdministrador)
         {
             if (!PuedeModificar(Pos, EsAdministrador)) return false;
-            Tramite Ant = VTramites[Pos];
+            Tramite Ant = ListaTramites[Pos];
 
             if (Ant.Estado == Recibido)
             {
@@ -172,27 +161,21 @@ namespace CapaNegocio
             return true;
         }
 
-        // Solo se elimina un trámite que todavía está Recibido.
         public bool Eliminar(int Pos)
         {
-            if (Pos < 0 || Pos > Vis) return false;
-            if (VTramites[Pos].Estado != Recibido) return false;
-            for (int V = Pos; V < Vis; V++)
-            {
-                VTramites[V] = VTramites[V + 1];
-                VTramites[V].Codigo = V + 1;
-            }
-            VTramites[Vis] = null;
-            Vis--;
+            if (Pos < 0 || Pos >= ListaTramites.Count) return false;
+            if (ListaTramites[Pos].Estado != Recibido) return false;
+            ListaTramites.RemoveAt(Pos);
+            for (int V = 0; V < ListaTramites.Count; V++)
+                ListaTramites[V].Codigo = V + 1;
             return true;
         }
 
-        // Recibido -> Despachado (casilla "Despacho a Alcaldía y Diprove")
         public bool Despachar(int Pos, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != Recibido) { Mensaje = "El trámite ya fue despachado."; return false; }
             if (!DatosCompletos(T))
             {
@@ -206,12 +189,11 @@ namespace CapaNegocio
         #endregion
 
         #region "PLACAS Y PAGOS (etapa 3): Despachado -> Con placa y pago"
-        // C: registra placa, RUAT verificado y comprobante de pago
         public bool RegistrarPlacaPago(int Pos, string Placa, bool Ruat, string Comprobante, double Monto, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != Despachado)
             {
                 Mensaje = "Solo se registran placa y pago de trámites Despachados (este está " + T.Estado + ").";
@@ -222,12 +204,12 @@ namespace CapaNegocio
             T.Estado = ConPlacaPago;
             return true;
         }
-        // U: corrige placa, monto o comprobante (mientras siga Con placa y pago)
+
         public bool ModificarPlacaPago(int Pos, string Placa, bool Ruat, string Comprobante, double Monto, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != ConPlacaPago)
             {
                 Mensaje = "Solo se modifica mientras el trámite esté Con placa y pago (este está " + T.Estado + ").";
@@ -237,12 +219,12 @@ namespace CapaNegocio
             AsignarPlacaPago(T, Placa, Ruat, Comprobante, Monto);
             return true;
         }
-        // D: deshace la etapa y el trámite vuelve a Despachado
+
         public bool DeshacerPlacaPago(int Pos, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != ConPlacaPago)
             {
                 Mensaje = "Solo se deshace si el trámite está Con placa y pago (este está " + T.Estado + ").";
@@ -252,6 +234,7 @@ namespace CapaNegocio
             T.Estado = Despachado;
             return true;
         }
+
         bool ValidarPlacaPago(int Pos, string Placa, bool Ruat, string Comprobante, double Monto, out string Mensaje)
         {
             Mensaje = "";
@@ -259,31 +242,31 @@ namespace CapaNegocio
             if (!Ruat) { Mensaje = "Falta verificar el RUAT."; return false; }
             if (Vacio(Comprobante)) { Mensaje = "Ingresa el N° de comprobante del banco."; return false; }
             if (Monto <= 0) { Mensaje = "El monto pagado debe ser mayor a cero."; return false; }
-            for (int V = 0; V <= Vis; V++)
-                if (V != Pos && Igual(VTramites[V].Placa, Placa))
+            for (int V = 0; V < ListaTramites.Count; V++)
+                if (V != Pos && Igual(ListaTramites[V].Placa, Placa))
                 {
-                    Mensaje = "Esa placa ya está asignada al trámite " + VTramites[V].NroTramite + ".";
+                    Mensaje = "Esa placa ya está asignada al trámite " + ListaTramites[V].NroTramite + ".";
                     return false;
                 }
             return true;
         }
+
         void AsignarPlacaPago(Tramite T, string Placa, bool Ruat, string Comprobante, double Monto)
         {
             T.Placa = Placa.Trim();
             T.Ruat = Ruat;
             T.Comprobante = Comprobante.Trim();
             T.MontoPago = Monto;
-            T.PagoRealizado = true;     // solo se registra con comprobante
+            T.PagoRealizado = true;
         }
         #endregion
 
         #region "DIPROVE Y TRANSITO (etapa 4): Con placa y pago -> En tránsito"
-        // C: registra el informe de Diprove y envía la carpeta a Tránsito
         public bool RegistrarTransito(int Pos, string Informe, DateTime FechaRetorno, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != ConPlacaPago)
             {
                 Mensaje = "Solo se envían a Tránsito trámites Con placa y pago (este está " + T.Estado + ").";
@@ -296,12 +279,12 @@ namespace CapaNegocio
             T.Estado = EnTransito;
             return true;
         }
-        // U: corrige informe o fecha (solo si la entrega todavía no empezó)
+
         public bool ModificarTransito(int Pos, string Informe, DateTime FechaRetorno, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != EnTransito || EntregaIniciada(T))
             {
                 Mensaje = "Ya no se puede modificar: el trámite está " + T.Estado + " o la entrega ya empezó.";
@@ -312,12 +295,12 @@ namespace CapaNegocio
             T.FechaRetorno = FechaRetorno;
             return true;
         }
-        // D: deshace el envío y el trámite vuelve a Con placa y pago
+
         public bool DeshacerTransito(int Pos, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != EnTransito || EntregaIniciada(T))
             {
                 Mensaje = "No se puede deshacer: el trámite está " + T.Estado + " o la entrega ya empezó.";
@@ -330,7 +313,6 @@ namespace CapaNegocio
         #endregion
 
         #region "ENTREGA FINAL (etapa 5): En tránsito -> Entregado"
-        // Posición de cada requisito dentro del texto de 7 caracteres (0 = falta, 1 = listo)
         public const int ReqActaImpresa = 0;
         public const int ReqComprobanteCopia = 1;
         public const int ReqDocsIniciales = 2;
@@ -347,18 +329,16 @@ namespace CapaNegocio
         {
             return T.Requisitos == "1111111";
         }
-        // ¿Ya hay un registro de entrega guardado?
         public static bool EntregaIniciada(Tramite T)
         {
             return !string.IsNullOrEmpty(T.Requisitos) || !string.IsNullOrWhiteSpace(T.EntregadoA);
         }
 
-        // C/U: guarda los requisitos marcados y a quién se entrega (el trámite sigue En tránsito)
         public bool GuardarEntrega(int Pos, string Requisitos, string EntregadoA, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != EnTransito)
             {
                 Mensaje = "Solo se registra la entrega de trámites En tránsito (este está " + T.Estado + ").";
@@ -373,12 +353,12 @@ namespace CapaNegocio
             T.EntregadoA = (EntregadoA ?? "").Trim();
             return true;
         }
-        // D: deshace el registro de entrega (solo si todavía no se finalizó)
+
         public bool DeshacerEntrega(int Pos, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != EnTransito)
             {
                 Mensaje = "Un trámite " + T.Estado + " no se puede deshacer.";
@@ -388,12 +368,12 @@ namespace CapaNegocio
             T.EntregadoA = "";
             return true;
         }
-        // En tránsito -> Entregado. Exige los 7 requisitos y a quién se entrega.
+
         public bool FinalizarEntrega(int Pos, out string Mensaje)
         {
             Mensaje = "";
-            if (Pos < 0 || Pos > Vis) { Mensaje = "No hay un trámite seleccionado."; return false; }
-            Tramite T = VTramites[Pos];
+            if (Pos < 0 || Pos >= ListaTramites.Count) { Mensaje = "No hay un trámite seleccionado."; return false; }
+            Tramite T = ListaTramites[Pos];
             if (T.Estado != EnTransito)
             {
                 Mensaje = "Solo se finaliza un trámite En tránsito (este está " + T.Estado + ").";
@@ -413,7 +393,6 @@ namespace CapaNegocio
             return (DateTime.Now - T.FechaIngreso).TotalHours;
         }
 
-        // Verde hasta 24 h, Ámbar de 24 a 48 h, Rojo más de 48 h. Un trámite entregado ya no corre.
         public static string Semaforo(Tramite T)
         {
             if (T.Estado == Entregado) return "Entregado";
@@ -423,7 +402,6 @@ namespace CapaNegocio
             return "Rojo";
         }
 
-        // Texto para la columna Estado de la grilla de Recepción
         public string Situacion(Tramite T)
         {
             if (T.Estado != Recibido) return T.Estado;
@@ -433,26 +411,23 @@ namespace CapaNegocio
         #endregion
 
         #region "MOSTRAR"
-        // Grilla de Recepción. Columnas: Chasis, Cliente, Modalidad, Marca, Póliza, Ingreso, Estado
         public void MostrarRecepcion(DataGridView Dgv)
         {
-            try
+            if (ListaTramites.Count == 0)
             {
-                Dgv.RowCount = Vis + 1;
+                Dgv.Rows.Clear();
+                return;
             }
-            catch
+            Dgv.RowCount = ListaTramites.Count;
+            for (int V = 0; V < ListaTramites.Count; V++)
             {
-                Dgv.RowCount = 1;
-            }
-            for (int V = 0; V <= Vis; V++)
-            {
-                Dgv[0, V].Value = VTramites[V].Chasis;
-                Dgv[1, V].Value = VTramites[V].Cliente;
-                Dgv[2, V].Value = VTramites[V].Modalidad;
-                Dgv[3, V].Value = VTramites[V].Marca;
-                Dgv[4, V].Value = VTramites[V].Poliza;
-                Dgv[5, V].Value = VTramites[V].FechaIngreso.ToString("dd/MM/yyyy HH:mm");
-                Dgv[6, V].Value = Situacion(VTramites[V]);
+                Dgv[0, V].Value = ListaTramites[V].Chasis;
+                Dgv[1, V].Value = ListaTramites[V].Cliente;
+                Dgv[2, V].Value = ListaTramites[V].Modalidad;
+                Dgv[3, V].Value = ListaTramites[V].Marca;
+                Dgv[4, V].Value = ListaTramites[V].Poliza;
+                Dgv[5, V].Value = ListaTramites[V].FechaIngreso.ToString("dd/MM/yyyy HH:mm");
+                Dgv[6, V].Value = Situacion(ListaTramites[V]);
             }
         }
         #endregion
@@ -468,17 +443,13 @@ namespace CapaNegocio
         public void VectorTramites_Archivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            List<Tramite> Lista = new List<Tramite>();
-            for (int V = 0; V <= Vis; V++)
-                Lista.Add(VTramites[V]);
-
-            string Json = JsonSerializer.Serialize(Lista, OpcionesJson);
+            string Json = JsonSerializer.Serialize(ListaTramites, OpcionesJson);
             File.WriteAllText(Archivo, Json);
         }
 
         public void Archivo_VectorTramites()
         {
-            Vis = -1;
+            ListaTramites.Clear();
             if (!File.Exists(Archivo))
             {
                 CrearArchivo();
@@ -487,16 +458,8 @@ namespace CapaNegocio
             try
             {
                 string Json = File.ReadAllText(Archivo);
-                List<Tramite> Lista = JsonSerializer.Deserialize<List<Tramite>>(Json, OpcionesJson);
-                if (Lista != null)
-                {
-                    for (int I = 0; I < Lista.Count; I++)
-                    {
-                        if (!HayEspacio()) break;
-                        Incrementar();
-                        VTramites[Vis] = Lista[I];
-                    }
-                }
+                List<Tramite> Cargados = JsonSerializer.Deserialize<List<Tramite>>(Json, OpcionesJson);
+                if (Cargados != null) ListaTramites = Cargados;
             }
             catch
             {
@@ -512,8 +475,6 @@ namespace CapaNegocio
         #endregion
 
         #region "DATOS DE PRUEBA"
-        // Agrega 5 trámites ficticios, uno en cada punto del recorrido, para probar todas las pantallas.
-        // 0 = Recibido incompleto, 1 = Recibido completo, 2 = Despachado, 3 = Con placa y pago, 4 = En tránsito
         public void CargarDemo()
         {
             AgregarDemo("CHASIS-DEMO-001", "POL-DEMO-001", "Cliente de ejemplo 1", "Contado", 0, 5);
@@ -525,7 +486,7 @@ namespace CapaNegocio
 
         void AgregarDemo(string Chasis, string Poliza, string Cliente, string Modalidad, int Nivel, int HorasAtras)
         {
-            if (!HayEspacio() || BuscarChasis(Chasis) >= 0) return;
+            if (BuscarChasis(Chasis) >= 0) return;
             Tramite T = new Tramite();
             T.Empresa = "IMCRUZ";
             T.Chasis = Chasis;
@@ -544,7 +505,7 @@ namespace CapaNegocio
             }
             Guardar(T);
             T.FechaIngreso = DateTime.Now.AddHours(-HorasAtras);
-            int Pos = Vis;
+            int Pos = ListaTramites.Count - 1;
             string Msg;
             string Numero = Chasis.Substring(Chasis.Length - 3);
             if (Nivel >= 2) Despachar(Pos, out Msg);
@@ -565,41 +526,6 @@ namespace CapaNegocio
         static KeyValuePair<string, string> Error(string Campo, string Mensaje)
         {
             return new KeyValuePair<string, string>(Campo, Mensaje);
-        }
-        static string L(string Texto)
-        {
-            if (Texto == null) return "";
-            return Texto.Replace("*", " ").Replace("\r", " ").Replace("\n", " ");
-        }
-        static string F(DateTime Fecha)
-        {
-            return Fecha == DateTime.MinValue ? "" : Fecha.ToString("yyyyMMddHHmmss", CultureInfo.InvariantCulture);
-        }
-        static DateTime D(string Texto)
-        {
-            DateTime Fecha;
-            if (DateTime.TryParseExact(Texto, "yyyyMMddHHmmss", CultureInfo.InvariantCulture, DateTimeStyles.None, out Fecha))
-                return Fecha;
-            return DateTime.MinValue;
-        }
-        static string N(double Numero)
-        {
-            return Numero.ToString(CultureInfo.InvariantCulture);
-        }
-        static double Num(string Texto)
-        {
-            double Numero;
-            if (double.TryParse(Texto, NumberStyles.Float, CultureInfo.InvariantCulture, out Numero))
-                return Numero;
-            return 0;
-        }
-        static string B(bool Valor)
-        {
-            return Valor ? "1" : "0";
-        }
-        static string G(string[] S, int Indice)
-        {
-            return Indice < S.Length ? S[Indice] : "";
         }
         #endregion
     }
