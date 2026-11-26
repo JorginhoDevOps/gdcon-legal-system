@@ -114,7 +114,7 @@ namespace CapaPresentacion
                 // Contadores por semáforo (solo trámites activos)
                 string sem = Tramites.Semaforo(t);
                 if (sem == "Verde") enTiempo++;
-                else if (sem == "Ámbar") porVencer++;
+                else if (sem == "Amarillo") porVencer++;
                 else if (sem == "Rojo") vencidos++;
 
                 // Contadores por etapa
@@ -170,7 +170,7 @@ namespace CapaPresentacion
                 celdaSem.Style.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
                 if (sem == "Verde")
                     celdaSem.Style.ForeColor = Color.FromArgb(46, 125, 50);
-                else if (sem == "Ámbar")
+                else if (sem == "Amarillo")
                     celdaSem.Style.ForeColor = Color.FromArgb(217, 119, 6);
                 else if (sem == "Rojo")
                     celdaSem.Style.ForeColor = Color.FromArgb(198, 40, 40);
