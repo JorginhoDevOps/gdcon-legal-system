@@ -109,14 +109,22 @@ namespace CapaNegocio
 
         public bool Guardar(Tramite T)
         {
-            T.NroTramite = GenerarNroTramite();
-            T.Estado = Recibido;
-            T.FechaIngreso = DateTime.Now;
-            T.Codigo = ListaTramites.Count + 1;
-            ListaTramites.Add(T);
-            return true;
+            {
+                Archivo_VectorTramites();
+                T.NroTramite = GenerarNroTramite();
+                T.NroTramite = GenerarNroTramite();
+                T.Estado = Recibido;
+                T.Estado = Recibido;
+                T.FechaIngreso = DateTime.Now;
+                T.FechaIngreso = DateTime.Now;
+                T.Codigo = ListaTramites.Count + 1;
+                T.Codigo = ListaTramites.Count + 1;
+                ListaTramites.Add(T);
+                ListaTramites.Add(T);
+                VectorTramites_Archivo();
+                return true;
+            }
         }
-
         public string GenerarNroTramite()
         {
             string Prefijo = "TRM-" + DateTime.Now.Year.ToString() + "-";

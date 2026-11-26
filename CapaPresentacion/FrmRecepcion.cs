@@ -13,16 +13,28 @@ namespace CapaPresentacion
 {
     public partial class FrmRecepcion : Form
     {
+        int indiceSeleccionado = -1;
+        bool modoEdicion = false;
         public FrmRecepcion()
         {
             InitializeComponent();
             EstiloUI.Aplicar(this, 1, 2);
+            tramites.Archivo_VectorTramites();
         }
+        Tramites tramites = new Tramites();
         Recepciones recepciones = new Recepciones();
+        string tramiteActual = "";
+        private ErrorProvider errorProvider1 = new ErrorProvider();
+
 
         private void FrmRecepcion_Load(object sender, EventArgs e)
         {
-
+            mostrarRecepciones();
+            chkDespacho.Visible = false;
+            pnlAviso.Visible = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnNuevo.Enabled = false;
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -68,26 +80,241 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            recepciones.incrementar();
-            Recepcion nuevaRecepcion = new Recepcion();
+            if (!ValidarCamposTramite(out string mensajeError, out Control controlConError))
+            {
+                MostrarAviso(mensajeError, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                controlConError?.Focus();
+                return;
+            }
 
-            nuevaRecepcion.chasis = txtChasis.Text;
-            nuevaRecepcion.nroContrato = txtContrato.Text;
-            nuevaRecepcion.documento = txtDocumento.Text;
-            nuevaRecepcion.cliente = txtPropietario.Text;
-            nuevaRecepcion.marca = cbMarca.Text;
-            nuevaRecepcion.clase = txtClase.Text;
-            nuevaRecepcion.tipoVehiculo = txtTipoVehiculo.Text;
-            nuevaRecepcion.poliza = txtPoliza.Text;
-            nuevaRecepcion.year = (txtYear.Text);
-            nuevaRecepcion.color = txtColor.Text;
-            nuevaRecepcion.modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
-            nuevaRecepcion.ingreso = dtpIngreso.Value;
-            nuevaRecepcion.despachoAlcaldia = chkDespacho.Checked;
-            nuevaRecepcion.status = "test";
-            recepciones.guardar(nuevaRecepcion);
-            recepciones.mostrarRecepciones(dgvRecepciones);
-            recepciones.guardarDocumento();
+            string modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
+
+            Tramite nuevoTramite = new Tramite
+            {
+                Chasis = txtChasis.Text.Trim(),
+                NroContrato = txtContrato.Text.Trim(),
+                NitCi = txtDocumento.Text.Trim(),
+                Cliente = txtPropietario.Text.Trim(),
+                Marca = cbMarca.Text.Trim(),
+                Clase = txtClase.Text.Trim(),
+                TipoVehiculo = txtTipoVehiculo.Text.Trim(),
+                Poliza = txtPoliza.Text.Trim(),
+                Anio = txtYear.Text.Trim(),
+                Color = txtColor.Text.Trim(),
+                Modalidad = modalidad,
+                DespachoAlcaldia = chkDespacho.Checked
+            };
+
+            tramites.Incrementar();
+            tramites.Guardar(nuevoTramite);
+
+            mostrarRecepciones();
+            MostrarAviso("Registro guardado exitosamente", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
+            limpiarFormulario();
+        }
+
+        public void mostrarRecepciones()
+        {
+            List<Tramite> ListaTramites = recepciones.ObtenerTodos();
+            dgvRecepciones.Rows.Clear();
+
+            if (ListaTramites == null || ListaTramites.Count == 0)
+                return;
+
+            dgvRecepciones.RowCount = ListaTramites.Count;
+
+            for (int V = 0; V < ListaTramites.Count; V++)
+            {
+                dgvRecepciones[0, V].Value = ListaTramites[V].Chasis;
+                dgvRecepciones[1, V].Value = ListaTramites[V].Cliente;
+                dgvRecepciones[2, V].Value = ListaTramites[V].Modalidad;
+                dgvRecepciones[3, V].Value = ListaTramites[V].Marca;
+                dgvRecepciones[4, V].Value = ListaTramites[V].Poliza;
+                dgvRecepciones[5, V].Value = ListaTramites[V].FechaIngreso.ToString("dd/MM/yyyy HH:mm");
+                dgvRecepciones[6, V].Value = ListaTramites[V].Estado;
+            }
+        }
+
+        private void dgvRecepciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indiceSeleccionado = e.RowIndex;
+            Tramite tramite = recepciones.ObtenerParaEditar(indiceSeleccionado, out string mensaje);
+            if (tramite == null)
+            {
+                MostrarAviso("Edición de datos no permitida", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                limpiarFormulario();
+                return;
+            }
+            OcultarAviso();
+            mostrarDatosEditar(tramite);
+            btnGuardar.Enabled = false;
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            tramiteActual = tramite.NroTramite;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            Tramite datosEditados = ArmarObjetoDesdeFormulario();
+
+            if (recepciones.EditarRecepcion(datosEditados)) {
+                MostrarAviso("Actualización exitosa", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
+            }
+            else
+            {
+                MostrarAviso("No se pudo actualizar", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+
+            }
+            mostrarRecepciones();
+            limpiarFormulario();
+        }
+
+        private void mostrarDatosEditar(Tramite tramite)
+        {
+            if (tramite != null)
+            {
+                txtChasis.Text = tramite.Chasis;
+                txtContrato.Text = tramite.NroContrato;
+                txtDocumento.Text = tramite.NitCi;
+                txtPropietario.Text = tramite.Cliente;
+                cbMarca.Text = tramite.Marca;
+                txtClase.Text = tramite.Clase;
+                txtTipoVehiculo.Text = tramite.TipoVehiculo;
+                txtPoliza.Text = tramite.Poliza;
+                txtYear.Text = tramite.Anio;
+                txtColor.Text = tramite.Color;
+
+                rbContado.Checked = tramite.Modalidad == "Contado";
+                rbCredito.Checked = tramite.Modalidad == "Crédito";
+
+                chkDespacho.Checked = tramite.DespachoAlcaldia;
+                chkDespacho.Enabled = tramite.Estado == Tramites.Recibido;
+                chkDespacho.Visible = true;
+                txtChasis.ReadOnly = false;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (indiceSeleccionado >= 0)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar el trámite seleccionado?", "Confirmar eliminación", buttons, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    /*recepciones.Eliminar(indiceSeleccionado);
+                    ListaTramites.RemoveAt(indiceSeleccionado);
+                    actualizarGrilla();*/
+                }
+            }
+            else
+            {
+                MostrarAviso("Seleccione un trámite para eliminar.", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoInfoBorde, EstiloUI.AvisoAlertaTexto);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarFormulario();
+            txtChasis.ReadOnly = false;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            limpiarFormulario();
+            chkDespacho.Visible = false;
+            txtChasis.ReadOnly = false;
+        }
+
+        private void limpiarFormulario()
+        {
+            txtChasis.Clear();
+            txtContrato.Clear();
+            txtDocumento.Clear();
+            txtPropietario.Clear();
+            cbMarca.SelectedIndex = -1;
+            txtClase.Clear();
+            txtTipoVehiculo.Clear();
+            txtPoliza.Clear();
+            txtYear.Clear();
+            txtColor.Clear();
+            rbContado.Checked = false;
+            rbCredito.Checked = false;
+            chkDespacho.Checked = false;
+        }
+
+        private void MostrarAviso(string texto, Color fondo, Color borde, Color colorTexto)
+        {
+            pnlAviso.BackColor = fondo;
+            pnlBordeAviso.BackColor = borde;
+            lblAviso.ForeColor = colorTexto;
+            lblAviso.Text = texto;
+            lblAviso.Visible = true;
+            pnlAviso.Visible = true;
+        }
+
+        private void OcultarAviso()
+        {
+            pnlAviso.Visible = false;
+            lblAviso.Visible = false;
+        }
+
+        private Tramite ArmarObjetoDesdeFormulario()
+        {
+            return new Tramite
+            {
+                NroTramite = tramiteActual,
+                Chasis = txtChasis.Text.Trim(),
+                NitCi = txtDocumento.Text.Trim(),
+                Cliente = txtPropietario.Text.Trim(),
+                Marca = cbMarca.Text.Trim(),
+                Clase = txtClase.Text.Trim(),
+                TipoVehiculo = txtTipoVehiculo.Text.Trim(),
+                Poliza = txtPoliza.Text.Trim(),
+                Anio = txtYear.Text.Trim(),
+                Color = txtColor.Text.Trim(),
+                Modalidad = rbContado.Checked ? "Contado" : "Crédito",
+                Estado = (chkDespacho.Checked == true) ? "Despachado" : "Recibido"
+            };
+        }
+        private bool ValidarCamposTramite(out string mensajeError, out Control controlConError)
+        {
+            controlConError = null;
+
+            var reglas = new (Control control, string valor, string mensaje)[]
+             {
+                (txtChasis, txtChasis.Text, "Ingrese el número de chasis."),
+                (txtContrato, txtContrato.Text, "Ingrese el número de contrato."),
+                (txtDocumento, txtDocumento.Text, "Ingrese el NIT o CI."),
+                (txtPropietario, txtPropietario.Text, "Ingrese el nombre del propietario o cliente."),
+                (cbMarca, cbMarca.Text, "Seleccione o ingrese la marca."),
+                (txtClase, txtClase.Text, "Ingrese la clase del vehículo."),
+                (txtTipoVehiculo, txtTipoVehiculo.Text, "Ingrese el tipo de vehículo."),
+                (txtPoliza, txtPoliza.Text, "Ingrese el número de póliza."),
+                (txtYear, txtYear.Text, "Ingrese el año del vehículo."),
+                (txtColor, txtColor.Text, "Ingrese el color del vehículo.")
+            };
+
+            foreach (var regla in reglas)
+            {
+                if (string.IsNullOrWhiteSpace(regla.valor))
+                {
+                    mensajeError = regla.mensaje;
+                    controlConError = regla.control;
+                    return false;
+                }
+            }
+
+            if (!rbContado.Checked && !rbCredito.Checked)
+            {
+                mensajeError = "Seleccione la modalidad (Contado o Crédito).";
+                return false;
+            }
+
+            mensajeError = string.Empty;
+            return true;
         }
     }
 }

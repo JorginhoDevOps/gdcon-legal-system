@@ -15,15 +15,13 @@ namespace CapaNegocio
     public class Recepciones
     {
         #region atributos
-        private List<Recepcion> listaRecepcion = new List<Recepcion>();
-        private readonly string rutaArchivo = "recepciones.json";
+        private Tramites tramites = new Tramites();
         public int count = 0;
         #endregion
         #region constructor
         public Recepciones()
         {
-            crearArchivoJson();
-            cargarDocumento();
+            tramites.Archivo_VectorTramites();
         }
         #endregion
         #region metodos
@@ -33,16 +31,23 @@ namespace CapaNegocio
             PropertyNameCaseInsensitive = true
         };
 
-        public void incrementar()
+        public int Cantidad()
         {
-            count++;
+            return tramites.Cantidad();
         }
-        public void guardar(Recepcion nuevaRecepcion)
+        public List<KeyValuePair<string, string>> GuardarRecepcion(Tramite nuevaRecepcion)
         {
-            nuevaRecepcion.codigo = count + 1;
-            listaRecepcion.Add(nuevaRecepcion);
-            count++;
-            guardarDocumento();
+            tramites.Archivo_VectorTramites();
+
+            var errores = tramites.Validar(nuevaRecepcion, -1);
+
+            if (errores.Count == 0)
+            {
+                tramites.Guardar(nuevaRecepcion);
+                tramites.VectorTramites_Archivo();
+            }
+
+            return errores;
         }
         public string obtenerContrato(RadioButton rbContado, RadioButton rbCredito)
         {
@@ -52,62 +57,75 @@ namespace CapaNegocio
             return modalidad;
         }
 
-        public void modificar()
-        {
-            // Implementación del método modificar
-        }
-
         public void eliminar()
         {
             // Implementación del método eliminar
         }
-        public void crearArchivoJson()
+
+        public List<Tramite> ObtenerTodos()
         {
-            if (!File.Exists(rutaArchivo))
-            {
-                string jsonInicial = JsonSerializer.Serialize(new List<Recepcion>(), opcionesJson);
-                File.WriteAllText(rutaArchivo, jsonInicial);
-            }
-        }
+            tramites.Archivo_VectorTramites();
+            List<Tramite> lista = new List<Tramite>();
 
-        public void guardarDocumento()
+            for (int i = 0; i < tramites.Cantidad(); i++)
+            {
+                lista.Add(tramites.Obtener(i));
+            }
+
+            return lista;
+        }
+        public Tramite ObtenerPorIndice(int indice)
         {
-            string json = JsonSerializer.Serialize(listaRecepcion, opcionesJson);
-            File.WriteAllText(rutaArchivo, json);
+            tramites.Archivo_VectorTramites();
+            return tramites.Obtener(indice);
         }
 
-        public void cargarDocumento()
+        public Tramite ObtenerParaEditar(int indice, out string mensajeError)
         {
-            if (System.IO.File.Exists(rutaArchivo))
+            mensajeError = "";
+            tramites.Archivo_VectorTramites();
+
+            Tramite tramite = tramites.Obtener(indice);
+            if (tramite == null)
             {
-                string json = System.IO.File.ReadAllText(rutaArchivo);
-                listaRecepcion = JsonSerializer.Deserialize<List<Recepcion>>(json);
-                count = listaRecepcion.Count;
+                mensajeError = "El registro seleccionado no existe.";
+                return null;
             }
+
+            if (tramite.Estado != Tramites.Recibido && tramite.Estado != Tramites.Despachado)
+            {
+                mensajeError = $"No se puede editar un trámite en estado '{tramite.Estado}'. Solo se permiten trámites Recibidos o Despachados.";
+                return null;
+            }
+
+            return tramite;
         }
 
-        public void mostrarRecepciones(DataGridView recepciones) {
-            recepciones.Rows.Clear();
+        public bool EditarRecepcion(Tramite editado)
+        {
+            tramites.Archivo_VectorTramites();
 
-            for (int i = 0; i < count;i++)
-            {
-                recepciones[0, i].Value = listaRecepcion[i].codigo;
-                recepciones[1, i].Value = listaRecepcion[i].chasis;
-                recepciones[2, i].Value = listaRecepcion[i].nroContrato;
-                recepciones[3, i].Value = listaRecepcion[i].documento;
-                recepciones[4, i].Value = listaRecepcion[i].cliente;
-                recepciones[5, i].Value = listaRecepcion[i].marca;
-                recepciones[6, i].Value = listaRecepcion[i].clase;
-                recepciones[7, i].Value = listaRecepcion[i].tipoVehiculo;
-                recepciones[8, i].Value = listaRecepcion[i].poliza;
-                recepciones[9, i].Value = listaRecepcion[i].year;
-                recepciones[10, i].Value = listaRecepcion[i].color;
-                recepciones[11, i].Value = listaRecepcion[i].modalidad;
-                recepciones[12, i].Value = listaRecepcion[i].ingreso;
-                recepciones[13, i].Value = listaRecepcion[i].despachoAlcaldia;
-                recepciones[14, i].Value = listaRecepcion[i].status;
-            }
+            int indice = tramites.Buscar(editado.NroTramite);
+
+            if (indice < 0) return false;
+
+            Tramite antiguo = tramites.Obtener(indice);
+            antiguo.Chasis = editado.Chasis;
+            antiguo.NitCi = editado.NitCi;
+            antiguo.Cliente = editado.Cliente;
+            antiguo.Marca = editado.Marca;
+            antiguo.Clase = editado.Clase;
+            antiguo.TipoVehiculo = editado.TipoVehiculo;
+            antiguo.Poliza = editado.Poliza;
+            antiguo.Anio = editado.Anio;
+            antiguo.Color = editado.Color;
+            antiguo.Modalidad = editado.Modalidad;
+            antiguo.Estado = editado.Estado;
+
+            tramites.VectorTramites_Archivo();
+            return true;
         }
+
         #endregion
 
     }
