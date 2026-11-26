@@ -87,25 +87,21 @@ namespace CapaNegocio
         }
 
         public void mostrarRecepciones(DataGridView recepciones) {
+            if (recepciones == null || listaRecepcion == null) return;
+
             recepciones.Rows.Clear();
 
-            for (int i = 0; i < count;i++)
+            foreach (var item in listaRecepcion)
             {
-                recepciones[0, i].Value = listaRecepcion[i].codigo;
-                recepciones[1, i].Value = listaRecepcion[i].chasis;
-                recepciones[2, i].Value = listaRecepcion[i].nroContrato;
-                recepciones[3, i].Value = listaRecepcion[i].documento;
-                recepciones[4, i].Value = listaRecepcion[i].cliente;
-                recepciones[5, i].Value = listaRecepcion[i].marca;
-                recepciones[6, i].Value = listaRecepcion[i].clase;
-                recepciones[7, i].Value = listaRecepcion[i].tipoVehiculo;
-                recepciones[8, i].Value = listaRecepcion[i].poliza;
-                recepciones[9, i].Value = listaRecepcion[i].year;
-                recepciones[10, i].Value = listaRecepcion[i].color;
-                recepciones[11, i].Value = listaRecepcion[i].modalidad;
-                recepciones[12, i].Value = listaRecepcion[i].ingreso;
-                recepciones[13, i].Value = listaRecepcion[i].despachoAlcaldia;
-                recepciones[14, i].Value = listaRecepcion[i].status;
+                recepciones.Rows.Add(
+                    item.chasis,
+                    item.cliente,
+                    item.modalidad,
+                    item.marca,
+                    item.poliza,
+                    item.ingreso,
+                    item.status
+                );
             }
         }
         #endregion

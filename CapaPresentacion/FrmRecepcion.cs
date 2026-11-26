@@ -22,7 +22,8 @@ namespace CapaPresentacion
 
         private void FrmRecepcion_Load(object sender, EventArgs e)
         {
-
+            recepciones.cargarDocumento();
+            recepciones.mostrarRecepciones(dgvRecepciones);
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
