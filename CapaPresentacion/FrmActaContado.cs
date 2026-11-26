@@ -85,9 +85,8 @@ namespace CapaPresentacion
             DateTime fecha = (t.FechaEntrega == DateTime.MinValue) ? DateTime.Now : t.FechaEntrega;
             lblLugarFecha.Text = "Santa Cruz, " + fecha.ToString("dd 'de' MMMM 'de' yyyy", new CultureInfo("es-BO"));
 
-            string datosQr = "GDCON | " + t.NroTramite + " | " + t.Empresa +
-                             " | Chasis: " + t.Chasis + " | Placa: " + placa +
-                             " | Modalidad: CONTADO | Cliente: " + t.Cliente;
+            DocumentoActa acta = new ActaContadoDocumento(t);
+            string datosQr = acta.ConstruirContenidoQr();
             GenerarQr(datosQr);
         }
 

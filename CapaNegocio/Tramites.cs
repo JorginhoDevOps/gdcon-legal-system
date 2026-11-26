@@ -529,5 +529,61 @@ namespace CapaNegocio
             return new KeyValuePair<string, string>(Campo, Mensaje);
         }
         #endregion
+
+        #region "SOBRECARGA, RECURSIVIDAD Y PUNTEROS"
+        // Sobrecarga  filtra por texto y estado
+        public int Buscar(string Texto, string EstadoFiltro)
+        {
+            if (string.IsNullOrWhiteSpace(Texto)) return -1;
+            Texto = Texto.Trim();
+
+            for (int i = 0; i < ListaTramites.Count; i++)
+            {
+                bool coincideTexto = Igual(ListaTramites[i].Chasis, Texto) ||
+                                       Igual(ListaTramites[i].NroTramite, Texto) ||
+                                       Igual(ListaTramites[i].NitCi, Texto);
+
+                bool coincideEstado = string.IsNullOrWhiteSpace(EstadoFiltro) ||
+                                        string.Equals(ListaTramites[i].Estado, EstadoFiltro, StringComparison.OrdinalIgnoreCase);
+
+                if (coincideTexto && coincideEstado)
+                    return i;
+            }
+            return -1;
+        }
+
+        // Recursividad: cuenta trámites de un estado
+        public int ContarPorEstadoRecursivo(string estado)
+        {
+            return ContarRecursivo(0, estado);
+        }
+
+        private int ContarRecursivo(int indice, string estado)
+        {
+            if (indice >= ListaTramites.Count)
+                return 0;
+
+            int sumaActual = string.Equals(ListaTramites[indice].Estado, estado, StringComparison.OrdinalIgnoreCase) ? 1 : 0;
+            return sumaActual + ContarRecursivo(indice + 1, estado);
+        }
+
+        // Punteros:
+        public unsafe int CalcularChecksumPuntero(string texto)
+        {
+            if (string.IsNullOrEmpty(texto)) return 0;
+
+            int acumulador = 0;
+            fixed (char* ptrInicio = texto)
+            {
+                char* p = ptrInicio;
+                for (int i = 0; i < texto.Length; i++)
+                {
+                    acumulador += (*p) * (i + 1);
+                    p++;
+                }
+            }
+            return acumulador;
+        }
+        #endregion
     }
 }
