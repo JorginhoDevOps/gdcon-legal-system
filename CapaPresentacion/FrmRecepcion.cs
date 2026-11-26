@@ -16,7 +16,28 @@ namespace CapaPresentacion
         public FrmRecepcion()
         {
             InitializeComponent();
+            AgregarBotonDespacharLote();
             EstiloUI.Aplicar(this, 1, 2);
+            pnlDatos.AutoScroll = true;
+        }
+
+        private void AgregarBotonDespacharLote()
+        {
+            ToolStripButton btnDespacharLote = new ToolStripButton();
+            btnDespacharLote.Name = "btnDespacharLote";
+            btnDespacharLote.Text = "Despachar lote";
+            btnDespacharLote.ToolTipText = "Despachar todos los trámites en estado Recibido";
+            btnDespacharLote.Image = Properties.Resources.IcoActualizar;
+            btnDespacharLote.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+            btnDespacharLote.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDespacharLote.ImageScaling = ToolStripItemImageScaling.SizeToFit;
+            btnDespacharLote.Click += btnDespacharLote_Click;
+
+            int idx = toolStrip1.Items.IndexOf(btnImportarExcel);
+            if (idx >= 0)
+                toolStrip1.Items.Insert(idx + 1, btnDespacharLote);
+            else
+                toolStrip1.Items.Add(btnDespacharLote);
         }
 
         private void FrmRecepcion_Load(object sender, EventArgs e)
@@ -287,6 +308,43 @@ namespace CapaPresentacion
                 {
                     Cursor = Cursors.Default;
                 }
+            }
+        }
+        private void btnDespacharLote_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmar = MessageBox.Show(
+                "¿Deseas despachar todos los trámites en estado 'Recibido' que tengan datos completos hacia Alcaldía y Diprove?",
+                "Despacho en lote — GDCON Legal System",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmar != DialogResult.Yes) return;
+
+            int omitidos;
+            int despachados = recepciones.DespacharTodosRecibidos(out omitidos);
+
+            mostrarRecepciones(txtBuscar.Text);
+            limpiarFormulario();
+
+            if (despachados > 0)
+            {
+                string resumen = "Despachados: " + despachados + (omitidos > 0 ? " | Incompletos omitidos: " + omitidos : "");
+                MostrarAviso(resumen, EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
+                MessageBox.Show(
+                    "Se despacharon " + despachados + " trámite(s) correctamente." +
+                    (omitidos > 0 ? "\nSe omitieron " + omitidos + " por tener datos vehiculares incompletos." : "") +
+                    "\n\nYa están disponibles en el módulo Placas y Pagos.",
+                    "GDCON Legal System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (omitidos > 0)
+            {
+                MostrarAviso("No se pudo despachar: " + omitidos + " trámite(s) con datos incompletos.",
+                    EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+            }
+            else
+            {
+                MostrarAviso("No hay trámites pendientes en estado Recibido.",
+                    EstiloUI.AvisoInfoFondo, EstiloUI.AvisoInfoBorde, EstiloUI.AvisoInfoTexto);
             }
         }
 

@@ -75,13 +75,6 @@ namespace CapaPresentacion
         private void CargarDatosDesdeArchivo()
         {
             tramites.Archivo_VectorTramites();
-#if DEBUG
-            if (tramites.Cantidad() == 0)
-            {
-                tramites.CargarDemo();
-                tramites.VectorTramites_Archivo();
-            }
-#endif
             CargarListado();
         }
 

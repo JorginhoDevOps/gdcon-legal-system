@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.Globalization;
 
 namespace CapaPresentacion
 {
@@ -47,8 +48,8 @@ namespace CapaPresentacion
             posActual = pos;
             txtNombre.Text = emp.Nombre;
             txtNit.Text = emp.Nit;
-            txtContado.Text = emp.HonorarioContado.ToString("0.00");
-            txtCredito.Text = emp.HonorarioCredito.ToString("0.00");
+            txtContado.Text = emp.HonorarioContado.ToString("0.00", CultureInfo.InvariantCulture);
+            txtCredito.Text = emp.HonorarioCredito.ToString("0.00", CultureInfo.InvariantCulture);
 
             ActualizarEstado();
         }
@@ -79,7 +80,7 @@ namespace CapaPresentacion
             }
 
             double contado;
-            if (!double.TryParse(txtContado.Text.Trim(), out contado) || contado < 0)
+            if (!IntentarParsearHonorario(txtContado.Text, out contado))
             {
                 Aviso("Ingresa un honorario al Contado válido (número mayor o igual a 0).", MessageBoxIcon.Warning);
                 txtContado.Focus();
@@ -87,7 +88,7 @@ namespace CapaPresentacion
             }
 
             double credito;
-            if (!double.TryParse(txtCredito.Text.Trim(), out credito) || credito < 0)
+            if (!IntentarParsearHonorario(txtCredito.Text, out credito))
             {
                 Aviso("Ingresa un honorario a Crédito válido (número mayor o igual a 0).", MessageBoxIcon.Warning);
                 txtCredito.Focus();
@@ -100,6 +101,15 @@ namespace CapaPresentacion
             emp.HonorarioContado = contado;
             emp.HonorarioCredito = credito;
             return true;
+        }
+
+        private bool IntentarParsearHonorario(string texto, out double valor)
+        {
+            valor = 0;
+            if (string.IsNullOrWhiteSpace(texto)) return false;
+            string limpio = texto.Trim().Replace(',', '.');
+            return double.TryParse(limpio, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out valor)
+                && valor >= 0;
         }
 
         private void Aviso(string msg, MessageBoxIcon icono)
