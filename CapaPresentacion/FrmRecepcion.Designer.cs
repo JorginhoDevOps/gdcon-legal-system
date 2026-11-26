@@ -91,8 +91,8 @@
             this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
             this.rbContado = new System.Windows.Forms.RadioButton();
             this.chkDespacho = new System.Windows.Forms.CheckBox();
-            this.lblEncabezadoDatos = new System.Windows.Forms.Label();
             this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
+            this.lblEncabezadoDatos = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.pnlPasos.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
@@ -833,6 +833,14 @@
             this.chkDespacho.Text = "Despachado a Alcaldía y Diprove";
             this.chkDespacho.UseVisualStyleBackColor = true;
             // 
+            // dtpIngreso
+            // 
+            this.tlpCampos.SetColumnSpan(this.dtpIngreso, 2);
+            this.dtpIngreso.Location = new System.Drawing.Point(3, 390);
+            this.dtpIngreso.Name = "dtpIngreso";
+            this.dtpIngreso.Size = new System.Drawing.Size(262, 23);
+            this.dtpIngreso.TabIndex = 24;
+            // 
             // lblEncabezadoDatos
             // 
             this.lblEncabezadoDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
@@ -846,14 +854,6 @@
             this.lblEncabezadoDatos.TabIndex = 0;
             this.lblEncabezadoDatos.Text = "Datos del trámite — Recepción y Despacho";
             this.lblEncabezadoDatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dtpIngreso
-            // 
-            this.tlpCampos.SetColumnSpan(this.dtpIngreso, 2);
-            this.dtpIngreso.Location = new System.Drawing.Point(3, 390);
-            this.dtpIngreso.Name = "dtpIngreso";
-            this.dtpIngreso.Size = new System.Drawing.Size(262, 23);
-            this.dtpIngreso.TabIndex = 24;
             // 
             // FrmRecepcion
             // 

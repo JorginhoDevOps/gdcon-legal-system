@@ -88,7 +88,7 @@ namespace CapaPresentacion
         // ---------- Ingreso ----------
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string correo = txtCorreo.Text.Trim();
+           /* string correo = txtCorreo.Text.Trim();
 
             if (correo == "" || txtClave.Text == "" || cmbRol.SelectedIndex < 0 || txtCaptcha.Text.Trim() == "")
             {
@@ -115,7 +115,7 @@ namespace CapaPresentacion
                 txtClave.Clear();
                 txtClave.Focus();
                 return;
-            }
+            }*/
 
             FrmMenuPrincipal menu = new FrmMenuPrincipal();
             menu.Show();
