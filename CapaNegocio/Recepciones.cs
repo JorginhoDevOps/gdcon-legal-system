@@ -15,15 +15,13 @@ namespace CapaNegocio
     public class Recepciones
     {
         #region atributos
-        private List<Recepcion> listaRecepcion = new List<Recepcion>();
-        private readonly string rutaArchivo = "recepciones.json";
+        private Tramites tramites = new Tramites();
         public int count = 0;
         #endregion
         #region constructor
         public Recepciones()
         {
-            crearArchivoJson();
-            cargarDocumento();
+            tramites.Archivo_VectorTramites();
         }
         #endregion
         #region metodos
@@ -33,16 +31,23 @@ namespace CapaNegocio
             PropertyNameCaseInsensitive = true
         };
 
-        public void incrementar()
+        public int Cantidad()
         {
-            count++;
+            return tramites.Cantidad();
         }
-        public void guardar(Recepcion nuevaRecepcion)
+        public List<KeyValuePair<string, string>> GuardarRecepcion(Tramite nuevaRecepcion)
         {
-            nuevaRecepcion.codigo = count + 1;
-            listaRecepcion.Add(nuevaRecepcion);
-            count++;
-            guardarDocumento();
+            tramites.Archivo_VectorTramites();
+
+            var errores = tramites.Validar(nuevaRecepcion, -1);
+
+            if (errores.Count == 0)
+            {
+                tramites.Guardar(nuevaRecepcion);
+                tramites.VectorTramites_Archivo();
+            }
+
+            return errores;
         }
         public string obtenerContrato(RadioButton rbContado, RadioButton rbCredito)
         {
@@ -61,48 +66,44 @@ namespace CapaNegocio
         {
             // Implementación del método eliminar
         }
-        public void crearArchivoJson()
+
+        public List<Tramite> ObtenerTodos()
         {
-            if (!File.Exists(rutaArchivo))
+            tramites.Archivo_VectorTramites();
+            List<Tramite> lista = new List<Tramite>();
+
+            for (int i = 0; i < tramites.Cantidad(); i++)
             {
-                string jsonInicial = JsonSerializer.Serialize(new List<Recepcion>(), opcionesJson);
-                File.WriteAllText(rutaArchivo, jsonInicial);
+                lista.Add(tramites.Obtener(i));
             }
+
+            return lista;
+        }
+        public Tramite ObtenerPorIndice(int indice)
+        {
+            tramites.Archivo_VectorTramites();
+            return ObtenerParaEditar(indice, out _);
         }
 
-        public void guardarDocumento()
+        public Tramite ObtenerParaEditar(int indice, out string mensajeError)
         {
-            string json = JsonSerializer.Serialize(listaRecepcion, opcionesJson);
-            File.WriteAllText(rutaArchivo, json);
-        }
+            mensajeError = "";
+            tramites.Archivo_VectorTramites();
 
-        public void cargarDocumento()
-        {
-            if (System.IO.File.Exists(rutaArchivo))
+            Tramite t = tramites.Obtener(indice);
+            if (t == null)
             {
-                string json = System.IO.File.ReadAllText(rutaArchivo);
-                listaRecepcion = JsonSerializer.Deserialize<List<Recepcion>>(json);
-                count = listaRecepcion.Count;
+                mensajeError = "El registro seleccionado no existe.";
+                return null;
             }
-        }
 
-        public void mostrarRecepciones(DataGridView recepciones) {
-            if (recepciones == null || listaRecepcion == null) return;
-
-            recepciones.Rows.Clear();
-
-            foreach (var item in listaRecepcion)
+            if (t.Estado != Tramites.Recibido && t.Estado != Tramites.Despachado)
             {
-                recepciones.Rows.Add(
-                    item.chasis,
-                    item.cliente,
-                    item.modalidad,
-                    item.marca,
-                    item.poliza,
-                    item.ingreso,
-                    item.status
-                );
+                mensajeError = $"No se puede editar un trámite en estado '{t.Estado}'. Solo se permiten trámites Recibidos o Despachados.";
+                return null;
             }
+
+            return t;
         }
         #endregion
 

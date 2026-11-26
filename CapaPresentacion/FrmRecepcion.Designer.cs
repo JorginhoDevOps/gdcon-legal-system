@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecepcion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -66,7 +66,6 @@
             this.pnlAviso = new System.Windows.Forms.Panel();
             this.pnlBordeAviso = new System.Windows.Forms.Panel();
             this.tlpCampos = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
             this.rbCredito = new System.Windows.Forms.RadioButton();
             this.lblModalidad = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
@@ -91,8 +90,8 @@
             this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
             this.rbContado = new System.Windows.Forms.RadioButton();
             this.chkDespacho = new System.Windows.Forms.CheckBox();
-            this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
             this.lblEncabezadoDatos = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.pnlPasos.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
@@ -137,6 +136,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(78, 44);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -158,6 +158,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(73, 44);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -168,6 +169,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(86, 44);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -178,6 +180,7 @@
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(83, 44);
             this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCerrar
             // 
@@ -321,20 +324,20 @@
             this.dgvRecepciones.AllowUserToAddRows = false;
             this.dgvRecepciones.AllowUserToDeleteRows = false;
             this.dgvRecepciones.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.dgvRecepciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.dgvRecepciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecepciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecepciones.BackgroundColor = System.Drawing.Color.White;
             this.dgvRecepciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRecepciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecepciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecepciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecepciones.ColumnHeadersHeight = 30;
             this.dgvRecepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRecepciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -345,14 +348,14 @@
             this.colPoliza,
             this.colIngreso,
             this.colEstado});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecepciones.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(26)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecepciones.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecepciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRecepciones.EnableHeadersVisualStyles = false;
             this.dgvRecepciones.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -366,6 +369,7 @@
             this.dgvRecepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecepciones.Size = new System.Drawing.Size(736, 619);
             this.dgvRecepciones.TabIndex = 1;
+            this.dgvRecepciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecepciones_CellClick);
             // 
             // colChasis
             // 
@@ -417,8 +421,8 @@
             // 
             // colEstado
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colEstado.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colEstado.DefaultCellStyle = dataGridViewCellStyle3;
             this.colEstado.FillWeight = 65F;
             this.colEstado.HeaderText = "Estado";
             this.colEstado.MinimumWidth = 10;
@@ -466,11 +470,13 @@
             this.pnlAviso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlAviso.Controls.Add(this.lblAviso);
             this.pnlAviso.Controls.Add(this.pnlBordeAviso);
             this.pnlAviso.Location = new System.Drawing.Point(8, 518);
             this.pnlAviso.Name = "pnlAviso";
             this.pnlAviso.Size = new System.Drawing.Size(269, 36);
             this.pnlAviso.TabIndex = 2;
+            this.pnlAviso.Visible = false;
             // 
             // pnlBordeAviso
             // 
@@ -488,7 +494,6 @@
             this.tlpCampos.ColumnCount = 2;
             this.tlpCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCampos.Controls.Add(this.label9, 0, 14);
             this.tlpCampos.Controls.Add(this.rbCredito, 1, 13);
             this.tlpCampos.Controls.Add(this.lblModalidad, 0, 12);
             this.tlpCampos.Controls.Add(this.txtColor, 1, 11);
@@ -512,8 +517,7 @@
             this.tlpCampos.Controls.Add(this.label6, 1, 6);
             this.tlpCampos.Controls.Add(this.txtTipoVehiculo, 0, 9);
             this.tlpCampos.Controls.Add(this.rbContado, 0, 13);
-            this.tlpCampos.Controls.Add(this.chkDespacho, 0, 16);
-            this.tlpCampos.Controls.Add(this.dtpIngreso, 1, 14);
+            this.tlpCampos.Controls.Add(this.chkDespacho, 0, 15);
             this.tlpCampos.Location = new System.Drawing.Point(10, 36);
             this.tlpCampos.Name = "tlpCampos";
             this.tlpCampos.RowCount = 17;
@@ -539,18 +543,6 @@
             this.tlpCampos.Size = new System.Drawing.Size(269, 477);
             this.tlpCampos.TabIndex = 1;
             this.tlpCampos.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpCampos_Paint);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.tlpCampos.SetColumnSpan(this.label9, 2);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.label9.Location = new System.Drawing.Point(0, 360);
-            this.label9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 15);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Fecha de ingreso";
             // 
             // rbCredito
             // 
@@ -578,6 +570,7 @@
             // 
             // txtColor
             // 
+            this.txtColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.txtColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtColor.Location = new System.Drawing.Point(137, 289);
             this.txtColor.Name = "txtColor";
@@ -586,6 +579,7 @@
             // 
             // txtYear
             // 
+            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.txtYear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtYear.Location = new System.Drawing.Point(3, 289);
             this.txtYear.Name = "txtYear";
@@ -617,6 +611,7 @@
             // 
             // txtChasis
             // 
+            this.txtChasis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.txtChasis.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tlpCampos.SetColumnSpan(this.txtChasis, 2);
             this.txtChasis.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -627,7 +622,6 @@
             this.txtChasis.Name = "txtChasis";
             this.txtChasis.Size = new System.Drawing.Size(269, 25);
             this.txtChasis.TabIndex = 0;
-            this.txtChasis.Text = "JM7DM2W7AV0700104";
             // 
             // lblNroContrato
             // 
@@ -649,11 +643,9 @@
             this.txtContrato.Location = new System.Drawing.Point(3, 75);
             this.txtContrato.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.txtContrato.Name = "txtContrato";
-            this.txtContrato.ReadOnly = true;
             this.txtContrato.Size = new System.Drawing.Size(128, 25);
             this.txtContrato.TabIndex = 1;
             this.txtContrato.TabStop = false;
-            this.txtContrato.Text = "Nro de contrato";
             // 
             // lblDocumento
             // 
@@ -688,11 +680,9 @@
             this.txtPropietario.Location = new System.Drawing.Point(0, 127);
             this.txtPropietario.Margin = new System.Windows.Forms.Padding(0, 0, 3, 7);
             this.txtPropietario.Name = "txtPropietario";
-            this.txtPropietario.ReadOnly = true;
             this.txtPropietario.Size = new System.Drawing.Size(266, 25);
             this.txtPropietario.TabIndex = 2;
             this.txtPropietario.TabStop = false;
-            this.txtPropietario.Text = "Jhon Doe";
             // 
             // lblPlaca
             // 
@@ -707,6 +697,7 @@
             // 
             // txtClase
             // 
+            this.txtClase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.txtClase.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtClase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtClase.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -717,7 +708,6 @@
             this.txtClase.Name = "txtClase";
             this.txtClase.Size = new System.Drawing.Size(129, 25);
             this.txtClase.TabIndex = 5;
-            this.txtClase.Text = "VAGONETA";
             // 
             // lblTipoVehiculo
             // 
@@ -752,10 +742,10 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(129, 25);
             this.txtDocumento.TabIndex = 6;
-            this.txtDocumento.Text = "12345678";
             // 
             // txtPoliza
             // 
+            this.txtPoliza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.txtPoliza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPoliza.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPoliza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
@@ -768,10 +758,18 @@
             // 
             // cbMarca
             // 
+            this.cbMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.cbMarca.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(39)))), ((int)(((byte)(51)))));
             this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Items.AddRange(new object[] {
+            "SUZUKI",
+            "NISSAN",
+            "MAZDA",
+            "CHEVROLET",
+            "GAC",
+            "CHERY"});
             this.cbMarca.Location = new System.Drawing.Point(3, 182);
             this.cbMarca.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.cbMarca.Name = "cbMarca";
@@ -803,6 +801,7 @@
             // 
             // txtTipoVehiculo
             // 
+            this.txtTipoVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.txtTipoVehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTipoVehiculo.Location = new System.Drawing.Point(3, 237);
             this.txtTipoVehiculo.Name = "txtTipoVehiculo";
@@ -825,21 +824,13 @@
             // 
             this.chkDespacho.AutoSize = true;
             this.tlpCampos.SetColumnSpan(this.chkDespacho, 2);
-            this.chkDespacho.Location = new System.Drawing.Point(3, 422);
+            this.chkDespacho.Location = new System.Drawing.Point(3, 390);
             this.chkDespacho.Name = "chkDespacho";
             this.tlpCampos.SetRowSpan(this.chkDespacho, 2);
             this.chkDespacho.Size = new System.Drawing.Size(198, 19);
             this.chkDespacho.TabIndex = 23;
             this.chkDespacho.Text = "Despachado a Alcaldía y Diprove";
             this.chkDespacho.UseVisualStyleBackColor = true;
-            // 
-            // dtpIngreso
-            // 
-            this.tlpCampos.SetColumnSpan(this.dtpIngreso, 2);
-            this.dtpIngreso.Location = new System.Drawing.Point(3, 390);
-            this.dtpIngreso.Name = "dtpIngreso";
-            this.dtpIngreso.Size = new System.Drawing.Size(262, 23);
-            this.dtpIngreso.TabIndex = 24;
             // 
             // lblEncabezadoDatos
             // 
@@ -854,6 +845,14 @@
             this.lblEncabezadoDatos.TabIndex = 0;
             this.lblEncabezadoDatos.Text = "Datos del trámite — Recepción y Despacho";
             this.lblEncabezadoDatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Location = new System.Drawing.Point(9, 10);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(0, 15);
+            this.lblAviso.TabIndex = 1;
             // 
             // FrmRecepcion
             // 
@@ -879,6 +878,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecepciones)).EndInit();
             this.pnlDatos.ResumeLayout(false);
             this.pnlAviso.ResumeLayout(false);
+            this.pnlAviso.PerformLayout();
             this.tlpCampos.ResumeLayout(false);
             this.tlpCampos.PerformLayout();
             this.ResumeLayout(false);
@@ -930,7 +930,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.TextBox txtTipoVehiculo;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rbCredito;
         private System.Windows.Forms.Label lblModalidad;
         private System.Windows.Forms.TextBox txtColor;
@@ -945,6 +944,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPoliza;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
-        private System.Windows.Forms.DateTimePicker dtpIngreso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

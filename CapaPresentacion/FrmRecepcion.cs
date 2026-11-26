@@ -13,6 +13,8 @@ namespace CapaPresentacion
 {
     public partial class FrmRecepcion : Form
     {
+        int indiceSeleccionado = -1;
+        bool modoEdicion = false;
         public FrmRecepcion()
         {
             InitializeComponent();
@@ -26,6 +28,8 @@ namespace CapaPresentacion
         private void FrmRecepcion_Load(object sender, EventArgs e)
         {
             mostrarRecepciones();
+            chkDespacho.Visible = false;
+            pnlAviso.Visible = false;
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -85,7 +89,6 @@ namespace CapaPresentacion
             nuevoTramite.Anio = (txtYear.Text);
             nuevoTramite.Color = txtColor.Text;
             nuevoTramite.Modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
-            nuevoTramite.FechaIngreso = dtpIngreso.Value;
             nuevoTramite.DespachoAlcaldia = chkDespacho.Checked;
             nuevoTramite.Estado = "test";
             tramites.Guardar(nuevoTramite);
@@ -112,6 +115,104 @@ namespace CapaPresentacion
                 dgvRecepciones[5, V].Value = ListaTramites[V].FechaIngreso.ToString("dd/MM/yyyy HH:mm");
                 dgvRecepciones[6, V].Value = ListaTramites[V].Estado;
             }
+        }
+
+        private void dgvRecepciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indiceSeleccionado = e.RowIndex;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (indiceSeleccionado < 0)
+            {
+                MessageBox.Show("Seleccione un trámite para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Tramite tramite = recepciones.ObtenerParaEditar(indiceSeleccionado, out string mensaje);
+
+            if (tramite == null)
+            {
+                MessageBox.Show(mensaje, "Edición no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            mostrarDatosEditar(tramite);
+        }
+
+        private void mostrarDatosEditar(Tramite tramite)
+        {
+            if (tramite != null)
+            {
+                txtChasis.Text = tramite.Chasis;
+                txtContrato.Text = tramite.NroContrato;
+                txtDocumento.Text = tramite.NitCi;
+                txtPropietario.Text = tramite.Cliente;
+                cbMarca.Text = tramite.Marca;
+                txtClase.Text = tramite.Clase;
+                txtTipoVehiculo.Text = tramite.TipoVehiculo;
+                txtPoliza.Text = tramite.Poliza;
+                txtYear.Text = tramite.Anio;
+                txtColor.Text = tramite.Color;
+
+                rbContado.Checked = tramite.Modalidad == "Contado";
+                rbCredito.Checked = tramite.Modalidad == "Crédito";
+
+                chkDespacho.Checked = tramite.DespachoAlcaldia;
+                chkDespacho.Enabled = tramite.Estado == Tramites.Recibido;
+                chkDespacho.Visible = true;
+                txtChasis.ReadOnly = true;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (indiceSeleccionado >= 0)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar el trámite seleccionado?", "Confirmar eliminación", buttons, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    /*recepciones.Eliminar(indiceSeleccionado);
+                    ListaTramites.RemoveAt(indiceSeleccionado);
+                    actualizarGrilla();*/
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un trámite para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarFormulario();
+            txtChasis.ReadOnly = false;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            limpiarFormulario();
+            chkDespacho.Visible = false;
+            txtChasis.ReadOnly = false;
+        }
+
+        private void limpiarFormulario()
+        {
+            txtChasis.Clear();
+            txtContrato.Clear();
+            txtDocumento.Clear();
+            txtPropietario.Clear();
+            cbMarca.SelectedIndex = -1;
+            txtClase.Clear();
+            txtTipoVehiculo.Clear();
+            txtPoliza.Clear();
+            txtYear.Clear();
+            txtColor.Clear();
+            rbContado.Checked = false;
+            rbCredito.Checked = false;
+            chkDespacho.Checked = false;
         }
     }
 }
