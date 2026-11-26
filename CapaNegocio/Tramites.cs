@@ -116,7 +116,6 @@ namespace CapaNegocio
             ListaTramites.Add(T);
             return true;
         }
-
         public string GenerarNroTramite()
         {
             string Prefijo = "TRM-" + DateTime.Now.Year.ToString() + "-";
