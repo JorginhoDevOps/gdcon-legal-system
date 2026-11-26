@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using CapaNegocio;
 
@@ -10,7 +11,6 @@ namespace CapaPresentacion
         private Form formularioActual;
         private bool cerrandoSesion;
 
-        // Colores del menú lateral
         private readonly Color colNormal = Color.FromArgb(9, 26, 58);
         private readonly Color colActivo = Color.FromArgb(20, 40, 75);
         private readonly Color colHover = Color.FromArgb(14, 33, 68);
@@ -19,6 +19,8 @@ namespace CapaPresentacion
 
         private Button[] botonesMenu;
         private Button botonActivo;
+
+        public Usuario UsuarioActual;
 
         public FrmMenuPrincipal()
         {
@@ -30,7 +32,7 @@ namespace CapaPresentacion
             {
                 btnPanelGeneral, btnRecepcion, btnPlacas, btnDiprove, btnEntrega,
                 btnSeguimiento, btnPagosBanco, btnListadoDespacho, btnListadoEntrega,
-                btnConfiguracion
+                btnConfiguracion, btnEmpresas
             };
 
             foreach (Button b in botonesMenu)
@@ -40,8 +42,8 @@ namespace CapaPresentacion
             }
 
             MarcarActivo(btnPanelGeneral);
+            CargarPanelGeneral();
         }
-        public Usuario UsuarioActual;
 
         public bool EsAdministrador()
         {
@@ -67,10 +69,10 @@ namespace CapaPresentacion
             lblAvatar.Text = ObtenerIniciales(UsuarioActual.Nombre);
             lblAvatar.Invalidate();
 
-            // Solo el Administrador puede entrar a Configuración
             btnConfiguracion.Visible = EsAdministrador();
             btnEmpresas.Visible = EsAdministrador();
         }
+
         private string ObtenerIniciales(string nombre)
         {
             if (string.IsNullOrWhiteSpace(nombre)) return "US";
@@ -79,6 +81,107 @@ namespace CapaPresentacion
                 return partes[0].Substring(0, Math.Min(2, partes[0].Length)).ToUpper();
             return (partes[0][0].ToString() + partes[1][0].ToString()).ToUpper();
         }
+
+        private void CargarPanelGeneral()
+        {
+            // 1. Fecha actual en español
+            CultureInfo esBo = new CultureInfo("es-BO");
+            string fechaTexto = DateTime.Now.ToString("dddd, dd 'de' MMMM 'de' yyyy", esBo);
+            lblFechaActual.Text = char.ToUpper(fechaTexto[0]) + fechaTexto.Substring(1);
+            lblEncabezadoResumen.Text = "Resumen general — " + DateTime.Now.ToString("dd/MM/yyyy");
+
+            // 2. Cargar trámites reales desde Tramites.json
+            Tramites tramites = new Tramites();
+            tramites.Archivo_VectorTramites();
+
+            int enTiempo = 0;
+            int porVencer = 0;
+            int vencidos = 0;
+
+            int recibidos = 0;
+            int despachados = 0;
+            int placaPago = 0;
+            int transito = 0;
+            int entregados = 0;
+            int actasContado = 0;
+            int actasCredito = 0;
+
+            for (int i = 0; i < tramites.Cantidad(); i++)
+            {
+                Tramite t = tramites.Obtener(i);
+                if (t == null) continue;
+
+                // Contadores por semáforo (solo trámites activos)
+                string sem = Tramites.Semaforo(t);
+                if (sem == "Verde") enTiempo++;
+                else if (sem == "Ámbar") porVencer++;
+                else if (sem == "Rojo") vencidos++;
+
+                // Contadores por etapa
+                if (t.Estado == Tramites.Recibido) recibidos++;
+                else if (t.Estado == Tramites.Despachado) despachados++;
+                else if (t.Estado == Tramites.ConPlacaPago) placaPago++;
+                else if (t.Estado == Tramites.EnTransito) transito++;
+                else if (t.Estado == Tramites.Entregado)
+                {
+                    entregados++;
+                    if (string.Equals(t.Modalidad, "Crédito", StringComparison.OrdinalIgnoreCase))
+                        actasCredito++;
+                    else
+                        actasContado++;
+                }
+            }
+
+            // 3. Mostrar valores en las tarjetas KPI y el panel Resumen
+            lblKpiValorEnTiempo.Text = enTiempo.ToString();
+            lblKpiValorPorVencer.Text = porVencer.ToString();
+            lblKpiValorVencidos.Text = vencidos.ToString();
+
+            lblResumenRecibidosValor.Text = recibidos.ToString();
+            lblResumenDespachadosValor.Text = despachados.ToString();
+            lblResumenPlacaPagoValor.Text = placaPago.ToString();
+            lblResumenTransitoValor.Text = transito.ToString();
+            lblResumenEntregadosValor.Text = entregados.ToString();
+            lblResumenActasContadoValor.Text = actasContado.ToString();
+            lblResumenActasCreditoValor.Text = actasCredito.ToString();
+
+            // 4. Llenar la tabla de trámites recientes (del más nuevo al más antiguo)
+            dgvRecientes.Rows.Clear();
+            int total = tramites.Cantidad();
+            if (total == 0) return;
+
+            dgvRecientes.RowCount = total;
+            int fila = 0;
+            for (int i = total - 1; i >= 0; i--)
+            {
+                Tramite t = tramites.Obtener(i);
+                string sem = Tramites.Semaforo(t);
+                int horas = (int)Math.Max(0, Math.Round(Tramites.Horas(t)));
+
+                dgvRecientes[0, fila].Value = t.Chasis;
+                dgvRecientes[1, fila].Value = t.Cliente;
+                dgvRecientes[2, fila].Value = t.Modalidad;
+                dgvRecientes[3, fila].Value = t.Estado;
+                dgvRecientes[4, fila].Value = (t.Estado == Tramites.Entregado) ? "Cerrado" : horas + " h";
+                dgvRecientes[5, fila].Value = sem;
+
+                // Color visual en la celda Semáforo
+                DataGridViewCell celdaSem = dgvRecientes[5, fila];
+                celdaSem.Style.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+                if (sem == "Verde")
+                    celdaSem.Style.ForeColor = Color.FromArgb(46, 125, 50);
+                else if (sem == "Ámbar")
+                    celdaSem.Style.ForeColor = Color.FromArgb(217, 119, 6);
+                else if (sem == "Rojo")
+                    celdaSem.Style.ForeColor = Color.FromArgb(198, 40, 40);
+                else
+                    celdaSem.Style.ForeColor = Color.FromArgb(25, 118, 210);
+
+                fila++;
+            }
+            dgvRecientes.ClearSelection();
+        }
+
         // Pinta el botón elegido como activo y deja los demás normales
         private void MarcarActivo(Button activo)
         {
@@ -97,12 +200,10 @@ namespace CapaPresentacion
             pnlIndicador.Top = activo.Top;
             pnlIndicador.Height = activo.Height;
             pnlIndicador.BringToFront();
-
-
         }
+
         private void RedondearAvatar()
         {
-            
             lblAvatar.BackColor = lblAvatar.Parent.BackColor;
 
             lblAvatar.Paint += (s, e) =>
@@ -121,7 +222,7 @@ namespace CapaPresentacion
         public void AbrirFormulario(Form frm, Button origen = null)
         {
             Form anterior = formularioActual;
-            formularioActual = null;           
+            formularioActual = null;
             if (anterior != null) anterior.Close();
 
             formularioActual = frm;
@@ -147,6 +248,7 @@ namespace CapaPresentacion
 
         private void MostrarPanelGeneral()
         {
+            CargarPanelGeneral();
             pnlPanelGeneral.Visible = true;
             pnlPanelGeneral.BringToFront();
             MarcarActivo(btnPanelGeneral);
