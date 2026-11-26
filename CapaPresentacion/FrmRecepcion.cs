@@ -80,24 +80,37 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            tramites.Incrementar();
-            Tramite nuevoTramite = new Tramite();
+            if (!ValidarCamposTramite(out string mensajeError, out Control controlConError))
+            {
+                MostrarAviso(mensajeError, EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                controlConError?.Focus();
+                return;
+            }
 
-            nuevoTramite.Chasis = txtChasis.Text;
-            nuevoTramite.NroContrato = txtContrato.Text;
-            nuevoTramite.NitCi = txtDocumento.Text;
-            nuevoTramite.Cliente = txtPropietario.Text;
-            nuevoTramite.Marca = cbMarca.Text;
-            nuevoTramite.Clase = txtClase.Text;
-            nuevoTramite.TipoVehiculo = txtTipoVehiculo.Text;
-            nuevoTramite.Poliza = txtPoliza.Text;
-            nuevoTramite.Anio = (txtYear.Text);
-            nuevoTramite.Color = txtColor.Text;
-            nuevoTramite.Modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
-            nuevoTramite.DespachoAlcaldia = chkDespacho.Checked;
+            string modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
+
+            Tramite nuevoTramite = new Tramite
+            {
+                Chasis = txtChasis.Text.Trim(),
+                NroContrato = txtContrato.Text.Trim(),
+                NitCi = txtDocumento.Text.Trim(),
+                Cliente = txtPropietario.Text.Trim(),
+                Marca = cbMarca.Text.Trim(),
+                Clase = txtClase.Text.Trim(),
+                TipoVehiculo = txtTipoVehiculo.Text.Trim(),
+                Poliza = txtPoliza.Text.Trim(),
+                Anio = txtYear.Text.Trim(),
+                Color = txtColor.Text.Trim(),
+                Modalidad = modalidad,
+                DespachoAlcaldia = chkDespacho.Checked
+            };
+
+            tramites.Incrementar();
             tramites.Guardar(nuevoTramite);
 
             mostrarRecepciones();
+            MostrarAviso("Registro guardado exitosamente", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
+            limpiarFormulario();
         }
 
         public void mostrarRecepciones()
@@ -128,7 +141,8 @@ namespace CapaPresentacion
             Tramite tramite = recepciones.ObtenerParaEditar(indiceSeleccionado, out string mensaje);
             if (tramite == null)
             {
-                MostrarAviso("Edición de datos no permitida", PaletaColores.AvisoAlertaFondo, PaletaColores.AvisoAlertaBorde, PaletaColores.AvisoAlertaTexto);
+                MostrarAviso("Edición de datos no permitida", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
+                limpiarFormulario();
                 return;
             }
             OcultarAviso();
@@ -146,11 +160,11 @@ namespace CapaPresentacion
             Tramite datosEditados = ArmarObjetoDesdeFormulario();
 
             if (recepciones.EditarRecepcion(datosEditados)) {
-                MostrarAviso("Actualización exitosa", PaletaColores.AvisoOkFondo, PaletaColores.AvisoOkBorde, PaletaColores.AvisoOkTexto);
+                MostrarAviso("Actualización exitosa", EstiloUI.AvisoOkFondo, EstiloUI.AvisoOkBorde, EstiloUI.AvisoOkTexto);
             }
             else
             {
-                MostrarAviso("No se pudo actualizar", PaletaColores.AvisoAlertaFondo, PaletaColores.AvisoAlertaBorde, PaletaColores.AvisoAlertaTexto);
+                MostrarAviso("No se pudo actualizar", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoAlertaBorde, EstiloUI.AvisoAlertaTexto);
 
             }
             mostrarRecepciones();
@@ -197,7 +211,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MostrarAviso("Seleccione un trámite para eliminar.", PaletaColores.AvisoAlertaFondo, PaletaColores.AvisoInfoBorde, PaletaColores.AvisoAlertaTexto);
+                MostrarAviso("Seleccione un trámite para eliminar.", EstiloUI.AvisoAlertaFondo, EstiloUI.AvisoInfoBorde, EstiloUI.AvisoAlertaTexto);
             }
         }
 
@@ -264,6 +278,43 @@ namespace CapaPresentacion
                 Modalidad = rbContado.Checked ? "Contado" : "Crédito",
                 Estado = (chkDespacho.Checked == true) ? "Despachado" : "Recibido"
             };
+        }
+        private bool ValidarCamposTramite(out string mensajeError, out Control controlConError)
+        {
+            controlConError = null;
+
+            var reglas = new (Control control, string valor, string mensaje)[]
+             {
+                (txtChasis, txtChasis.Text, "Ingrese el número de chasis."),
+                (txtContrato, txtContrato.Text, "Ingrese el número de contrato."),
+                (txtDocumento, txtDocumento.Text, "Ingrese el NIT o CI."),
+                (txtPropietario, txtPropietario.Text, "Ingrese el nombre del propietario o cliente."),
+                (cbMarca, cbMarca.Text, "Seleccione o ingrese la marca."),
+                (txtClase, txtClase.Text, "Ingrese la clase del vehículo."),
+                (txtTipoVehiculo, txtTipoVehiculo.Text, "Ingrese el tipo de vehículo."),
+                (txtPoliza, txtPoliza.Text, "Ingrese el número de póliza."),
+                (txtYear, txtYear.Text, "Ingrese el año del vehículo."),
+                (txtColor, txtColor.Text, "Ingrese el color del vehículo.")
+            };
+
+            foreach (var regla in reglas)
+            {
+                if (string.IsNullOrWhiteSpace(regla.valor))
+                {
+                    mensajeError = regla.mensaje;
+                    controlConError = regla.control;
+                    return false;
+                }
+            }
+
+            if (!rbContado.Checked && !rbCredito.Checked)
+            {
+                mensajeError = "Seleccione la modalidad (Contado o Crédito).";
+                return false;
+            }
+
+            mensajeError = string.Empty;
+            return true;
         }
     }
 }

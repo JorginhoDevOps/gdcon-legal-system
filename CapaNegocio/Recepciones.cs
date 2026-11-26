@@ -57,11 +57,6 @@ namespace CapaNegocio
             return modalidad;
         }
 
-        public void modificar()
-        {
-            
-        }
-
         public void eliminar()
         {
             // Implementación del método eliminar
@@ -111,7 +106,6 @@ namespace CapaNegocio
             tramites.Archivo_VectorTramites();
 
             int indice = tramites.Buscar(editado.NroTramite);
-            MessageBox.Show("tramite e indice: "+ indice);
 
             if (indice < 0) return false;
 
