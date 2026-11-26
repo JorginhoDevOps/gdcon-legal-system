@@ -86,7 +86,8 @@ namespace CapaPresentacion
             lblLugarFecha.Text = "Santa Cruz, " + fecha.ToString("dd 'de' MMMM 'de' yyyy", new CultureInfo("es-BO"));
 
             DocumentoActa acta = new ActaContadoDocumento(t);
-            string datosQr = acta.ConstruirContenidoQr();
+            string datosQr = acta.ConstruirContenidoQr() +
+                 " | Verif: " + new Tramites().CalcularChecksumPuntero(t.NroTramite);
             GenerarQr(datosQr);
         }
 

@@ -140,7 +140,7 @@ namespace CapaPresentacion
             lblResumenRecibidosValor.Text = recibidos.ToString();
             lblResumenDespachadosValor.Text = despachados.ToString();
             lblResumenPlacaPagoValor.Text = placaPago.ToString();
-            lblResumenTransitoValor.Text = transito.ToString();
+            lblResumenTransitoValor.Text = tramites.ContarPorEstadoRecursivo(Tramites.EnTransito).ToString();
             lblResumenEntregadosValor.Text = entregados.ToString();
             lblResumenActasContadoValor.Text = actasContado.ToString();
             lblResumenActasCreditoValor.Text = actasCredito.ToString();

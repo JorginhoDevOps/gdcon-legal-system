@@ -399,7 +399,7 @@ namespace CapaNegocio
             if (T.Estado == Entregado) return "Entregado";
             double H = Horas(T);
             if (H <= 24) return "Verde";
-            if (H <= 48) return "Ámbar";
+            if (H <= 48) return "Amarillo";
             return "Rojo";
         }
 
