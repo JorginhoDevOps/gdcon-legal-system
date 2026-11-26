@@ -59,7 +59,7 @@ namespace CapaNegocio
 
         public void modificar()
         {
-            // Implementación del método modificar
+            
         }
 
         public void eliminar()
@@ -82,7 +82,7 @@ namespace CapaNegocio
         public Tramite ObtenerPorIndice(int indice)
         {
             tramites.Archivo_VectorTramites();
-            return ObtenerParaEditar(indice, out _);
+            return tramites.Obtener(indice);
         }
 
         public Tramite ObtenerParaEditar(int indice, out string mensajeError)
@@ -90,21 +90,48 @@ namespace CapaNegocio
             mensajeError = "";
             tramites.Archivo_VectorTramites();
 
-            Tramite t = tramites.Obtener(indice);
-            if (t == null)
+            Tramite tramite = tramites.Obtener(indice);
+            if (tramite == null)
             {
                 mensajeError = "El registro seleccionado no existe.";
                 return null;
             }
 
-            if (t.Estado != Tramites.Recibido && t.Estado != Tramites.Despachado)
+            if (tramite.Estado != Tramites.Recibido && tramite.Estado != Tramites.Despachado)
             {
-                mensajeError = $"No se puede editar un trámite en estado '{t.Estado}'. Solo se permiten trámites Recibidos o Despachados.";
+                mensajeError = $"No se puede editar un trámite en estado '{tramite.Estado}'. Solo se permiten trámites Recibidos o Despachados.";
                 return null;
             }
 
-            return t;
+            return tramite;
         }
+
+        public bool EditarRecepcion(Tramite editado)
+        {
+            tramites.Archivo_VectorTramites();
+
+            int indice = tramites.Buscar(editado.NroTramite);
+            MessageBox.Show("tramite e indice: "+ indice);
+
+            if (indice < 0) return false;
+
+            Tramite antiguo = tramites.Obtener(indice);
+            antiguo.Chasis = editado.Chasis;
+            antiguo.NitCi = editado.NitCi;
+            antiguo.Cliente = editado.Cliente;
+            antiguo.Marca = editado.Marca;
+            antiguo.Clase = editado.Clase;
+            antiguo.TipoVehiculo = editado.TipoVehiculo;
+            antiguo.Poliza = editado.Poliza;
+            antiguo.Anio = editado.Anio;
+            antiguo.Color = editado.Color;
+            antiguo.Modalidad = editado.Modalidad;
+            antiguo.Estado = editado.Estado;
+
+            tramites.VectorTramites_Archivo();
+            return true;
+        }
+
         #endregion
 
     }

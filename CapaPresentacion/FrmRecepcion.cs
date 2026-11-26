@@ -23,6 +23,8 @@ namespace CapaPresentacion
         }
         Tramites tramites = new Tramites();
         Recepciones recepciones = new Recepciones();
+        string tramiteActual = "";
+        private ErrorProvider errorProvider1 = new ErrorProvider();
 
 
         private void FrmRecepcion_Load(object sender, EventArgs e)
@@ -30,6 +32,9 @@ namespace CapaPresentacion
             mostrarRecepciones();
             chkDespacho.Visible = false;
             pnlAviso.Visible = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnNuevo.Enabled = false;
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -90,8 +95,8 @@ namespace CapaPresentacion
             nuevoTramite.Color = txtColor.Text;
             nuevoTramite.Modalidad = recepciones.obtenerContrato(rbContado, rbCredito);
             nuevoTramite.DespachoAlcaldia = chkDespacho.Checked;
-            nuevoTramite.Estado = "test";
             tramites.Guardar(nuevoTramite);
+
             mostrarRecepciones();
         }
 
@@ -120,25 +125,36 @@ namespace CapaPresentacion
         private void dgvRecepciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indiceSeleccionado = e.RowIndex;
+            Tramite tramite = recepciones.ObtenerParaEditar(indiceSeleccionado, out string mensaje);
+            if (tramite == null)
+            {
+                MostrarAviso("Edición de datos no permitida", PaletaColores.AvisoAlertaFondo, PaletaColores.AvisoAlertaBorde, PaletaColores.AvisoAlertaTexto);
+                return;
+            }
+            OcultarAviso();
+            mostrarDatosEditar(tramite);
+            btnGuardar.Enabled = false;
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            tramiteActual = tramite.NroTramite;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (indiceSeleccionado < 0)
-            {
-                MessageBox.Show("Seleccione un trámite para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+
+            Tramite datosEditados = ArmarObjetoDesdeFormulario();
+
+            if (recepciones.EditarRecepcion(datosEditados)) {
+                MostrarAviso("Actualización exitosa", PaletaColores.AvisoOkFondo, PaletaColores.AvisoOkBorde, PaletaColores.AvisoOkTexto);
             }
-
-            Tramite tramite = recepciones.ObtenerParaEditar(indiceSeleccionado, out string mensaje);
-
-            if (tramite == null)
+            else
             {
-                MessageBox.Show(mensaje, "Edición no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                MostrarAviso("No se pudo actualizar", PaletaColores.AvisoAlertaFondo, PaletaColores.AvisoAlertaBorde, PaletaColores.AvisoAlertaTexto);
 
-            mostrarDatosEditar(tramite);
+            }
+            mostrarRecepciones();
+            limpiarFormulario();
         }
 
         private void mostrarDatosEditar(Tramite tramite)
@@ -162,7 +178,7 @@ namespace CapaPresentacion
                 chkDespacho.Checked = tramite.DespachoAlcaldia;
                 chkDespacho.Enabled = tramite.Estado == Tramites.Recibido;
                 chkDespacho.Visible = true;
-                txtChasis.ReadOnly = true;
+                txtChasis.ReadOnly = false;
             }
         }
 
@@ -181,7 +197,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("Seleccione un trámite para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MostrarAviso("Seleccione un trámite para eliminar.", PaletaColores.AvisoAlertaFondo, PaletaColores.AvisoInfoBorde, PaletaColores.AvisoAlertaTexto);
             }
         }
 
@@ -213,6 +229,41 @@ namespace CapaPresentacion
             rbContado.Checked = false;
             rbCredito.Checked = false;
             chkDespacho.Checked = false;
+        }
+
+        private void MostrarAviso(string texto, Color fondo, Color borde, Color colorTexto)
+        {
+            pnlAviso.BackColor = fondo;
+            pnlBordeAviso.BackColor = borde;
+            lblAviso.ForeColor = colorTexto;
+            lblAviso.Text = texto;
+            lblAviso.Visible = true;
+            pnlAviso.Visible = true;
+        }
+
+        private void OcultarAviso()
+        {
+            pnlAviso.Visible = false;
+            lblAviso.Visible = false;
+        }
+
+        private Tramite ArmarObjetoDesdeFormulario()
+        {
+            return new Tramite
+            {
+                NroTramite = tramiteActual,
+                Chasis = txtChasis.Text.Trim(),
+                NitCi = txtDocumento.Text.Trim(),
+                Cliente = txtPropietario.Text.Trim(),
+                Marca = cbMarca.Text.Trim(),
+                Clase = txtClase.Text.Trim(),
+                TipoVehiculo = txtTipoVehiculo.Text.Trim(),
+                Poliza = txtPoliza.Text.Trim(),
+                Anio = txtYear.Text.Trim(),
+                Color = txtColor.Text.Trim(),
+                Modalidad = rbContado.Checked ? "Contado" : "Crédito",
+                Estado = (chkDespacho.Checked == true) ? "Despachado" : "Recibido"
+            };
         }
     }
 }
