@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.Globalization;
 
 namespace CapaPresentacion
 {

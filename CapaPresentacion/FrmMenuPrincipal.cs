@@ -89,6 +89,9 @@ namespace CapaPresentacion
             string fechaTexto = DateTime.Now.ToString("dddd, dd 'de' MMMM 'de' yyyy", esBo);
             lblFechaActual.Text = char.ToUpper(fechaTexto[0]) + fechaTexto.Substring(1);
             lblEncabezadoResumen.Text = "Resumen general — " + DateTime.Now.ToString("dd/MM/yyyy");
+            lblResumenRecibidos.Text = "Recibidos";
+            lblResumenDespachados.Text = "Despachados";
+            lblResumenEntregados.Text = "Entregados";
 
             // 2. Cargar trámites reales desde Tramites.json
             Tramites tramites = new Tramites();
@@ -101,7 +104,6 @@ namespace CapaPresentacion
             int recibidos = 0;
             int despachados = 0;
             int placaPago = 0;
-            int transito = 0;
             int entregados = 0;
             int actasContado = 0;
             int actasCredito = 0;
@@ -121,7 +123,6 @@ namespace CapaPresentacion
                 if (t.Estado == Tramites.Recibido) recibidos++;
                 else if (t.Estado == Tramites.Despachado) despachados++;
                 else if (t.Estado == Tramites.ConPlacaPago) placaPago++;
-                else if (t.Estado == Tramites.EnTransito) transito++;
                 else if (t.Estado == Tramites.Entregado)
                 {
                     entregados++;

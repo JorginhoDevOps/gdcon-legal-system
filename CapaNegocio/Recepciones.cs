@@ -180,6 +180,30 @@ namespace CapaNegocio
             tramites.VectorTramites_Archivo();
             return true;
         }
+        public int DespacharTodosRecibidos(out int omitidos)
+        {
+            omitidos = 0;
+            int despachados = 0;
+            tramites.Archivo_VectorTramites();
+
+            for (int i = 0; i < tramites.Cantidad(); i++)
+            {
+                Tramite t = tramites.Obtener(i);
+                if (t == null || t.Estado != Tramites.Recibido) continue;
+
+                string msg;
+                if (tramites.Despachar(i, out msg))
+                    despachados++;
+                else
+                    omitidos++;
+            }
+
+            if (despachados > 0)
+                tramites.VectorTramites_Archivo();
+
+            count = tramites.Cantidad();
+            return despachados;
+        }
         #endregion
     }
 }

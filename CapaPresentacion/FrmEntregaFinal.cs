@@ -58,9 +58,6 @@ namespace CapaPresentacion
             dgvEntregas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             tramites.Archivo_VectorTramites();
-#if DEBUG
-            if (tramites.Cantidad() == 0) { tramites.CargarDemo(); tramites.VectorTramites_Archivo(); }
-#endif
             LlenarGrilla();
             LimpiarFormulario();
         }
