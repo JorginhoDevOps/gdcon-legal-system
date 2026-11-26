@@ -40,6 +40,8 @@ namespace CapaNegocio
         public string Requisitos;        // 7 caracteres 0/1, ver Tramites.Req...
         public string EntregadoA;
         public DateTime FechaEntrega;
+        public string NroContrato;
+        public bool DespachoAlcaldia;
         #endregion
     }
 }

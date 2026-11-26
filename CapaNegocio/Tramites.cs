@@ -183,6 +183,7 @@ namespace CapaNegocio
                 return false;
             }
             T.Estado = Despachado;
+            T.DespachoAlcaldia = true;
             T.FechaDespacho = DateTime.Now;
             return true;
         }
