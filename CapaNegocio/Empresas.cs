@@ -1,80 +1,74 @@
 using System;
-using System.Globalization;
-using System.IO;
-using System.Windows.Forms;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
+using System.Windows.Forms;
 
 namespace CapaNegocio
 {
     public class Empresas
     {
         #region "ATRIBUTOS"
-        Empresa[] VEmpresas = new Empresa[30];
-        int Vis;
+        List<Empresa> ListaEmpresas = new List<Empresa>();
         #endregion
 
         #region "CONSTRUCTOR"
         public Empresas()
         {
-            Vis = -1;
+            ListaEmpresas = new List<Empresa>();
         }
         #endregion
 
         #region "METODOS"
         public void Incrementar()
         {
-            Vis++;
+
         }
         public bool HayEspacio()
         {
-            return Vis < VEmpresas.Length - 1;
+            return true;
         }
         public int Cantidad()
         {
-            return Vis + 1;
+            return ListaEmpresas.Count;
         }
         public void Guardar(Empresa DatosEmp)
         {
-            DatosEmp.Codigo = Vis + 1;
-            VEmpresas[Vis] = DatosEmp;
+            DatosEmp.Codigo = ListaEmpresas.Count + 1;
+            ListaEmpresas.Add(DatosEmp);
         }
         public int Buscar(string Nombre)
         {
-            for (int V = 0; V <= Vis; V++)
-                if (string.Equals(VEmpresas[V].Nombre, Nombre, StringComparison.OrdinalIgnoreCase))
+            for (int V = 0; V < ListaEmpresas.Count; V++)
+                if (string.Equals(ListaEmpresas[V].Nombre, Nombre, StringComparison.OrdinalIgnoreCase))
                     return V;
             return -1;
         }
         public Empresa Obtener(int Pos)
         {
-            if (Pos < 0 || Pos > Vis) return null;
-            return VEmpresas[Pos];
+            if (Pos < 0 || Pos >= ListaEmpresas.Count) return null;
+            return ListaEmpresas[Pos];
         }
         public void Modificar(int Pos, Empresa DatosEmp)
         {
-            if (Pos < 0 || Pos > Vis) return;
-            DatosEmp.Codigo = VEmpresas[Pos].Codigo;
-            VEmpresas[Pos] = DatosEmp;
+            if (Pos < 0 || Pos >= ListaEmpresas.Count) return;
+            DatosEmp.Codigo = ListaEmpresas[Pos].Codigo;
+            ListaEmpresas[Pos] = DatosEmp;
         }
         public void Eliminar(int Pos)
         {
-            if (Pos < 0 || Pos > Vis) return;
-            for (int V = Pos; V < Vis; V++)
-            {
-                VEmpresas[V] = VEmpresas[V + 1];
-                VEmpresas[V].Codigo = V + 1;
-            }
-            VEmpresas[Vis] = null;
-            Vis--;
+            if (Pos < 0 || Pos >= ListaEmpresas.Count) return;
+            ListaEmpresas.RemoveAt(Pos);
+            for (int V = 0; V < ListaEmpresas.Count; V++)
+                ListaEmpresas[V].Codigo = V + 1;
         }
 
         // Nombres para llenar el ComboBox de Recepción
         public string[] Nombres()
         {
-            string[] Lista = new string[Vis + 1];
-            for (int V = 0; V <= Vis; V++)
-                Lista[V] = VEmpresas[V].Nombre;
+            string[] Lista = new string[ListaEmpresas.Count];
+            for (int V = 0; V < ListaEmpresas.Count; V++)
+                Lista[V] = ListaEmpresas[V].Nombre;
             return Lista;
         }
 
@@ -84,27 +78,25 @@ namespace CapaNegocio
             int Pos = Buscar(NombreEmpresa);
             if (Pos < 0) return 0;
             if (string.Equals(Modalidad, "Crédito", StringComparison.OrdinalIgnoreCase))
-                return VEmpresas[Pos].HonorarioCredito;
-            return VEmpresas[Pos].HonorarioContado;
+                return ListaEmpresas[Pos].HonorarioCredito;
+            return ListaEmpresas[Pos].HonorarioContado;
         }
 
         // Columnas del DataGridView: Nombre, NIT, Honorario Contado, Honorario Crédito
         public void Mostrar(DataGridView Dgv)
         {
-            try
+            if (ListaEmpresas.Count == 0)
             {
-                Dgv.RowCount = Vis + 1;
+                Dgv.Rows.Clear();
+                return;
             }
-            catch
+            Dgv.RowCount = ListaEmpresas.Count;
+            for (int V = 0; V < ListaEmpresas.Count; V++)
             {
-                Dgv.RowCount = 1;
-            }
-            for (int V = 0; V <= Vis; V++)
-            {
-                Dgv[0, V].Value = VEmpresas[V].Nombre;
-                Dgv[1, V].Value = VEmpresas[V].Nit;
-                Dgv[2, V].Value = VEmpresas[V].HonorarioContado.ToString("0.00");
-                Dgv[3, V].Value = VEmpresas[V].HonorarioCredito.ToString("0.00");
+                Dgv[0, V].Value = ListaEmpresas[V].Nombre;
+                Dgv[1, V].Value = ListaEmpresas[V].Nit;
+                Dgv[2, V].Value = ListaEmpresas[V].HonorarioContado.ToString("0.00");
+                Dgv[3, V].Value = ListaEmpresas[V].HonorarioCredito.ToString("0.00");
             }
         }
         #endregion
@@ -120,17 +112,13 @@ namespace CapaNegocio
         public void VectorEmpresas_Archivo()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Archivo));
-            List<Empresa> Lista = new List<Empresa>();
-            for (int V = 0; V <= Vis; V++)
-                Lista.Add(VEmpresas[V]);
-
-            string Json = JsonSerializer.Serialize(Lista, OpcionesJson);
+            string Json = JsonSerializer.Serialize(ListaEmpresas, OpcionesJson);
             File.WriteAllText(Archivo, Json);
         }
 
         public void Archivo_VectorEmpresas()
         {
-            Vis = -1;
+            ListaEmpresas.Clear();
             if (!File.Exists(Archivo))
             {
                 CrearArchivo();
@@ -140,23 +128,15 @@ namespace CapaNegocio
                 try
                 {
                     string Json = File.ReadAllText(Archivo);
-                    List<Empresa> Lista = JsonSerializer.Deserialize<List<Empresa>>(Json, OpcionesJson);
-                    if (Lista != null)
-                    {
-                        for (int I = 0; I < Lista.Count; I++)
-                        {
-                            if (!HayEspacio()) break;
-                            Incrementar();
-                            VEmpresas[Vis] = Lista[I];
-                        }
-                    }
+                    List<Empresa> Cargadas = JsonSerializer.Deserialize<List<Empresa>>(Json, OpcionesJson);
+                    if (Cargadas != null) ListaEmpresas = Cargadas;
                 }
                 catch
                 {
                     CrearArchivo();
                 }
             }
-            if (Vis == -1) CrearEmpresasPrueba();
+            if (ListaEmpresas.Count == 0) CrearEmpresasPrueba();
         }
 
         public void CrearArchivo()
@@ -165,15 +145,11 @@ namespace CapaNegocio
             File.WriteAllText(Archivo, "[]");
         }
 
-        // Valores de PRUEBA: el administrador los cambiará con los honorarios reales
         void CrearEmpresasPrueba()
         {
-            Vis = -1;
-            Incrementar();
+            ListaEmpresas.Clear();
             Guardar(new Empresa { Nombre = "IMCRUZ", Nit = "", HonorarioContado = 900, HonorarioCredito = 1100 });
-            Incrementar();
             Guardar(new Empresa { Nombre = "TOYOSA", Nit = "", HonorarioContado = 850, HonorarioCredito = 1000 });
-            Incrementar();
             Guardar(new Empresa { Nombre = "OVANDO", Nit = "", HonorarioContado = 800, HonorarioCredito = 950 });
             VectorEmpresas_Archivo();
         }
